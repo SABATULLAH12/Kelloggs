@@ -1,0 +1,10 @@
+2022-11-16 11:43:45,564 [12] ERROR  Application (null) (null) -    at Microsoft.Graph.Auth.ClaimsPrincipalExtensions.ToGraphUserAccount(ClaimsPrincipal claimsPrincipal)
+   at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 274
+2022-11-16 11:43:45,590 [12] ERROR  Application (null) (null) - Code: invalidClaim
+Message: Missing 'http://schemas.microsoft.com/identity/claims/objectidentifier' claim.
+
+2022-11-16 11:47:26,027 [14] ERROR  Application (null) (null) -    at Microsoft.Graph.Auth.ClaimsPrincipalExtensions.ToGraphUserAccount(ClaimsPrincipal claimsPrincipal)
+   at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 274
+2022-11-16 11:47:26,894 [14] ERROR  Application (null) (null) - Code: invalidClaim
+Message: Missing 'http://schemas.microsoft.com/identity/claims/objectidentifier' claim.
+

@@ -1,0 +1,293 @@
+﻿@using AQ.Kelloggs.Resources
+@{
+    ViewBag.Title = @Resources.OSP;
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta content="utf-8" http-equiv="encoding">
+<script src="~/Scripts/CrossTab/bootstrap-multiselect.js"></script>
+<link href="~/Content/CrossTab/bootstrap-multiselect.css" rel="stylesheet" />
+<script>
+    document.write('<script src="../Scripts/AdvancedAnalytics/Osp.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<link href="../Content/CrossTab/CrossTab.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/CrossTab/_chart.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/AdvancedAnalytics/Osp.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+</script>
+
+@using AQ.Kelloggs.Resources
+<div class="view-container" ng-controller="OSP-Controller">
+    <div>
+        <div class="calloutArrow"></div>
+        <div class="selectionButtonCallout">Click here to make selections</div>
+    </div>
+
+    <div class="leftpanelarea" ng-hide="leftMenuIsHidden"></div>
+    @*bind left panel from partial start*@
+    <div class="left-panel-load animate-hide" ng-hide="leftMenuIsHidden">
+        @{Html.RenderPartial("LeftPanel");}
+    </div>
+    @*bind left panel from partial view end*@
+
+    @*bind content start*@
+
+    <script type="text/javascript">
+        $(function () {
+
+            $(".trendChart").mouseover(function () {
+                if (!isTrendChart) {
+                    $("#trendchartCallout").show();
+                }
+
+            }).mouseout(function () {
+                if (!isTrendChart) {
+                    $("#trendchartCallout").hide();
+                }
+            });
+
+            $(".stackChart").mouseover(function () {
+                if (!isStackChart) {
+                    $("#chartCallout").show();
+                }
+            }).mouseout(function () {
+                if (!isStackChart) {
+                    $("#chartCallout").hide();
+                }
+            });
+
+            $('#lstRespType').multiselect({
+                includeSelectAllOption: true,
+                selectAllText: 'Total',
+                nonSelectedText: 'Total',
+                selectedClass: 'selectedClass',
+                //optionClass: 'dropdownText',
+                allSelectedText: 'Total',
+                buttonText: function (options, select) {
+                    if (options.length === 0) {
+                        return 'Total';
+                    }
+                    else if (options.length > 2) {
+                        return 'Total';
+                    }
+                    else {
+                        var labels = [];
+                        options.each(function () {
+                            if ($(this).attr('label') !== undefined) {
+                                labels.push($(this).attr('label'));
+                            }
+                            else {
+                                labels.push($(this).html());
+                            }
+                        });
+                        return labels.join(', ') + '';
+                    }
+                }
+            });
+            $('#btnSelected').click(function () {
+                if (submitFlag) {
+                    let curscope = angular.element("#left-pane-container").scope();
+
+                    if ($("#lstRespType option:selected").length == 0)
+                        show_popup("Alert", "Please select any respondent type.");
+                    else
+                        curscope.left_panel_submit();
+                }
+                else
+                    show_popup("Alert", "Please click on submit and try again, as the selection has been changed.");
+            });
+
+            $('#dispTotal').click(function () {
+                checkBoxUpdate($('#chkbox_total'));
+
+                selectChartType(event, $('.trendChart').hasClass('active'));
+            });
+            $('#dispLabel').click(function () {
+                checkBoxUpdate($('#chkbox_label'));
+                selectChartType(event, $('.trendChart').hasClass('active'));
+            });
+
+            function checkBoxUpdate(element) {
+                if (element.hasClass('chkbox_active')) {
+                    element.removeClass('chkbox_active');
+                    element.addClass('chkbox');
+                }
+                else {
+                    element.removeClass('chkbox');
+                    element.addClass('chkbox_active');
+                }
+            }
+
+        });
+    </script>
+
+    <div class="view-load" ng-click="hideLeftPanel()">
+        <div class="output-container">
+            <div class="OSPHeader headerArea">
+                <div class="headerLeftBorder"></div>
+                <div class="headerText"><div class="middleAlign">Occasion Strategic Posture</div></div>
+                <div class="headerOptions">
+                    <div class="shareCategory optionValue" ng-click="selectHeaderOption(3)" ng-show="isShareCategory">
+                        <div class="shareIcon"></div>
+                        <div class="shareCategoryText middleAlign">SHARE OF {{shareName}}</div>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="retailValue optionValue" ng-click="selectHeaderOption(1)">
+                        <div class="retailIconImage"></div>
+                        <div class="retailText middleAlign">RETAIL VALUE</div>
+                        <div id="retailCallout">
+                            <div class="retailcalloutArrow"></div>
+                            <div class="retailCallout">
+                                Retail Value is disabled for following reasons:
+                                <ol style="padding-left:1.17vw;text-align:left">
+                                    <li>Additional filter is selected. Retail sales value is not applicable for filtered rows.</li>
+                                    <li>Respondent type selected is other than 'Total'. </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="separator"></div>
+                    <div class="distribution optionValue" ng-click="selectHeaderOption(2)">
+                        <div class="disIcon"></div>
+                        <DIV class="disText middleAlign">DISTRIBUTION</DIV>
+                    </div>
+                </div>
+            </div>
+            <div class="headerArea" style="border-bottom:none;">
+
+                <div class="headerText"><div class="middleAlign">Respondent Type</div></div>
+
+                <select id="lstRespType" multiple="multiple">
+                    <option value="1" selected>@Resources.Adult</option>
+                    <option value="2" selected>@Resources.Teen</option>
+                    <option value="3" selected>@Resources.Kids</option>
+                </select>
+                <div id="btnSelected" title="Submit">
+                    <div class="empty-div1"></div>
+                    <div class="button-event">
+                        <div class="button-img middleAlign backgroundCheck"></div>
+                        <div class="button-text" style="width: 78%;text-align: center;margin-top: -1%;">
+                            <div class="middleAlign">Submit</div>
+                        </div>
+                    </div>
+                    <div class="empty-div2"></div>
+
+                </div>
+
+                <div class="legend">
+                    <div class="share legendContent middleAlign">Take Share</div>
+                    <div class="strengthenCore legendContent middleAlign">Strengthen the Core</div>
+                    <div class="grow legendContent middleAlign">Grow relevance</div>
+                    <div class="maintain legendContent middleAlign">Maintain</div>
+
+                    <div class="deprioritize legendContent middleAlign">Deprioritize</div>
+                </div>
+
+
+            </div>
+            <div class="chartArea distributionChartArea" id="chartArea">
+
+            </div>
+            <div class="chartArea retailChartArea" id="chartArea">
+
+            </div>
+            <div class="chartArea shareCategoryChartArea" id="chartArea">
+
+            </div>
+        </div>
+        <div class="drilldown-container">
+            <div class="OSPHeader headerArea">
+                <div class="headerLeftBorder"></div>
+                <div class="headerText">
+                    <div class="middleAlign" style="height:60%">
+                        <div class="colName">FAMILY BREAKFAST </div>
+                        <span style="color:#d11245;float:left;margin: 0 5px;"> * </span>
+                        <div class="rowName">AT HOME</div>
+                    </div>
+                </div>
+                <div class="legendOption legendContent middleAlign" style="width: 14%;">STRENGTHEN THE CORE</div>
+                <div class="headerOptions" style="width: 35%; margin-right: -1%;">
+                    <div class="demographics optionValue" ng-click="selectInnerHeaderOption(1)" style="width: 30%;">
+                        <div class="demogIconImage"></div>
+                        <DIV class="demogText middleAlign">DEMOGRAPHICS</DIV>
+                    </div>
+                    <div class="separator" style="width: 1%;"></div>
+                    <div class="motivation optionValue" ng-click="selectInnerHeaderOption(2)" style="width: 30%;">
+                        <div class="motivIcon"></div>
+                        <DIV class="motivText middleAlign">MOTIVATIONS</DIV>
+                    </div>
+                    <div class="separator" style="width: 1%;"></div>
+                    <div class="fiveWs optionValue" ng-click="selectInnerHeaderOption(3)" style="width: 30%;">
+                        <div class="fiveWsIcon"></div>
+                        <DIV class="fiveWsText middleAlign">5Ws</DIV>
+                    </div>
+                    <div class="backButton middleAlign" ng-click="goBack()"></div>
+                </div>
+            </div>
+            <div class="chartArea demographicsChartArea" id="chartArea"> </div>
+            <div class="chartArea motivationChartArea" id="chartArea"> </div>
+            <div class="chartArea fiveWsChartArea" id="chartArea"> </div>
+        </div>
+    </div>
+    @*bind content end*@
+
+    <div class="Newbody-footer">
+        <div class="footerNote">Source: Project Landmark</div>
+        <div class="footerContent">
+
+            <div id="nsample-size" ng-click="samplesizedetails($event)">
+                <div class="middleAlign">
+                    Sample Size
+                </div>
+            </div>
+            <div class="middleAlign">Source: Project Landmark</div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign occasionChange">Number indicates: Row Percentage Item Distribution</div>
+            <div class="separatorNew occasionChange" style="margin: 0.55vw .22vw;border-left: none;"></div>
+            @*<div class="middleAlign occasionChange" style="margin-left:0px;">Change PP Vs Benchmark/RetailValue</div>*@
+            <div class="middleAlign occasionChange" style="margin-left:0px;">Change PP Vs Benchmark</div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign" id="normNote">Significance Vs Total Row @@ 95% CL: </div>
+            <div class="middleAlign"><div class="greenDot"></div></div>
+            <div class="middleAlign">High</div>
+            <div class="middleAlign"><div class="redDot"></div></div>
+            <div class="middleAlign">Low</div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign" id="dataNotAvailable">
+                NA - Data not available
+            </div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign" id="insuffSampleNote">
+                LS: Insufficient sample(&lt; 150)
+            </div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign">Low Base Sample</div>
+            <div class="middleAlign"><div class="greyDot"></div></div>
+            <div class="middleAlign">150-250</div>
+            @*<div class="middleAlign separator columnPerc">||</div>*@
+            @*<div class="separatorNew columnPerc"></div>
+                <div class="middleAlign columnPerc">Column % shown across tool</div>*@
+
+        </div>
+        <div class="innerFooterContent">
+            <div class="middleAlign">Source: Project Landmark</div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign occasionChange">Number indicates:Occasion %</div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign" id="normNote">Significance Vs Total @@ 95% CL: </div>
+            <div class="middleAlign"><div class="greenDot"></div></div>
+            <div class="middleAlign">High</div>
+            <div class="middleAlign"><div class="redDot"></div></div>
+            <div class="middleAlign">Low</div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign" id="dataNotAvailable">
+                NA - Data not available
+            </div>
+            <div class="separatorNew"></div>
+            <div class="middleAlign">Low Base Sample:LS < 150,</div>
+            <div class="middleAlign"><div class="greyDot"></div></div>
+            <div class="middleAlign">150-250</div>
+        </div>
+
+    </div>
+</div>
+
+

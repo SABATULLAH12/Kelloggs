@@ -1,0 +1,7 @@
+D:\Kellogs Projects\Kellogs\AQ.Statistics\bin\Release\AQ.Statistics.xml
+D:\Kellogs Projects\Kellogs\AQ.Statistics\bin\Release\AQ.Statistics.dll
+D:\Kellogs Projects\Kellogs\AQ.Statistics\bin\Release\AQ.Statistics.pdb
+D:\Kellogs Projects\Kellogs\AQ.Statistics\bin\Release\MathNet.Numerics.dll
+D:\Kellogs Projects\Kellogs\AQ.Statistics\obj\Release\AQ.Statistics.csprojResolveAssemblyReference.cache
+D:\Kellogs Projects\Kellogs\AQ.Statistics\obj\Release\AQ.Statistics.dll
+D:\Kellogs Projects\Kellogs\AQ.Statistics\obj\Release\AQ.Statistics.pdb

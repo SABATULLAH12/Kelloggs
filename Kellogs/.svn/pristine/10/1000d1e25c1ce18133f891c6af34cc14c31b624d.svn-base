@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-app="landingStarter">
+    <div class="default-background_landing" style="display:none"></div>
+    <div class="landing-header">
+        <div class="logo">
+            <div class="logo-img"></div>
+        </div>
+        <div class="landing-settings">
+            <div class="icons">
+                <div class="settings" onclick="showSettings()"></div>
+            </div>
+            <div ng-click="BellIconclick()" class="icons" style="height:auto">
+                <div class="nofitications"></div>
+            </div>
+        </div>
+    </div>
+    <div class="landing-content">
+        @RenderBody()
+    </div>
+    <div class="landing-footer">
+        <div class="aq-logo">
+            <div class="aq-logo-img"></div>
+        </div>
+        <div class="kantra-logo">
+            <div class="kantra-logo-img"></div>
+        </div>
+    </div>
+</body>
+</html>

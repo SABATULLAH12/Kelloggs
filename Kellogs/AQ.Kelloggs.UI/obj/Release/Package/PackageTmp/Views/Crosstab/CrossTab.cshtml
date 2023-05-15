@@ -1,0 +1,269 @@
+﻿@using AQ.Kelloggs.Resources
+@{
+    ViewBag.Title = @Resources.CrossTab;
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta content="utf-8" http-equiv="encoding">
+<script type="text/javascript">
+    var selectedMainModule = "CrossTab";
+</script>
+@using AQ.Kelloggs.Resources
+@*@Styles.Render("~/Content/crosstab")*@
+
+@*<script src="~/Scripts/CrossTab/CrossTab.js"></script>
+    <script src="~/Scripts/CrossTab/bootstrap-multiselect.js"></script>*@
+<script>
+    document.write('<script src="../bundles/crosstab?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    //document.write('<link href="../Content/CrossTab/pagination.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/CrossTab/CrossTab.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/CrossTab/_chart.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<script src="../Scripts/CrossTab/Charts/_chart.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+</script>
+<link href="~/Content/CrossTab/bootstrap-multiselect.css" rel="stylesheet" />
+
+@*@Scripts.Render("~/bundles/charts")*@
+<style>
+    .selectedClass {
+        background-color: none;
+    }
+
+    .trendChartCallout {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 46.72%, rgba(237, 236, 236, 1) 100%);
+        width: 11%;
+        border-radius: 0px 0px 0.3vw 0.3vw;
+        border-top: 0.15vw solid rgba(211, 18, 69, 1);
+        margin-left: 84.1%;
+        margin-top: -0.9vw;
+        box-shadow: 0 0.4vw 0.4vw -0.4vw rgba(0, 0, 0, 0.3);
+        font-style: italic;
+        font-size: 0.9vw;
+        color: #000000;
+        padding: 0.4vw;
+        text-align: left;
+        position: absolute;
+    }
+
+
+
+    .trendChartcalloutArrow {
+        transform: rotateY(180deg);
+        position: absolute;
+        margin-left: 94.5%;
+        margin-top: -0.95%;
+        background: url(../../Content/Images/Kelloggs_Sprite.svg);
+        width: 2vw;
+        height: 2vw;
+        background-size: 118vw 85vw;
+        background-position-x: 0vw;
+        background-position-y: -24.25vw;
+    }
+
+    #chartCallout, #trendchartCallout {
+        width: 100%;
+        z-index: 100;
+        position: relative;
+        right: 4%;
+        top: 57%;
+        display: none;
+    }
+
+</style>
+<div class="view-container" ng-controller="Crosstab-Controller">
+
+    <div>
+        <div class="calloutArrow"></div>
+        <div class="selectionButtonCallout">Click here to make selections</div>
+    </div>
+
+    <div class="leftpanelarea" ng-hide="leftMenuIsHidden"></div>
+    @*bind left panel from partial start*@
+    <div class="left-panel-load animate-hide" ng-hide="leftMenuIsHidden">
+        @{Html.RenderPartial("LeftPanel");}
+    </div>
+    @*bind left panel from partial view end*@
+
+    @*bind content start*@
+
+    <script type="text/javascript">
+        $(function () {
+
+            //$(".trendChart").mouseover(function () {
+            //    if (!isTrendChart) {
+            //        $("#trendchartCallout").show();
+            //    }
+
+            //}).mouseout(function () {
+            //    if (!isTrendChart) {
+            //        $("#trendchartCallout").hide();
+            //    }
+            //});
+
+            $(".trendChart").click(function (event) {
+
+                if (!isTrendChart) {
+                    $("#trendchartCallout").show();
+                }
+                else {
+                    selectChartType(event, true);
+                }
+            });
+
+            $(".stackChart").click(function (event) {
+
+                if (!isStackChart) {
+                    $("#chartCallout").show();
+                }
+                else {
+                    selectChartType(event, false);
+                }
+            });
+
+
+
+            $('#lstRespType').multiselect({
+                includeSelectAllOption: true,
+                selectAllText: 'Total',
+                nonSelectedText: 'Total',
+                selectedClass: 'selectedClass',
+                //optionClass: 'dropdownText',
+                allSelectedText: 'Total',
+                buttonText: function (options, select) {
+                    if (options.length === 0) {
+                        return 'Total';
+                    }
+                    else if (options.length > 2) {
+                        return 'Total';
+                    }
+                    else {
+                        var labels = [];
+                        options.each(function () {
+                            if ($(this).attr('label') !== undefined) {
+                                labels.push($(this).attr('label'));
+                            }
+                            else {
+                                labels.push($(this).html());
+                            }
+                        });
+                        return labels.join(', ') + '';
+                    }
+                }
+            });
+            $('#btnSelected').click(function () {
+                if (submitFlag) {
+                    let curscope = angular.element("#left-pane-container").scope();
+                    if ($("#lstRespType option:selected").length == 0)
+                        show_popup("Alert", "Please select any respondent type.");
+                    else
+                        curscope.left_panel_submit();
+                }
+                else
+                    show_popup("Alert", "Please click on submit and try again, as the selection has been changed.");
+            });
+
+            $('#dispTotal').click(function () {
+                checkBoxUpdate($('#chkbox_total'));
+
+                selectChartType(event, $('.trendChart').hasClass('active'));
+            });
+            $('#dispLabel').click(function () {
+                checkBoxUpdate($('#chkbox_label'));
+                selectChartType(event, $('.trendChart').hasClass('active'));
+            });
+
+            function checkBoxUpdate(element) {
+                if (element.hasClass('chkbox_active')) {
+                    element.removeClass('chkbox_active');
+                    element.addClass('chkbox');
+                }
+                else {
+                    element.removeClass('chkbox');
+                    element.addClass('chkbox_active');
+                }
+            }
+
+        });
+    </script>
+
+    <div class="view-load" ng-click="hideLeftPanel()">
+        <div class="output-container">
+            <div class="headerArea">
+                <div class="headerLeftBorder"></div>
+                <div class="headerText"><div class="middleAlign">Respondent Type</div></div>
+
+                <select id="lstRespType" multiple="multiple">
+                    <option value="1" selected>@Resources.Adult</option>
+                    <option value="2" selected>@Resources.Teen</option>
+                    <option value="3" selected>@Resources.Kids</option>
+                </select>
+                <div id="btnSelected" title="Submit">
+                    <div class="empty-div1"></div>
+                    <div class="button-event">
+                        <div class="button-img middleAlign backgroundCheck"> </div>
+                        <div class="button-text" style="width: 78%;text-align: center;margin-top: -1%;">
+                            <div class="middleAlign">Submit</div>
+                        </div>
+                    </div>
+                    <div class="empty-div2"></div>
+
+                </div>
+
+                <div id="chartCallout">
+                    <div class="trendChartcalloutArrow"></div>
+                    <div class="trendChartCallout">
+                        Stack Chart is disabled for any of the following reasons:
+                        <ol style="padding-left:1.17vw;text-align:left">
+                            <li>Row Nesting selected</li>
+                            <li>Number of columns is greater than 23</li>
+                            <li>Number of rows is greater than 15</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id="trendchartCallout">
+                    <div class="trendChartcalloutArrow"></div>
+                    <div class="trendChartCallout">
+                        Trend Chart is disabled for any of the following reasons:
+                        <ol style="padding-left:1.17vw;text-align:left">
+                            <li>Time Period is not selected in Columns.</li>
+                            <li>Number of rows is more than 15.</li>
+                            <li>Row Nesting is selected.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="chartIcons">
+
+                    <div class="trendChart" >
+                        <div class="middleAlign"><div class="trendChartIcon"></div></div>
+
+                    </div>
+                    <div class="stackChart" >
+                        <div class="middleAlign"><div class="stackChartIcon"></div></div>
+                    </div>
+                    <div class="tableChart active" onclick="selectChartType(event)">
+                        <div class="middleAlign"><div class="tableChartIcon"></div></div>
+                    </div>
+                </div>
+                @*<div class="checkbox" style="margin-left:0px;padding-left:1%;float:right;position:relative;margin-right:10%;"><div>asdf</div></div>*@
+                <div id="dispTotal" class="checkboxDiv" style="float: right;height: 100%;width:12%;cursor:pointer;">
+                    <div class="checkboxIcon" style="width: 20%;height: 100%;float: left;position: relative;">
+                        <div class="middleAlignHorizontal" style="position: absolute;">
+                            <div id="chkbox_total" class="chkbox_active"></div>
+                        </div>
+                    </div>
+                    <div class="checkboxText" style="height: 105%;width: 80%;float: left;"><div class="middleAlign" style="font-size:0.9vw;">Display Total Column</div></div>
+                </div>
+                <div id="dispLabel" class="checkboxDiv" style="float: right;height: 100%;width:12%;cursor:pointer;">
+                    <div class="checkboxIcon" style="width: 20%;height: 100%;float: left;position: relative;">
+                        <div class="middleAlignHorizontal" style="position: absolute;">
+                            <div id="chkbox_label" class="chkbox"></div>
+                        </div>
+                    </div>
+                    <div class="checkboxText" style="height: 105%;width: 80%;float: left;"><div class="middleAlign" style="font-size:0.9vw;">Display Data Labels</div></div>
+                </div>
+            </div>
+            <div class="chartArea" id="chartArea">
+
+            </div>
+        </div>
+    </div>
+    @*bind content end*@
+</div>

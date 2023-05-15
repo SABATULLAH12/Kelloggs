@@ -1,0 +1,12 @@
+2022-10-26 15:39:54,287 [13] ERROR  Application (null) (null) - Name:11173
+2022-10-26 16:45:55,016 [17] ERROR  Application (null) (null) - Name:11173
+2022-10-26 16:47:38,129 [13] ERROR  Application (null) (null) - C:\Users\11173\AppData\Local\Temp\Temporary ASP.NET Files\root\66afacd9\e63b0170\App_Web_login.cshtml.5efefc5f.dszme4mm.0.cs(121): error CS1528: Expected ; or = (cannot specify constructor arguments in declaration)
+2022-10-26 16:48:41,620 [15] ERROR  Application (null) (null) - C:\Users\11173\AppData\Local\Temp\Temporary ASP.NET Files\root\66afacd9\e63b0170\App_Web_login.cshtml.5efefc5f.whzrlnc8.0.cs(121): error CS1528: Expected ; or = (cannot specify constructor arguments in declaration)
+2022-10-26 16:49:12,765 [18] ERROR  Application (null) (null) - C:\Users\11173\AppData\Local\Temp\Temporary ASP.NET Files\root\66afacd9\e63b0170\App_Web_login.cshtml.5efefc5f.rhqshy_a.0.cs(121): error CS1528: Expected ; or = (cannot specify constructor arguments in declaration)
+2022-10-26 16:49:29,361 [14] ERROR  Application (null) (null) - C:\Users\11173\AppData\Local\Temp\Temporary ASP.NET Files\root\66afacd9\e63b0170\App_Web_login.cshtml.5efefc5f.v21j8ya1.0.cs(121): error CS1528: Expected ; or = (cannot specify constructor arguments in declaration)
+2022-10-26 16:53:09,909 [10] ERROR  Application (null) (null) - C:\Users\11173\AppData\Local\Temp\Temporary ASP.NET Files\root\66afacd9\e63b0170\App_Web_login.cshtml.5efefc5f.b2a_bbot.0.cs(121): error CS1528: Expected ; or = (cannot specify constructor arguments in declaration)
+2022-10-26 16:54:50,609 [10] ERROR  Application (null) (null) - The controller for path '/Invalid UserName and Password/Login' was not found or does not implement IController.
+2022-10-26 16:56:06,138 [12] ERROR  Application (null) (null) - The controller for path '/Invalid UserName and Password/Login' was not found or does not implement IController.
+2022-10-26 17:32:57,710 [14] ERROR  Application (null) (null) - Name:AQ\11173
+2022-10-26 17:36:50,446 [35] ERROR  Application (null) (null) - Name:AQ\11173
+2022-10-26 17:37:56,526 [44] ERROR  Application (null) (null) - Name:AQ\11173

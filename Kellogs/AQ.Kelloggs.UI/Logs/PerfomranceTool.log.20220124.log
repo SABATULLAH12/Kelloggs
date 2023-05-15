@@ -1,0 +1,52 @@
+2022-01-24 19:22:21,879 [13] ERROR  Application (null) (null) - Name:AQ\11173
+2022-01-24 19:23:15,608 [14] ERROR  Application (null) (null) -    at System.DirectoryServices.DirectoryEntry.Bind(Boolean throwIfFail)
+   at System.DirectoryServices.DirectoryEntry.Bind()
+   at System.DirectoryServices.DirectoryEntry.get_AdsObject()
+   at System.DirectoryServices.PropertyValueCollection.PopulateList()
+   at System.DirectoryServices.PropertyValueCollection..ctor(DirectoryEntry entry, String propertyName)
+   at System.DirectoryServices.PropertyCollection.get_Item(String propertyName)
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoLDAPDirectoryInitNoContainer()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoDomainInit()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.Initialize()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.get_QueryCtx()
+   at System.DirectoryServices.AccountManagement.PrincipalSearcher.SetDefaultPageSizeForContext()
+   at System.DirectoryServices.AccountManagement.PrincipalSearcher..ctor(Principal queryFilter)
+   at AQ.Kelloggs.UI.Controllers.CommonController.<SearchUsers>d__22.MoveNext() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 422
+2022-01-24 19:23:15,610 [14] ERROR  Application (null) (null) - The user name or password is incorrect.
+
+2022-01-24 19:23:15,649 [14] ERROR  Application (null) (null) - The user name or password is incorrect.
+
+2022-01-24 19:25:58,751 [16] ERROR  Application (null) (null) -    at System.DirectoryServices.DirectoryEntry.Bind(Boolean throwIfFail)
+   at System.DirectoryServices.DirectoryEntry.Bind()
+   at System.DirectoryServices.DirectoryEntry.get_AdsObject()
+   at System.DirectoryServices.PropertyValueCollection.PopulateList()
+   at System.DirectoryServices.PropertyValueCollection..ctor(DirectoryEntry entry, String propertyName)
+   at System.DirectoryServices.PropertyCollection.get_Item(String propertyName)
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoLDAPDirectoryInitNoContainer()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoDomainInit()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.Initialize()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.get_QueryCtx()
+   at System.DirectoryServices.AccountManagement.PrincipalSearcher.SetDefaultPageSizeForContext()
+   at System.DirectoryServices.AccountManagement.PrincipalSearcher..ctor(Principal queryFilter)
+   at AQ.Kelloggs.UI.Controllers.CommonController.<SearchUsers>d__22.MoveNext() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 422
+2022-01-24 19:25:58,762 [16] ERROR  Application (null) (null) - The user name or password is incorrect.
+
+2022-01-24 19:25:59,169 [16] ERROR  Application (null) (null) - The user name or password is incorrect.
+
+2022-01-24 19:31:32,618 [13] ERROR  Application (null) (null) -    at System.DirectoryServices.DirectoryEntry.Bind(Boolean throwIfFail)
+   at System.DirectoryServices.DirectoryEntry.Bind()
+   at System.DirectoryServices.DirectoryEntry.get_AdsObject()
+   at System.DirectoryServices.PropertyValueCollection.PopulateList()
+   at System.DirectoryServices.PropertyValueCollection..ctor(DirectoryEntry entry, String propertyName)
+   at System.DirectoryServices.PropertyCollection.get_Item(String propertyName)
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoLDAPDirectoryInitNoContainer()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.DoDomainInit()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.Initialize()
+   at System.DirectoryServices.AccountManagement.PrincipalContext.get_QueryCtx()
+   at System.DirectoryServices.AccountManagement.PrincipalSearcher.SetDefaultPageSizeForContext()
+   at System.DirectoryServices.AccountManagement.PrincipalSearcher..ctor(Principal queryFilter)
+   at AQ.Kelloggs.UI.Controllers.CommonController.<SearchUsers>d__22.MoveNext() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 422
+2022-01-24 19:31:32,624 [13] ERROR  Application (null) (null) - The user name or password is incorrect.
+
+2022-01-24 19:31:32,681 [13] ERROR  Application (null) (null) - The user name or password is incorrect.
+

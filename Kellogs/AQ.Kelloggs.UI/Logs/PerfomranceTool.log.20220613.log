@@ -1,0 +1,6 @@
+2022-06-13 17:18:38,601 [12] ERROR  Application (null) (null) - Name:AQ\11173
+2022-06-13 17:36:40,791 [16] ERROR  Application (null) (null) - Name:AQ\11173
+2022-06-13 17:44:53,487 [12] ERROR  Application (null) (null) - Name:AQ\11173
+2022-06-13 18:03:50,846 [11] ERROR  Application (null) (null) - Name:AQ\11173
+2022-06-13 18:08:55,733 [12] ERROR  Application (null) (null) - A circular reference was detected while serializing an object of type 'System.Collections.Generic.List`1[[System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]'.
+2022-06-13 18:22:12,974 [11] ERROR  Application (null) (null) - Name:AQ\11173

@@ -1,0 +1,1246 @@
+﻿/*
+ * SonarQube, open source software quality management tool.
+ * Copyright (C) 2008-2013 SonarSource
+ * mailto:contact AT sonarsource DOT com
+ *
+ * SonarQube is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ *
+ * SonarQube is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+#region Includes
+using System.Collections.Generic;
+using System.Globalization;
+#endregion
+
+#region Namespace
+namespace AQ.Kelloggs.Models
+{
+    #region Public Class
+    public static class Constants
+    {
+        #region Stored Procedures
+        private const string leftpanelCrossTab = "Usp_LeftPanelData";
+        private const string crossTabData = "usp_KelloggsCrossTab";
+        private const string leftpanelSnapshot = "usp_LeftPanelData_Snapshot";
+        private const string snapshotData = "usp_KelloggsOccasionProfile";
+        private const string userManagementData = "usp_KelloggsUserManagement_GetUsers";
+        private const string leftpanelDashboard = "usp_LeftPanelData_Dashboard";
+        private const string dashboardMaster = "usp_Load_Dashboard";
+        private const string addToDasboard = "usp_Dashboard_Insert";
+        private const string updateDashboard = "usp_Dashboard_Update";
+        private const string deleteDashboard = "usp_Dashboard_Delete";
+        private const string saveAsDashboard = "usp_Dashboard_SaveAs";
+        private const string shareDashboard = "usp_Dashboard_Share";
+        private const string saveStickySelections = "USP_StoreModule_Selections";
+        private const string getStickySelections = "USP_GetModule_Selections";
+        private const string deleteUser = "usp_DeactivateUsers";
+        private const string addUserToGroup = "usp_AddUsersToGroup";
+        private const string addGroup = "usp_SaveGroup";
+        private const string editGroup = "usp_EditGroup";
+        private const string deleteGroup = "usp_DeleteGroup";
+        private const string updateLastActivity = "usp_UpdateLastActivity";
+        private const string leftpanelStrategicPostures = "usp_LeftPanelData_StrategicPostures";
+        private const string leftpanelCorrespondenceMap = "usp_LeftPanelData_CMap";
+        private const string leftpanelReportGenerator = "USP_LeftPanelData_ReportGenerator";
+        private const string ospData = "USP_StrategicPostures";
+        private const string cmData = "usp_KelloggsCorrespondenceMap";
+        private const string commonReportData = "usp_ReportGeneratorCommonSlides";
+        private const string occasionAttribute = "usp_OccasionAttributeIds";
+        private const string ospCellData = "USP_StrategicPostures_Profile";
+        private const string categoryAttribute = "usp_AllCategories";
+        private const string leftpanelPerformanceDashboard = "usp_LeftPanelData_PDashboard";
+
+
+        private const string businessReportData = "USP_BusinessReview";
+        private const string businessReportData47 = "USP_BusinessReviewSlides47";
+        private const string businessReportData50 = "USP_BusinessReviewSlides50";
+        private const string businessReportData53 = "USP_BusinessReviewSlides53";
+        private const string businessReportData56 = "USP_BusinessReviewSlides56";
+        private const string businessReportData77 = "USP_BusinessReviewSlides77";
+        private const string occasionReportData = "usp_OccasionReport";
+        private const string categoryReportData = "usp_CategoryReport";
+        private const string obppcReportData = "usp_OBPPCReport";
+        private const string kidsReportData = "usp_KidsReport";
+        private const string channelReportData = "usp_ChannelReport";
+        private const string customFilter = "usp_UserCustomFilter";
+        private const string customFilterMaster = "usp_UserCustomFilter_GetData";
+        private const string marketTimeperiodList = "usp_GetMarketTimeperiodData";
+        private const string customGroup = "usp_UserCustomGroup";
+        private const string customGroupMaster = "usp_UserCustomGroup_GetData";
+        private const string trendReportData = "usp_TrendReport";
+        private const string trendReportData2 = "usp_TrendReport2";
+        private const string trendReportData3 = "usp_TrendReport3";
+        private const string getEmailIdsForDashboardShare = "usp_GetEmailIdsForDashboardShare";
+        private const string allDashboard = "usp_DashboardList";
+
+        private const string userDetails = "usp_GetUserDetails";
+
+        private const string pDashboardData = "usp_PerformanceDashboard";
+
+        #endregion
+
+        #region Chart
+        private static List<string> chartColors = new List<string> { "#95B9E5", "#F4C1C1", "#B5D8A3", "#B6BDC1", "#C2DCF2", "#FCA586", "#C29BC6",
+            "#E2D6B0", "#88D1E5", "#D6A6A5", "#C4BAD3", "#F7C47F","#F2BDDA", "#5ECCC9", "#F9CBAC"};
+        #endregion
+
+        public enum UserGuideType
+        {
+            allmodules = 1, snapshot = 2, crosstab = 3, swimlanes = 4, correspondencemaps = 5, dashboard = 6, reportgenerator = 7, usermanagement = 8, performanceDashboard = 9
+        }
+
+        public enum MagicNumbers
+        {
+            zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen,
+            fourteen, fifteen, sixteen = 16, seventeen = 17, eighteen = 18, nineteen = 19, twenty = 20, twentyone = 21, thirty = 30, fifty = 50, hundred = 100, thousand = 1000,
+            onetwentyeight = 128, twofiftysix = 256,
+            forty = 40, fortyone = 41, fortytwo = 42, fortythree = 43
+        }
+        private const string userGuidePathCrosstab = "~/UserGuide/Kellogg's Visual Cross Tab User Guide.pdf";
+        private const string userGuidePathSnapshot = "~/UserGuide/Kellogg's Occasion Profile User Guide.pdf";
+        private const string userGuidePathAll = "~/UserGuide/Kellogg's All Modules User Guide.pdf";
+        private const string userGuidePathMyDashboard = "~/UserGuide/Kellogg's My Dashboard User Guide.pdf";
+        private const string questionairreDocument = "~/UserGuide/Questionairre.pdf";
+        private const string regionalContactsDocument = "~/UserGuide/RegionalContacts.pdf";
+        private const string usermanagementguide = "~/UserGuide/UserManagementUserGuide.pdf";
+        private const string reportgeneratorguide = "~/UserGuide/Kellogg's Report Generator User Guide.pdf";
+        private const string userGuidePathOSP = "~/UserGuide/Kellogg's Occasion Strategic Postures User Guide.pdf";
+        private const string userGuidePathCM = "~/UserGuide/Kellogg's Correspondence Maps User Guide.pdf";
+        private const string performanceDashboardGuide = "~/UserGuide/Kellogg's Performance Dashboard User Guide.pdf";
+        private const string tempPath = "~/temp/";
+        private const string chartNALabel = "NA\n\n";
+        private const string chartLSLabel = "LS\n\n";
+
+        private const int chartFontHeight = 7;
+
+        private const string weighted = "weighted";
+        private const string wColorClass = "wColorClass";
+        private const string value = "value";
+        private const string unweighted = "unweighted";
+        private const string uColorClass = "uColorClass";
+        private const string colorClass = "colorClass";
+        private const string backColor = "backColor";
+        private const string borderColor = "borderColor";
+        private const string change = "change";
+        private const string volume = "Volume";
+        private const string black = "Black";
+        private const string white = "#FFFFFF";
+        private const byte cellNumberFormat = 9;
+        private static readonly int[] snapshotsheets = { 6, 10, 8 };
+        private static CultureInfo culture = new CultureInfo("en-US", false);
+        private const int samplesizeCheck = 30;
+        private const int questionairre = 11;
+        private const int regionalContacts = 12;
+        private const string header = "Header";
+        private const string respType = "RespType";
+
+        private const string avgItemsPerOccasion = "AVERAGE ITEMS PER OCCASION";
+        private const string pathDelimiter = "/";
+        private const string currencyFormat = "{0:0.00}";
+        private const string totalAttribute = "Total";
+        private const string totalinCaps = "TOTAL";
+        private const string retail = "Retail";
+        private const string title = "Title";
+        private const string userId = "UserId";
+
+        private const string title4 = "Title 4";
+        private const string strategicPostures = "STRATEGIC POSTURES - ";
+        private const string transparentColor = "#0000FFFF";
+        private const string kOccasion = "K. SHARE OF OCCASION";
+        private const string target = "Target";
+        private const string benchmark = "BENCHMARK";
+        private const string tempFilePath = "~/Temp/";
+        private const int insufficientSample = 150;
+        private const int lowSample = 250;
+        private const string minus = "minus";
+        private const string plus = "plus";
+
+        public static string LeftpanelCrossTab
+        {
+            get
+            {
+                return leftpanelCrossTab;
+            }
+        }
+
+
+        public static string BusinessReportData
+        {
+            get
+            {
+                return businessReportData;
+            }
+        }
+        public static string BusinessReportData47
+        {
+            get
+            {
+                return businessReportData47;
+            }
+        }
+        public static string BusinessReportData50
+        {
+            get
+            {
+                return businessReportData50;
+            }
+        }
+        public static string BusinessReportData53
+        {
+            get
+            {
+                return businessReportData53;
+            }
+        }
+        public static string BusinessReportData56
+        {
+            get
+            {
+                return businessReportData56;
+            }
+        }
+
+        public static string BusinessReportData77
+        {
+            get
+            {
+                return businessReportData77;
+            }
+        }
+        public static string CrossTabData
+        {
+            get
+            {
+                return crossTabData;
+            }
+        }
+
+
+        public static string OccasionAttribute
+        {
+            get
+            {
+                return occasionAttribute;
+            }
+        }
+
+        public static string LeftpanelSnapshot
+        {
+            get
+            {
+                return leftpanelSnapshot;
+            }
+        }
+
+        public static string LeftpanelDashboard
+        {
+            get
+            {
+                return leftpanelDashboard;
+            }
+        }
+
+        public static string LeftpanelStrategicPostures
+        {
+            get
+            {
+                return leftpanelStrategicPostures;
+            }
+        }
+
+        public static string LeftpanelCorrespondenceMap
+        {
+            get
+            {
+                return leftpanelCorrespondenceMap;
+            }
+        }
+
+        public static string LeftpanelPerformanceDashboard
+        {
+            get
+            {
+                return leftpanelPerformanceDashboard;
+            }
+        }
+        public static string DashboardMaster
+        {
+            get
+            {
+                return dashboardMaster;
+            }
+        }
+        public static string SnapshotData
+        {
+            get
+            {
+                return snapshotData;
+            }
+        }
+        public static string AddToDasboard
+        {
+            get
+            {
+                return addToDasboard;
+            }
+        }
+
+        public static string UpdateDashboard
+        {
+            get
+            {
+                return updateDashboard;
+            }
+        }
+        public static string DeleteDashboard
+        {
+            get
+            {
+                return deleteDashboard;
+            }
+        }
+        public static string SaveAsDashboard
+        {
+            get
+            {
+                return saveAsDashboard;
+            }
+        }
+        public static string ShareDashboard
+        {
+            get
+            {
+                return shareDashboard;
+            }
+        }
+
+        public static string UserManagement
+        {
+            get
+            {
+                return userManagementData;
+            }
+        }
+
+        public static string DeleteUser
+        {
+            get
+            {
+                return deleteUser;
+            }
+        }
+
+
+
+
+
+        public static IList<string> ChartColors
+        {
+            get
+            {
+                return chartColors;
+            }
+
+        }
+
+        public static CultureInfo Culture
+        {
+            get
+            {
+                return culture;
+            }
+
+        }
+
+        public static string UserGuidePathCrosstab
+        {
+            get
+            {
+                return userGuidePathCrosstab;
+            }
+        }
+
+        public static string ChartNALabel
+        {
+            get
+            {
+                return chartNALabel;
+            }
+        }
+
+        public static string ChartLSLabel
+        {
+            get
+            {
+                return chartLSLabel;
+            }
+        }
+
+        public static int ChartFontHeight
+        {
+            get
+            {
+                return chartFontHeight;
+            }
+        }
+
+        public static string Weighted
+        {
+            get
+            {
+                return weighted;
+            }
+        }
+
+        public static string WColorClass
+        {
+            get
+            {
+                return wColorClass;
+            }
+        }
+
+        public static string Value
+        {
+            get
+            {
+                return value;
+            }
+        }
+
+        public static string Unweighted
+        {
+            get
+            {
+                return unweighted;
+            }
+        }
+
+        public static string UColorClass
+        {
+            get
+            {
+                return uColorClass;
+            }
+        }
+
+        public static string ColorClass
+        {
+            get
+            {
+                return colorClass;
+            }
+        }
+        public static string BackColor
+        {
+            get
+            {
+                return backColor;
+            }
+        }
+
+        public static string Change
+        {
+            get
+            {
+                return change;
+            }
+        }
+
+        public static string Black
+        {
+            get
+            {
+                return black;
+            }
+        }
+
+        public static string White
+        {
+            get
+            {
+                return white;
+            }
+        }
+
+        public static byte CellNumberFormat
+        {
+            get
+            {
+                return cellNumberFormat;
+            }
+        }
+
+        public static int[] Snapshotsheets
+        {
+            get
+            {
+                return snapshotsheets;
+            }
+        }
+
+        public static int SamplesizeCheck
+        {
+            get
+            {
+                return samplesizeCheck;
+            }
+        }
+
+        public static string UserGuidePathSnapshot
+        {
+            get
+            {
+                return userGuidePathSnapshot;
+            }
+        }
+
+        public static string UserGuidePathAll
+        {
+            get
+            {
+                return userGuidePathAll;
+            }
+        }
+
+        public static string SaveStickySelections
+        {
+            get
+            {
+                return saveStickySelections;
+            }
+        }
+
+        public static string GetStickySelections
+        {
+            get
+            {
+                return getStickySelections;
+            }
+        }
+
+        public static string UserManagementData
+        {
+            get
+            {
+                return userManagementData;
+            }
+        }
+
+        public static string AddUserToGroup
+        {
+
+            get
+            {
+                return addUserToGroup;
+            }
+        }
+
+        public static string AddGroup
+        {
+            get
+            {
+                return addGroup;
+            }
+        }
+
+        public static string EditGroup
+        {
+            get
+            {
+                return editGroup;
+            }
+        }
+        public static string DeleteGroup
+        {
+            get
+            {
+                return deleteGroup;
+            }
+        }
+
+        public static string UpdateLastActivity
+        {
+            get
+            {
+                return updateLastActivity;
+            }
+        }
+
+        public static string UserGuidePathMyDashboard
+        {
+            get
+            {
+                return userGuidePathMyDashboard;
+            }
+        }
+
+        public static string TempPath
+        {
+            get
+            {
+                return tempPath;
+            }
+        }
+
+        public static string QuestionairreDocument
+        {
+            get
+            {
+                return questionairreDocument;
+            }
+        }
+
+        public static string RegionalContactsDocument
+        {
+            get
+            {
+                return regionalContactsDocument;
+            }
+        }
+
+        public static int RegionalContacts
+        {
+            get
+            {
+                return regionalContacts;
+            }
+        }
+
+        public static int Questionairre
+        {
+            get
+            {
+                return questionairre;
+            }
+        }
+
+        public static string LeftpanelReportGenerator
+        {
+
+            get
+            {
+                return leftpanelReportGenerator;
+            }
+        }
+
+        public static string OspData
+        {
+            get
+            {
+                return ospData;
+            }
+        }
+
+        public static string CMData
+        {
+            get
+            {
+                return cmData;
+            }
+        }
+
+        public static string CommonReportData
+        {
+            get
+            {
+                return commonReportData;
+            }
+        }
+        public static string OspCellData
+        {
+            get
+            {
+                return ospCellData;
+            }
+        }
+
+        public static string CategoryAttribute
+        {
+            get
+            {
+                return categoryAttribute;
+            }
+        }
+
+        public static string OccasionReportData
+        {
+            get
+            {
+                return occasionReportData;
+            }
+        }
+
+        public static string CategoryReportData
+        {
+            get
+            {
+                return categoryReportData;
+            }
+        }
+
+        public static string ObppcReportData
+        {
+            get
+            {
+                return obppcReportData;
+            }
+        }
+
+        public static string KidsReportData
+        {
+            get
+            {
+                return kidsReportData;
+            }
+        }
+
+        public static string ChannelReportData
+        {
+            get
+            {
+                return channelReportData;
+            }
+        }
+
+        public static string UsermanagementGuide
+        {
+            get
+            {
+                return usermanagementguide;
+            }
+        }
+
+        public static string Volume
+        {
+            get
+            {
+                return volume;
+            }
+        }
+
+        public static string Header
+        {
+            get
+            {
+                return header;
+            }
+        }
+
+        public static string RespType
+        {
+            get
+            {
+                return respType;
+            }
+        }
+
+        public static string AvgItemsPerOccasion
+        {
+            get
+            {
+                return avgItemsPerOccasion;
+            }
+        }
+
+        public static string PathDelimiter
+        {
+            get
+            {
+                return pathDelimiter;
+            }
+        }
+
+        public static string CurrencyFormat
+        {
+            get
+            {
+                return currencyFormat;
+            }
+        }
+
+        public static string TotalAttribute
+        {
+            get
+            {
+                return totalAttribute;
+            }
+        }
+
+        public static string TotalinCaps
+        {
+            get
+            {
+                return totalinCaps;
+            }
+        }
+
+        public static string Retail
+        {
+            get
+            {
+                return retail;
+            }
+        }
+
+        public static string CustomFilter
+        {
+            get
+            {
+                return customFilter;
+            }
+        }
+
+        public static string CustomFilterMaster
+        {
+            get
+            {
+                return customFilterMaster;
+            }
+        }
+
+        public static string MarketTimeperiodList
+        {
+            get
+            {
+                return marketTimeperiodList;
+            }
+        }
+
+        public static string GetEmailIdsForDashboardShare
+        {
+            get
+            {
+                return getEmailIdsForDashboardShare;
+            }
+        }
+
+        public static string Reportgeneratorguide
+        {
+            get
+            {
+                return reportgeneratorguide;
+            }
+        }
+
+        public static string UserGuidePathOSP
+        {
+            get
+            {
+                return userGuidePathOSP;
+            }
+        }
+
+        public static string UserGuidePathCM
+        {
+            get
+            {
+                return userGuidePathCM;
+            }
+        }
+
+        public static string Title
+        {
+            get
+            {
+                return title;
+            }
+        }
+
+        public static string Title4
+        {
+            get
+            {
+                return title4;
+            }
+        }
+
+        public static string AllDashboard
+        {
+            get
+            {
+                return allDashboard;
+            }
+        }
+
+        public static string GetUserDetails
+        {
+            get
+            {
+                return userDetails;
+            }
+        }
+
+        public static string StrategicPostures
+        {
+            get
+            {
+                return strategicPostures;
+            }
+
+        }
+
+        public static string TransparentColor
+        {
+            get
+            {
+                return transparentColor;
+            }
+
+        }
+
+        public static string UserId
+        {
+            get
+            {
+                return userId;
+            }
+        }
+
+        public static string PDashboardData
+        {
+            get
+            {
+                return pDashboardData;
+            }
+        }
+
+        public static string BorderColor
+        {
+            get
+            {
+                return borderColor;
+            }
+        }
+
+        public static string KOccasion
+        {
+            get
+            {
+                return kOccasion;
+            }
+        }
+
+        public static string Benchmark
+        {
+            get
+            {
+                return benchmark;
+            }
+        }
+
+        public static string TempFilePath
+        {
+            get
+            {
+                return tempFilePath;
+            }
+        }
+
+        public static int InsufficientSample
+        {
+            get
+            {
+                return insufficientSample;
+            }
+        }
+
+        public static int LowSample
+        {
+            get
+            {
+                return lowSample;
+            }
+        }
+
+        public static string Target
+        {
+            get
+            {
+                return target;
+            }
+        }
+
+        public static string Minus
+        {
+            get
+            {
+                return minus;
+            }
+        }
+
+        public static string Plus
+        {
+            get
+            {
+                return plus;
+            }
+        }
+
+        public static string PerformanceDashboardGuide
+        {
+            get
+            {
+                return performanceDashboardGuide;
+            }
+        }
+
+        public static string CustomGroup
+        {
+            get
+            {
+                return customGroup;
+            }
+        }
+
+        public static string CustomGroupMaster
+        {
+            get
+            {
+                return customGroupMaster;
+            }
+        }
+
+        public static string TrendReportData
+        {
+            get
+            {
+                return trendReportData;
+            }
+        }
+
+        public static string TrendReportData2
+        {
+            get
+            {
+                return trendReportData2;
+            }
+        }
+
+        public static string TrendReportData3
+        {
+            get
+            {
+                return trendReportData3;
+            }
+        }
+
+
+
+
+
+
+
+        #endregion
+
+        public static class ExcelParams
+        {
+            private static int maxSampleSize = 250;
+
+            public static int MaxSampleSize
+            {
+                get { return maxSampleSize; }
+            }
+
+        }
+
+        #region DB Parameters
+        public static class DBParameters
+        {
+            private const string filter = "Filter";
+            private const string parent = "Parent";
+            public static readonly string FilterID = "FilterID";
+            public static readonly string FilterLevel = "FilterLevel";
+            public static readonly string MetricName = "MetricName";
+            public static readonly string DisplayName = "DisplayName";
+            public static readonly string MetricParentName = "MetricParentName";
+            public static readonly string ParentId = "ParentId";
+            public static readonly string IsSelectable = "IsSelectable";
+            public static readonly string AttributetypeId = "AttributetypeId";
+            public static readonly string AttributeId = "AttributeId";
+            public static readonly string IsLastLevel = "IsLastLevel";
+            public static readonly string SortID = "SortID";
+            public static readonly string CountryID = "CountryID";
+
+            public static readonly string Column = "Column";
+            public static readonly string Row = "Row";
+            public static readonly string RowNesting = "RowNesting";
+            public static readonly string TimePeriod = "TimePeriod";
+            public static readonly string TimePeriodType = "TimePeriodType";
+            public static readonly string Market = "Market";
+            public static readonly string Occasion = "Occasion";
+            public static readonly string Category = "Category";
+            public static readonly string Metric = "Metric";
+            public static readonly string Demographics = "Demographics";
+
+            public static readonly string ColumnMetricName = "ColumnMetricName";
+            public static readonly string RowMetricName = "RowMetricName";
+            public static readonly string NestingMetricName = "NestingMetricName";
+            public static readonly string Percentage = "Percentage";
+            public static readonly string UNumerator = "UNumerator";
+            public static readonly string WNumerator = "WNumerator";
+            public static readonly string USampleSize = "USampleSize";
+            public static readonly string WSampleSize = "WSampleSize";
+            public static readonly string Significance = "Significance";
+            public static readonly string Changes = "Change";
+
+            public static readonly string WidgetNumber = "WidgetNumber";
+            public static readonly string Attribute = "Attribute";
+            public static readonly string SampleSize = "SampleSize";
+            public static readonly string Volumes = "Volume";
+            public static readonly string DiffVol = "DiffVol";
+            public static readonly string VolumeHome = "VolumeHome";
+            public static readonly string DiffVolHome = "DiffVolHome";
+            public static readonly string VolumeTotal = "VolumeTotal";
+            public static readonly string DiffVolTotal = "DiffVolTotal";
+            public static readonly string ProfileOrder = "ProfileOrder";
+            public static readonly string USampleSizeTotal = "USampleSizeTotal";
+            public static readonly string USampleSizeHome = "USampleSizeHome";
+            public static readonly string WSampleSizeTotal = "WSampleSizeTotal";
+            public static readonly string WSampleSizeHome = "WSampleSizeHome";
+            public static readonly string UNumeratorTotal = "UNumeratorTotal";
+            public static readonly string UNumeratorHome = "UNumeratorHome";
+            public static readonly string WNumeratorTotal = "WNumeratorTotal";
+            public static readonly string WNumeratorHome = "WNumeratorHome";
+
+
+            public static readonly string UserID = "UserID";
+            public static readonly string DashBoardTypeId = "DashBoardTypeId";
+            public static readonly string DashBoardID = "DashBoardID";
+            public static readonly string DashboardName = "DashboardName";
+            public static readonly string WidgetName = "WidgetName";
+            public static readonly string WidgetType = "WidgetType";
+            public static readonly string WidgetID = "WidgetID";
+            public static readonly string SelectionSummary = "SelectionSummary";
+            public static readonly string RequestObj = "RequestObj";
+            public static readonly string Image = "Image";
+            public static readonly string ResponseData = "ResponseData";
+            public static readonly string SelectionObj = "SelectionObj";
+            public static readonly string Email = "Email";
+            public static readonly string UserName = "UserName";
+            public static readonly string GroupName = "GroupName";
+            public static readonly string GroupId = "GroupId";
+            public static readonly string Name = "Name";
+            public static readonly string NoOfUsers = "NoOfUsers";
+            public static readonly string CreatedBy = "CreatedBy";
+            public static readonly string CreatedDate = "CreatedDate";
+            public static readonly string SharedDate = "SharedDate";
+            public static readonly string UMUserID = "Id";
+            public static readonly string BusinessUnit = "BusinessUnit";
+            public static readonly string Department = "Department";
+            public static readonly string Role = "Role";
+            public static readonly string DateCreated = "DateCreated";
+            public static readonly string UserStatus = "UserStatus";
+            public static readonly string LastActivityDate = "LastActivityDate";
+            public static readonly string IsActive = "IsActive";
+
+            public static readonly string Selection = "Selection";
+            public static readonly string ModuleId = "ModuleId";
+
+            public static readonly string SelectedAttribute = "SelectedAttribute";
+            public static readonly string Distribution = "Distribution";
+            public static readonly string RetailValue = "RetailValue";
+            public static readonly string ColorScheme = "ColorScheme";
+            public static readonly string RowAttribute = "RowAttribute";
+            public static readonly string ColumnAttribute = "ColumnAttribute";
+            public static readonly string Headers = "Header";
+            public static readonly string TotalValue = "TotalValue";
+            public static readonly string Values = "Value";
+            public static readonly string TotalChange = "TotalChange";
+            public static readonly string UTotalSampleSize = "UTotalSampleSize";
+            public static readonly string WTotalSampleSize = "WTotalSampleSize";
+            public static readonly string UTotalNumerator = "UTotalNumerator";
+            public static readonly string WTotalNumerator = "WTotalNumerator";
+            public static readonly string CategoryId = "CategoryId";
+            public static readonly string ShareUSampleSize = "ShareUSampleSize";
+            public static readonly string ShareWSampleSize = "ShareWSampleSize";
+            public static readonly string Share = "Share";
+            public static readonly string ShareSignificance = "ShareSignificance";
+            public static readonly string ShareChange = "ShareChange";
+            public static readonly string Level = "Level";
+
+            public static readonly string Dimension1 = "Dimension1";
+            public static readonly string Dimension2 = "Dimension2";
+            public static readonly string Channel = "Channel";
+            public static readonly string ReportGeneratorFilter = "ReportGeneratorFilter";
+            public static readonly string SNo = "S.NO";
+            public static readonly string Country = "Country";
+            public static readonly string NoOfVisit = "Number of LOV visits";
+            public static readonly string NoOfRegisteredUsers = "Number of LOV registered users";
+
+            public static readonly string StrategicPosture = "StrategicPosture";
+            public static readonly string StrategicColor = "StrategicColor";
+            public static readonly string USample = "USample";
+            public static readonly string WSample = "WSample";
+            public static readonly string TimeperiodOrder = "TimeperiodOrder";
+            public static readonly string MetricOrder = "MetricOrder";
+            public static readonly string OccasionOrder = "OccasionOrder";
+            public static readonly string Unweighted = "Unweighted";
+
+            public static readonly string TimePeriodId = "TimePeriodId";
+            public static readonly string IsItemLevel = "IsItemLevel";
+
+            public static string Filter
+            {
+                get
+                {
+                    return filter;
+                }
+            }
+
+            public static string Parent
+            {
+                get
+                {
+                    return parent;
+                }
+            }
+        }
+        #endregion
+
+
+        #region Templates For Excel/PPT
+        public static class Templates
+        {
+
+            public static readonly string SnapshotPpt = "~/Templates/Snapshot_PPT_Template.pptx";
+            public static readonly string SnapshotExcel = "~/Templates/Snapshot_Excel_Template.xlsx";
+            public static readonly string DashboardPpt = "~/Templates/Dashboard_PPT_Template.pptx";
+            public static readonly string UserManagementCreateBatchUsers = "~/Templates/User_Management_Create_Batch_Users_Template.xlsm";
+            public static readonly string UserManagementDeleteBatchUsers = "~/Templates/User_Management_Delete_Batch_User_Template.xlsx";
+            public static readonly string UserManagementGroupList = "~/Templates/User_Management_Group_List_Template.xlsx";
+            public static readonly string UserManagementUserList = "~/Templates/User_Management_User_List_Template.xlsx";
+            public static readonly string ReportGeneratorCategory = "~/Templates/Report_Generator_Category.pptx";
+            public static readonly string ReportGeneratorBussiness = "~/Templates/BusinessReviewReport.pptx";
+            public static readonly string ReportGeneratorDummy = "~/Templates/Dummytemplate.pptx";
+            public static readonly string ReportGeneratorOccasion = "~/Templates/Report_Generator_Occasion.pptx";
+            public static readonly string ReportGeneratorKids = "~/Templates/Report_Generator_Kids.pptx";
+            public static readonly string ReportGeneratorOBPPC = "~/Templates/Report_Generator_OBPPC.pptx";
+            public static readonly string ReportGeneratorChannelRetailer = "~/Templates/Report_Generator_Channel_Retailer.pptx";
+            public static readonly string ReportGeneratorCustomCategory = "~/Templates/Report_Generator_Custom_Category.pptx";
+            public static readonly string ReportGeneratorChannelRetailerNets = "~/Templates/Report_Generator_Channel_Retailer_Nets.pptx";
+            public static readonly string ReportGeneratorTrendReport1 = "~/Templates/Occasion_Trend_Report.pptx";
+            public static readonly string ReportGeneratorTrendReport2 = "~/Templates/Report_Generator_Channel_Retailer_Nets.pptx";
+            public static readonly string OSPPpt = "~/Templates/OSP_Kellogg's_ExportPPT_Template.pptx";
+            public static readonly string CMPpt = "~/Templates/CorrespondenceMap_Kellogg's_ExportPPT_Template.pptx";
+            public static readonly string ExportExcelProfile = "~/Templates/Occasion_Strategic_Postures _Profile_Excel_Template.xlsx";
+
+            public static readonly string UsageTracking = "~/Templates/LOV_Usage_Template.xlsx";
+            public static readonly string PDPpt = "~/Templates/Occasion_Performance_Dashboard.pptx";
+            public static readonly string PDExcel = "~/Templates/Occasion_Performance_Dashboard.xlsx";
+        }
+        #endregion
+    }
+}
+
+#endregion

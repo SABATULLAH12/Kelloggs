@@ -1,0 +1,56 @@
+﻿<script>
+    document.write('<link href="../Content/Shared/LeftPanel.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+</script>
+<!--[if IE]>
+<style type="text/css">
+
+#.navigation ul li{
+    position:static;
+}
+
+</style>
+<![endif]-->
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+<div id="left-pane-container" ng-controller="LeftPanelController">
+    <div class="left-view-container navigation">
+
+        @*initial parents binding start*@
+        <div class="wrapper">
+            <ul class="menus_list">
+                @*memenber="left-panel-scope"*@
+                <li class="has-sub left-panel-parent {{menusList.isDisabled?'disableSelection':''}} {{menusList.isTabSelected?'tab_selected':''}}"
+                    ng-repeat="menusList in LeftStaticMenu track by menusList.id " ng-name="{{menusList.DisplayName}}" ng-automation="{{menusList.DisplayName.toLowerCase()}}" ng-vdata="menusList">
+                </li>
+                @*ng-include="'menuTree'"*@
+            </ul>
+        </div>
+        @*initial parents binding end*@
+
+        @*submit button start*@
+
+        <div class="submit-tab">
+            <div class="menu-tab-center submit-tab-design" id="left-panel-submit" ng-click="left_panel_submit('leftPanel')"  title="Submit">
+                <div class="empty-div1"></div>
+                <div class="button-event">
+                    <div class="buttonImage"><div class="middleAlign"><div class="button-img backgroundCheck"></div></div></div>
+                    <div class="button-text middleAlign">
+                        <div class="middleAlign">SUBMIT</div>
+                    </div>
+                </div>
+                <div class="empty-div2"></div>
+            </div>
+            <div class="menu-tab-center submit-tab-design" id="left-panel-submit" ng-click="left_panel_clearAll()"  title="Clear All">
+                <div class="empty-div1"></div>
+                <div class="button-event">
+                    <div class="buttonImage" style="width: 1.3vw;"><div class="middleAlign"><div class="button-img clear backgroundCheck"></div></div></div>
+                    <div class="button-text middleAlign" style="width: calc(100% - 1.3vw);">
+                        <div class="middleAlign">CLEAR ALL</div>
+                    </div>
+                </div>
+                <div class="empty-div2"></div>
+            </div>
+        </div>
+
+        @*submit button end*@
+    </div>
+</div>

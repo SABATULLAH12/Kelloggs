@@ -1,0 +1,184 @@
+<!--for subsequent levels-->
+<div class="internalWrapper" ng-if="(menusList.data.length>=0 && !menusList.isDefaultLevel && parent_list[0].DisplayName!='RETAIL SALES VALUE')"
+     ng-init="i=i+1;parent_list=$parent.parent_list.concat(menusList)">
+    <div class="menu-tab sub_menus {{menusList.MetricParentName =='Shopper Mission'  ? 'customHover':''}}"
+         ng-class="[{'sub_menus_active menu-tab-active':$parent.menusList.hasSubMenusActive},{true: 'single', false: 'multiple'}[$parent.menusList.isSingle],{true: 'single_active', false: ''}[$parent.menusList.isSingle && $parent.menusList.hasChildSelected],{true: 'multiple_active', false: ''}[!$parent.menusList.isSingle && $parent.menusList.hasChildSelected],{'brandVertical':$parent.menusList.IsCollapsible},{true: 'minus', false: ''}[$parent.menusList.IsCollapsible && $parent.menusList.IsExpanded],{true: 'plus', false: ''}[$parent.menusList.IsCollapsible && !$parent.menusList.IsExpanded],{'extraPadding':$parent.menusList.ExtraPadding}]">
+        <div class="tooltipDiv" ng-if="menusList.MetricParentName =='Shopper Mission' && menusList.DisplayName!='Select All' && menusList.DisplayName!='Custom Group'">
+            <div class="tooltipArrow"></div>
+            <div class="tooltipBox">{{returnTitle(menusList,parent_list)}}</div>
+        </div>
+        <div class="menu-tab-left" ng-click="!menusList.IsCollapsible ? menu_Tab_Click(menusList,parent_list,curScope,0): showBrands(menusList,parent_list,curScope)">
+            <div class="menu-tab-img" ng-if="menusList.IsSelectable">
+                <div class="middleAlign">
+                    <div class="submenu-tab-single-click-img backgroundCheck"></div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-tab-center" ng-click="checkIsLastLevel(menusList,parent_list,curScope)">
+            <div class="menu-tab-name">
+                <div class="middleAlign" title="{{menusList.MetricParentName == 'Shopper Mission' && menusList.DisplayName!='Select All' && menusList.DisplayName!='Custom Group' ? '':(menusList.MetricParentName.indexOf('Custom Group') > -1 ? returnTitle(menusList,parent_list) : menusList.DisplayName)}}">{{menusList.DisplayName}}</div>
+            </div>
+        </div>
+        <div class="menu-tab-right" ng-if="!menusList.IsLastLevel || menusList.DisplayName.indexOf('Custom Group') > -1" ng-click="!menusList.IsCollapsible ? next_Level_Click(menusList,parent_list,curScope) : showBrands(menusList,parent_list,curScope)">
+            <div class="menu-tab-arrow-img middleAlign backgroundCheck"></div>
+        </div>
+    </div>
+    <div class="wrapper" ng-if="(menusList.data != undefined && menusList.data != null && menusList.data.length>0)">
+        <ul class="menus_list" ng-show="menusList.show"
+            ng-if="(menusList.data.length>0 && !menusList.isDefaultLevel)"
+            ng-style="{height: UlHeight}">
+
+            <li class="has-sub left_panel_levels search-tab-li" ng-if="hasSearch(menusList,parent_list)" ng-parent="menusList.Name" ng-name="search" style="display: block;">
+                <div class="search-tab searchCustom">
+                    <div class="search-tab-align" style="position:relative;">
+                        <div class="search-tab-left ng-scope" new-scope-directive="">
+                            <input type="text" search-parent="menusList.Name" placeholder="Search"
+                                   class="searchLeftContent "
+                                   ng-model="searchText.text" style="" id="{{parent_list[0].DisplayName +(menusList.MetricParentName !=parent_list[0].DisplayName ?'_'+ menusList.MetricParentName : '') + '_'+ menusList.DisplayName}}">
+                            <ul class="search-item-container">
+                                <li ng-repeat="item in menusList.data|search:{searchText : searchText.text,parentList:parent_list,menusList:menusList}" ng-bind-html="getTrustedHtml(item)" ng-click="searchItemClick(menusList,parent_list,item,searchText)"></li>
+                            </ul>
+                        </div>
+                        <div class="searchIconDiv">
+                            <div class="searchIcon middleAlign backgroundCheck"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels group-tab-li ng-scope" ng-if="isGroupNeeded(menusList,parent_list) && menusList.isGroupNeeded" ng-parent="menusList.Name" ng-name="group" style="display: block;">
+                <div class="menu-tab">
+                    <button class="groupbtn middleAlignHorizontal" ng-click="createGroup(menusList,parent_list,curScope,this)"> Create Group </button>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels group-tab-li ng-scope" ng-if="menusList.DisplayName.indexOf('Custom Group') > -1 && isGroupNeeded(menusList,parent_list)" ng-parent="menusList.Name" ng-name="group" style="display: block;">
+                <div class="menu-tab">
+                    <button class="groupbtn middleAlignHorizontal" ng-click="deleteGroup(menusList,parent_list,curScope,this, 'Group')"> Delete Group </button>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels group-tab-li ng-scope" ng-if="menusList.DisplayName == 'Custom Filters'" ng-parent="menusList.Name" ng-name="group" style="display: block;">
+                <div class="menu-tab">
+                    <button class="groupbtn middleAlignHorizontal" ng-click="deleteGroup(menusList,parent_list,curScope,this,'Filter')"> Delete Filter </button>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels {{menusList.isTabSelected?'tab_selected':''}} {{menusList.isDisabled?'disableSelection':''}}"
+                ng-repeat="menusList in menusList.data "
+                ng-name="{{menusList.DisplayName}}" ng-automation="{{menusList.DisplayName.toLowerCase()}}" ng-show="!menusList.IsHidden" custom-hide="{{menusList.IsHidden}}" ng-vdata ng-if="(menusList.DisplayName!='Select All' && menusList.isSingle)|| !menusList.isSingle">
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!--for default level-->
+<div class="internalWrapper" ng-if="(menusList.isDefaultLevel)" ng-init="i=i+1;parent_list=$parent.parent_list.concat(menusList)">
+    <div class="menu-tab {{menusList.name_class}} sub_menus {{menusList.hasSubMenusActive?'sub_menus_active menu-tab-active':''}}
+{{menusList.name_class}}{{menusList.hasSubMenusActive?'_active':''}}  " ng-click="menu_Tab_Click(menusList,parent_list,curScope,0)">
+        <div class="menu-tab-left" ng-if="menusList.hasChild">
+            <div class="menu-tab-img middleAlignHorizontal backgroundCheck"></div>
+        </div>
+        <div class="menu-tab-center {{!menusList.hasChild ? 'customLabel':''}}">
+            <div class="tooltipDiv" ng-if="!menusList.hasChild">
+                <div class="tooltipArrow"></div>
+                <div class="tooltipBox" ng-if="menusList.DisplayName == 'TABLE STRUCTURE'">The first three selection are only for the table structure, no selections to be made in this section</div>
+                <div class="tooltipBox" ng-if="menusList.DisplayName == 'TABLE CONTENT'">The selections in Columns, Rows and Row Nesting will be multiple select, rest will be single select</div>
+            </div>
+            <div class="leftIconDiv" ng-if="menusList.hasChild && menusList.hasSubMenusActive">
+                <div class="middleAlign">
+                    <div class="leftIcon">
+                    </div>
+                </div>
+            </div>
+            <div class="menu-tab-name">
+                <div class="middleAlign" title="{{menusList.hasChild ? menusList.DisplayName : ''}}">{{menusList.DisplayName}}</div>
+            </div>
+            <div class="menu-tab-colon" ng-if="menusList.hasChild">
+                <div class="middleAlign">:</div>
+            </div>
+            <div class="menu-tab-selection" title="{{menusList.selections}}" ng-if="menusList.hasChild">
+                <div class="middleAlign" id="{{menusList.name_class}}_selections">{{menusList.selections}}</div>
+            </div>
+        </div>
+        <div class="menu-tab-right" ng-if="menusList.hasChild">
+            <div class="menu-tab-arrow-img middleAlign backgroundCheck"></div>
+        </div>
+    </div>
+
+    <div class="wrapper" ng-if="(menusList.data != null && menusList.data.length>0 && menusList.isDefaultLevel && menusList.DisplayName!='RETAIL SALES VALUE')">
+        <ul class="menus_list" ng-show="menusList.show" ng-if="(menusList.data.length>0)" ng-style="{height:  UlHeight}">
+            <!--ng-init="parent_list=$parent.parent_list.concat(menusList)"-->
+            <!--<li ng-show="crosstabLeftPanel"></li>-->
+            <li class="has-sub left_panel_levels search-tab-li" ng-if="hasSearch(menusList,parent_list)" ng-parent="menusList.Name" ng-name="search" style="display: block;">
+                <div class="search-tab searchCustom">
+                    <div class="search-tab-align  " style="position:relative;">
+                        <div class="search-tab-left ng-scope" new-scope-directive="">
+                            <input type="text" search-parent="menusList.Name" placeholder="Search"
+                                   class="searchLeftContent "
+                                   ng-model="searchText.text" style="" id="{{parent_list[0].DisplayName +(menusList.MetricParentName !=parent_list[0].DisplayName ?'_'+ menusList.MetricParentName : '') + '_'+ menusList.DisplayName}}">
+                            <ul class="search-item-container"><li ng-repeat="item in menusList.data|search:{searchText : searchText.text,parentList:parent_list,scope:scope}" ng-bind-html="getTrustedHtml(item)" ng-click="searchItemClick(menusList,parent_list,item,searchText)"></li></ul>
+                        </div>
+                        <div class="searchIconDiv">
+                            <div class="searchIcon middleAlign backgroundCheck"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels group-tab-li ng-scope" ng-if="isGroupNeeded(menusList,parent_list) && menusList.isGroupNeeded" ng-parent="menusList.Name" ng-name="group" style="display: block;">
+                <div class="menu-tab">
+                    <button class="groupbtn middleAlignHorizontal" ng-click="createGroup(menusList,parent_list,curScope,this)"> Create Group </button>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels group-tab-li ng-scope" ng-if="menusList.DisplayName.indexOf('Custom Group') > -1 && isGroupNeeded(menusList,parent_list)" ng-parent="menusList.Name" ng-name="group" style="display: block;">
+                <div class="menu-tab">
+                    <button class="groupbtn middleAlignHorizontal" ng-click="deleteGroup(menusList,parent_list,curScope,this,'Group')"> Delete Group </button>
+                </div>
+            </li>
+
+            <li class="has-sub left_panel_levels {{menusList.isTabSelected?'tab_selected':''}} {{menusList.isDisabled?'disableSelection':''}}"
+                ng-repeat="menusList in menusList.data " ng-name="{{menusList.DisplayName}}" ng-automation="{{menusList.DisplayName.toLowerCase()}}" ng-show="!menusList.IsHidden" custom-hide="{{menusList.IsHidden}}" ng-vdata ng-if="(menusList.DisplayName !='Select All' && menusList.isSingle)|| !menusList.isSingle">
+            </li>
+        </ul>
+
+        <div class='noteDiv' ng-if="menusList.DisplayName=='TIME PERIOD' || menusList.DisplayName=='MARKETS'">
+            <span class="notePopup" ng-click="showMarketTimeperiodPopup()">LOV Markets & Time Period</span><br />
+            <span>Note: Click the link for a list of Markets and associated Time Periods</span>
+            <!--<span>Note: Only Q1 2019 data available for Australia.</span>-->
+        </div>
+        <div class='noteDiv' ng-if="menusList.DisplayName=='FIND OPPORTUNITY FOR'">Note: User can find opportunity for max. of 15 products / channels at one time.</div>
+    </div>
+
+    <div class="wrapper" ng-if="(menusList.data != null && menusList.data.length>0 && menusList.isDefaultLevel && menusList.DisplayName=='RETAIL SALES VALUE')" style="width:120%;padding-top:1.83vw">
+        <div class='retailNote' ng-if="menusList.DisplayName=='RETAIL SALES VALUE'">Note: Please input annual value(s) <b>IN MILLIONS $USD</b></div>
+        <ul class="menus_list" ng-show="menusList.show" ng-if="(menusList.data.length>0)" ng-style="{height:  UlHeight}">
+            <li class="has-sub left_panel_levels {{menusList.isTabSelected?'tab_selected':''}} {{menusList.isDisabled?'disableSelection':''}}"
+                ng-repeat="menusList in menusList.data " ng-name="{{menusList.DisplayName}}" ng-automation="{{menusList.DisplayName.toLowerCase()}}" ng-show="!menusList.IsHidden" custom-hide="{{menusList.IsHidden}}" ng-if="(menusList.DisplayName !='Select All' && menusList.isSingle)|| !menusList.isSingle">
+                <div class="menu-tab  sub_menus">
+                    <div class="menu-tab-text">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign" title="{{menusList.DisplayName}}">{{menusList.DisplayName}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-input">
+                        <div class="retail-tab">
+                            <div class="retail-tab-align" style="position:relative;">
+                                <div class="retailIconDiv">
+                                    <div class="retailIcon middleAlign backgroundCheck"></div>
+                                </div>
+                                <div class="retail-tab-left">
+                                    <input type="text" step="0.01" placeholder="0.00" min="0.00" onkeyup="return validateInput(event,this)" onkeypress="return validateInput(event,this)" class="retailLeftContent" id="{{menusList.className}}" value="{{menusList.value}}" filterid="{{menusList.FilterID}}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+

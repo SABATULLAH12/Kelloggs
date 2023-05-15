@@ -1,0 +1,29 @@
+﻿/*Source Description
+************************************************** File Description Block ***************************************************
+
+                            The file contains the styles related to custom fonts
+******************************************************************************************************************************
+
+        Modifiled Date                          Modified By                                     Comments
+         10-05-2017                              Chandru
+
+******************************************************************************************************************************/
+
+@font-face {
+    font-family: 'Chivo';
+    src: url('Chivo-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Chivo Bold';
+    src: url('Chivo-Bold.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('MYRIADPROREGULAR.ttf') format('truetype');
+    font-weight: normal;
+}
+

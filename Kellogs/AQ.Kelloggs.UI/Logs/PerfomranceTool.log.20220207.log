@@ -1,0 +1,11 @@
+2022-02-07 10:54:34,616 [16] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 18:16:20,144 [17] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 18:23:06,144 [15] ERROR  Application (null) (null) - Column 'DollarSales' does not belong to table Table2.
+2022-02-07 18:36:28,573 [12] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 18:50:57,013 [11] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 18:59:06,220 [14] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 19:12:03,209 [11] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 19:26:09,378 [10] ERROR  Application (null) (null) - Name:AQ\11173
+2022-02-07 19:37:08,093 [10] ERROR  Application (null) (null) - NA is not a valid value for Int32.
+2022-02-07 19:38:13,780 [10] ERROR  Application (null) (null) - NA is not a valid value for Int32.
+2022-02-07 19:44:27,328 [14] ERROR  Application (null) (null) - Name:AQ\11173

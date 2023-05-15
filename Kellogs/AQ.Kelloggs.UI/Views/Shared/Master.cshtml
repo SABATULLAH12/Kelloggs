@@ -1,0 +1,506 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @*jquery plugin start*@
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/Plugins/d3/d3.min.js"></script>
+    @*jquery plugin end*@
+
+    @*Angular Js plugin - start*@
+    <script src="~/Scripts/Plugins/angular1.5.8/angular.js"></script>
+    <script src="~/Scripts/Plugins/angular1.5.8/angular-animate.js"></script>
+    <script src="~/Scripts/Plugins/angular1.5.8/angular-route.js"></script>
+    <script src="~/Scripts/Plugins/angular-recursion.min.js"></script>
+    <script src="~/Scripts/Plugins/niceScroll.js"></script>
+    @*Angular Js plugin - end*@
+    @*Html2Canvas start*@
+    <script src="~/Scripts/Plugins/Html2Canvas/canvg.min.js"></script>
+    <script src="~/Scripts/Plugins/Html2Canvas/rgbcolor.js"></script>
+
+
+    @*Html2Canvas start*@
+    @*plugin for search dropdown - start*@
+    <script src="~/Scripts/Plugins/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/Plugins/bootstrap.min.js"></script>
+    <link href="~/Scripts/Plugins/bootstrap.min.css" rel="stylesheet" />
+    @*plugin for search dropdown - end*@
+
+    @*video js plugin start*@
+    <script src="~/Scripts/video.js"></script>
+    <script src="~/Scripts/video.dev.js"></script>
+    <link href="~/Content/video-js.css" rel="stylesheet" />
+    <link href="~/Content/video-js.min.css" rel="stylesheet" />
+    <link href="~/Content/video-js.swf" />
+    @*video js plugin end*@
+    <link href="~/Content/Fonts/CustomFonts.css" rel="stylesheet" />
+    <script src="~/Scripts/Common/HelperFunction.js"></script>
+
+    <script src="~/Scripts/Common/App.js"></script>
+
+    <script type="text/javascript">
+
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            //    document.getElementById('mySettings').style.background = "none";
+            //     document.getElementById('mySettings').style.backgroundColor = "white";
+
+        }
+
+        function myFunction1() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            document.getElementById('mySettings').style.background = "";
+            document.getElementById('mySettings').style.backgroundColor = "";
+
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!angular.element(event.target).hasClass('dropbtn')) {
+                var dropdowns = document.getElementsByClassName("settingDropdown");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+                document.getElementById('mySettings').style.background = "";
+                document.getElementById('mySettings').style.backgroundColor = "";
+            }
+
+            if (!angular.element(event.target).hasClass('trendChartIcon'))
+                $("#trendchartCallout").hide();
+            if (!angular.element(event.target).hasClass('stackChartIcon'))
+                $("#chartCallout").hide();
+            if (!angular.element(event.target).hasClass('retailText') && !angular.element(event.target).hasClass('retailIconImage') && !angular.element(event.target).hasClass('retailValue'))
+                $("#retailCallout").hide();
+
+        }
+        sessionStorage.setItem("Username", "@Session["Username"].ToString()");
+        sessionStorage.setItem("Roles", "@Session["Roles"].ToString()");
+        sessionStorage.setItem("Email", "@Session["Email"].ToString()");
+        sessionStorage.setItem("UserId", "@Session["UserId"].ToString()");
+        sessionStorage.setItem("Modules", "@Session["Modules"].ToString()");
+
+        var outputNeededStickySelection = '@System.Configuration.ConfigurationManager.AppSettings["IsSSOutputNeeded"].ToString()' == "true" ? true : false;
+        var version = '@System.Configuration.ConfigurationManager.AppSettings["Version"].ToString()';
+        document.write('<link href="../Content/Shared/Master.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+        document.write('<script src="../Scripts/Common/Constans.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<script src="../Scripts/Common/Common.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+        document.write('<script src="../Scripts/Common/Services.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write('<script src="../Scripts/Plugins/Html2Canvas/promise.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+            document.write('<script src="../Scripts/Plugins/Html2Canvas/html2canvasIE.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+            document.write('<script src="../Scripts/Plugins/Html2Canvas/html2canvasIE.svg.min.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+            //document.write('<script src="../Scripts/Plugins/Html2Canvas/html2canvasIE.min.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+        }
+        else {
+            document.write('<script src="../Scripts/Plugins/Html2Canvas/html2canvas.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+            document.write('<script src="../Scripts/Plugins/Html2Canvas/html2canvas.min.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+            document.write('<script src="../Scripts/Plugins/Html2Canvas/html2canvas.svg.min.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+        }
+    </script>
+</head>
+<body id="parentBody" ng-app="starter" ng-controller="parent-controller">
+    <content id="parent">
+        <div class="default-background_landing" style="display:none"></div>
+        <div class="overlay1"></div>
+        <div class="overlay"></div>
+        @*background default start*@
+        <div class="default-background"></div>
+        @*background default end*@
+        @*heade start*@
+        <div class="body-header  ng-cloak">
+            <div class="body-header-menus">
+                <div class="header-left">
+                    <div class="header-arrow-styles" ng-click="ModulePanelToggle()">
+                        <div class="middleAlign">
+                            <div class="header-arrow"></div>
+                        </div>
+                    </div>
+                    <div class="module-name">
+                        <div class="middleAlign">
+                            Visual CrossTab
+                        </div>
+                    </div>
+                </div>
+                <div class="header-center">
+
+                </div>
+                <div class="header-right">
+
+                    <div class="header-logo-styles">
+                        <div class="header-logo"></div>
+                    </div>
+
+                    <div class="icons">
+                        <div class="home" onclick="location.href='@Url.Action("Home", "Home")'"></div>
+                    </div>
+                    @*settings dropdwon div - start*@
+                    <div class="settings dropdown">
+                        <button onclick="myFunction()" class="dropbtn" id="mySettings"></button>
+                        <div id="myDropdown" class="settingDropdown">
+                            <div class="settingsDiv ddOptions">
+                                <div class="middleAlign">
+                                    <div class="settings active" onclick="myFunction1()"></div>
+                                </div>
+                            </div>
+                            <div class="excelDiv ddOptions disableSelection" ng-click="Exports('excel')" title="Export to Excel">
+                                <div class="middleAlign">
+                                    <div class="exclIcon ddIcon ddExclIcon"></div>
+                                </div>
+                            </div>
+                            <div class="pptDiv ddOptions disableSelection" ng-click="Exports('ppt')" title="Export to PPT">
+                                <div class="middleAlign">
+                                    <div class="pptIcon ddIcon ddPptIcon"></div>
+                                </div>
+                            </div>
+                            <div class="helpDiv ddOptions " ng-click="downloadUserGuide(1,'abc')" title="Download User Guide" style="box-shadow:none">
+                                <div class="middleAlign">
+                                    <div class="helpIcon ddHIcon ddHelpIcon"></div>
+                                </div>
+                            </div>
+                            <div class="logoutDiv ddOptions disableSelection" title="Logout" style="display:none">
+                                <div class="middleAlign">
+                                    <div class="logoutIcon ddIcon ddLogoutIcon" onclick="location.href='@Url.Action("Login", "Login")'"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*settings dropdwon div - end*@
+                </div>
+            </div>
+
+            <div class="body-header-filterSummery">
+
+                <div class="summary-content">
+                    <div class="summaryName">
+                        <div class="summarytitle">
+                            <div class="middleAlign">Selections:</div>
+                        </div>
+                    </div>
+                    <div class="summay-content-text">
+                        <div class="middleAlign"></div>
+                    </div>
+
+                    <div class="summary-view">
+                        <div class="summary-view-details">
+                            <div class="summary-view-click" ng-click="showAllSummary()"></div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="save_filter"  title="Save Filter">
+                        <div class="saveFilterIconDiv">
+                            <div class="middleAlign"><div class="saveFilterIcon"></div></div>
+                        </div>
+                        <div class="saveFilterText"><div class="middleAlign">SAVE FILTER</div></div>
+                    </div>*@
+                <div class="save_filter_icon disableSelection" title="Save Filter" onclick="custom_filters()">
+                    <div class="middleAlign">
+                        <div class="saveFilterIcon"></div>
+                    </div>
+                </div>
+                <div class="left-panel-view" id="left_panel_click_element">
+                    <div class="panel-left-div">
+                        <div class="panel-click middleAlign" ng-click="leftPanelToggle($event)"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @*header end*@
+
+        @*body start*@
+        <div class="body-container ng-cloak">
+
+            <div class="modulePanel ng-cloak" ng-hide="ModuleIsHidden">
+                <img src="../Content/Images/Kelloggs_Menu bg thick.jpg" style="position: absolute;height: 100%;width :100%">
+                <div class="moduleLevel"></div>
+                <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('2','Occasion Profile')}]" ng-click="loadModule(event,'../Snapshot/Snapshot?moduleid=2')" title="OCCASION PROFILE">
+                    <div class="menu-tab-left">
+                        <div class="middleAlign">
+                            <div class="moduleLevel1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-center">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign">OCCASION PROFILE</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('9','Performance Dashboard')}]" ng-click="loadModule(event,'../PerformanceDashboard/PerformanceDashboard?moduleid=9')" title="PERFORMANCE DASHBOARD">
+                    <div class="menu-tab-left">
+                        <div class="middleAlign">
+                            <div class="moduleLevel6">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-center">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign">PERFORMANCE DASHBOARD</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('2','Visual Crosstab')}]" ng-click="loadModule(event,'../Crosstab/Crosstab?moduleid=3')" title="VISUAL CROSSTAB">
+                    <div class="menu-tab-left">
+                        <div class="middleAlign">
+                            <div class="moduleLevel2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-center">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign">VISUAL CROSSTAB</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('0','Advanced Analytics')}]" ng-click="showOptions()" title="ADVANCED ANALYTICS">
+                    <div class="menu-tab-left">
+                        <div class="middleAlign">
+                            <div class="moduleLevel3">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-center">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign">ADVANCED ANALYTICS</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moduleLevel" ng-show="!IsOptionsHidden" ng-style="!IsOptionsHidden ? {'background':'#222222'} : ''">
+
+                    <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('4','Occasion Strategic Postures')}]" ng-click="loadModule(event,'../AdvancedAnalytics/Osp?moduleid=4')" style="height:50%;" title="STRATEGIC POSTURES">
+                        <div class="menu-tab-center" style="float: right;border-bottom: 1px solid #8a8a8a;">
+                            <div class="menu-tab-name" style="font-size: 0.9vw;padding-right: 6%;padding-left: 0;">
+                                <div class="middleAlign">STRATEGIC POSTURES</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('5','Correspondence Maps')}]" ng-click="loadModule(event,'../AdvancedAnalytics/CorrespondenceMap?moduleid=5')" style="height:50%;border-bottom: 2px solid #E82343;" title="CORRESPONDENCE MAPS">
+                        <div class="menu-tab-center" style="float: right;">
+                            <div class="menu-tab-name" style="font-size: 0.9vw;padding-right: 6%;padding-left: 0;">
+                                <div class="middleAlign">CORRESPONDENCE MAPS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('6','My Dashboard')}]" ng-click="loadModule(event,'../Dashboard/Dashboard?moduleid=6')" title="MY DASHBOARD">
+                    <div class="menu-tab-left">
+                        <div class="middleAlign">
+                            <div class="moduleLevel4">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-center">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign">MY DASHBOARD</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moduleLevel" ng-class="[{'disableSelection' :!checkUserAccess('7','Report Generator')}]" ng-click="loadModule(event,'../ReportGenerator/ReportGenerator?moduleid=7')" title="REPORT GENERATOR">
+                    <div class="menu-tab-left">
+                        <div class="middleAlign">
+                            <div class="moduleLevel5">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-tab-center">
+                        <div class="menu-tab-name">
+                            <div class="middleAlign">REPORT GENERATOR</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="moduleLevel"></div>
+            </div>
+            @RenderBody()
+        </div>
+        @*body end*@
+
+        @*footer start*@
+        <div class="body-footer ng-cloak">
+            <div class="footerNote">Source: Project Landmark</div>
+            <div class="footerContent">
+
+                <div id="nsample-size" ng-click="samplesizedetails($event)" style="padding-top: 0.05vw;">
+                    <div class="middleAlign" style="padding:0.1vw;">
+                        Sample Size
+                    </div>
+                </div>
+                <div class="middleAlign">Source: Project Landmark</div>
+                <div class="separatorNew"></div>
+                <div class="middleAlign occasionChange percentageCategory">Occasion %</div>
+                <div class="separatorNew occasionChange" style="margin: 0.55vw .22vw;border-left: none;"></div>
+                <div class="middleAlign occasionChange" style="margin-left:0px;">Change PP Vs Benchmark shown in table</div>
+                <div class="separatorNew"></div>
+                <div class="middleAlign" id="normNote">Significance Vs Total Column @@ 95% CL: </div>
+                <div class="middleAlign"><div class="greenDot"></div></div>
+                <div class="middleAlign">High</div>
+                <div class="middleAlign"><div class="redDot"></div></div>
+                <div class="middleAlign">Low</div>
+                <div class="separatorNew"></div>
+                <div class="middleAlign" id="dataNotAvailable">
+                    NA - Data not available
+                </div>
+                <div class="separatorNew"></div>
+                <div class="middleAlign" id="insuffSampleNote">
+                    Low Base Sample: LS &lt; 150,
+                </div>
+                <div class="middleAlign"><div class="greyDot"></div></div>
+                <div class="middleAlign">150-250</div>
+                @*<div class="middleAlign separator columnPerc">||</div>*@
+                <div class="separatorNew columnPerc"></div>
+                <div class="middleAlign columnPerc">Column % shown across tool</div>
+
+            </div>
+
+        </div>
+        @*footer end*@
+
+
+        @*custom popup start*@
+        <div class="custom-popup">
+            <div class="popup-header">
+                <div class="head-warnong-icon"><div class="headLeftBorder"></div></div>
+                <div class="head-msg" id="custom_message">
+                    <div class="middleAlign"> ALERT </div>
+                </div>
+                <div class="head-close-icon" ng-click="close_Custom_popup()"></div>
+                <div class="bottomShadow" style="bottom: -0.2vw;background: white;"><img no-repeat="" src="../Content/Images/Kelloggs_horizontal_shadow.png"></div>
+            </div>
+            <div class="popup-container">
+                <div class="middleAlign">content</div>
+            </div>
+
+        </div>
+        @*custom popup end*@
+
+        @*custom popup start*@
+        <div class="samplesize-popup">
+            <div class="popup-header">
+                <div class="head-warnong-icon"><div class="headLeftBorder"></div></div>
+                <div class="head-msg samplesizeHead" id="custom_message">
+                    <div class="middleAlign">SAMPLE SIZE</div>
+                </div>
+                <div class="weightedOccasionDiv sampleTypeDiv" style="display:none" onclick="selectSampleType(event)">
+                    <div class="weightedIconDiv"><div class="middleAlign"><div class="sampleTypeIcon"></div></div></div>
+                    <div class="weightedTextDiv"><div class="middleAlign">Kellogg Weighted Occasion</div></div>
+                </div>
+                <div class="unweightedOccasionDiv sampleTypeDiv" style="display:none;box-shadow: 0.37vw 0 0.37vw -0.3vw #333;" onclick="selectSampleType(event)">
+                    <div class="unweightedIconDiv"><div class="middleAlign"><div class="sampleTypeIcon"></div></div></div>
+                    <div class="unweightedTextDiv"><div class="middleAlign">Kellogg Unweighted Occasion</div></div>
+                </div>
+                <div class="weightedOccasionDiv sampleTypeDiv" onclick="selectSampleType(event)">
+                    <div class="weightedIconDiv"><div class="middleAlign"><div class="sampleTypeIcon"></div></div></div>
+                    <div class="weightedTextDiv"><div class="middleAlign">Weighted Occasion</div></div>
+                </div>
+                <div class="unweightedOccasionDiv sampleTypeDiv" onclick="selectSampleType(event)">
+                    <div class="unweightedIconDiv"><div class="middleAlign"><div class="sampleTypeIcon"></div></div></div>
+                    <div class="unweightedTextDiv"><div class="middleAlign">Unweighted Occasion</div></div>
+                </div>
+                <div class="head-close-icon" ng-click="close_Custom_popup()"></div>
+                <div class="bottomShadow"><img no-repeat="" src="../Content/Images/Kelloggs_horizontal_shadow.png"></div>
+            </div>
+            <div class="popup-container" id="samplesize_content">
+
+            </div>
+        </div>
+        @*custom popup end*@
+
+        @*custom popup for change password start*@
+        <div class="changePwdBox" ng-class="showchangePwdBox ? 'changePwdBlock' : 'changePwdNone'">
+            <div class="changePwdTopBox">
+                <div class="changePwdCross" ng-click="closechangePwdBox()"></div>
+            </div>
+            <div class="changePwdFormBox" ng-class="toggleFormResetBox ? 'changePwdNone' : 'changePwdBlock'">
+                <div class="changePwdTitleBox">
+                    <div class="changePwdTitle middleAlign">RESET YOUR PASSWORD</div>
+                </div>
+                <div class="changePwdText">
+                    <div class="middleAlign">Please enter password</div>
+                </div>
+                <div class="changePwdContainer">
+                    <input class="changePwdTextBox oldPwd" type="password" placeholder="ENTER CURRENT PASSWORD" id="crntPass" ng-model="crntPass" ng-style="curPwdstyl" ng-focus="inputBox()" autocomplete="off" />
+                </div>
+                <div class="changePwdContainer">
+                    <input class="changePwdTextBox newPwd" type="password" placeholder="ENTER NEW PASSWORD" id="newPass" ng-model="newPass" ng-style="newPwdstyl" ng-focus="inputBox()" autocomplete="off" />
+                </div>
+                <div class="changePwdContainer">
+                    <input class="changePwdTextBox newPwd" type="password" placeholder="RE-ENTER NEW PASSWORD" id="reNewPass" ng-model="reNewPass" ng-style="newPwdstyl" ng-focus="inputBox()" autocomplete="off" />
+                </div>
+                <div class="changePwdBottomBox">
+                    <div class="changePwdInvalidPass">
+                        <div class="changePwdInvalidPassText middleAlign" ng-model="changePwdInvalidPassText"
+                             ng-class="showInvalidPwdText ? 'changePwdBlock' : 'changePwdNone'"></div>
+                    </div>
+                    <div class="changePwdSubmitImg" ng-click="changePassword(crntPass, newPass, reNewPass)">
+                        <div class="changePwdSubmitText">SUBMIT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="changePwdResetBox" ng-class="toggleFormResetBox ? 'changePwdBlock' : 'changePwdNone'"></div>
+        </div>
+        @*custom popup for change password start*@
+
+        @*custom loader icon start*@
+        <div class="default-loader-icon"></div>
+        @*custom loader icon end*@
+
+        @*show summary popup start*@
+        <div class="summaryPopup">
+            <div class="headerSummary"><span>Selections :</span></div>
+            <div class="pop_selection_summ"></div>
+            <div class="summary-view">
+                <div class="summary-view-details">
+                    <div class="summary-view-click" ng-click="showAllSummary()"></div>
+                </div>
+            </div>
+        </div>
+        @*show summary popup end*@
+
+        @*translucent back div in common - start*@
+        <div class="translucentDiv" ng-class="{'show' : customPopup['visible'] == true}"></div>
+        @*translucent back div in common - end*@
+
+        <div class="alert-overlay"></div>
+        <div class="alert-popup">
+            <div class="popup-header">
+                <div class="head-warnong-icon"><div class="headLeftBorder"></div></div>
+                <div class="head-msg" id="custom_message">
+                    <div class="middleAlign"> ALERT </div>
+                </div>
+                <div class="head-close-icon" onclick="close_alert_popup()"></div>
+            </div>
+            <div class="popup-container">
+                <div class="middleAlign">content</div>
+            </div>
+
+        </div>
+
+
+
+    </content>
+    <div id="warning-message">
+        this website is only viewable in landscape mode
+    </div>
+</body>
+
+</html>

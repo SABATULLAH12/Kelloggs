@@ -1,0 +1,1516 @@
+﻿.output-container {
+    background: none;
+    width: 99%;
+}
+
+.widgetArea {
+    height: 100%;
+    width: 97%;
+    float: left;
+}
+
+.topWidget {
+    width: 100%;
+    height: 54%;
+}
+
+    .topWidget.page2 {
+        height: 50%;
+    }
+
+
+.bottomWidget {
+    height: 44%;
+    width: 100%;
+    margin-top: 1%;
+}
+
+    .bottomWidget.page2 {
+        height: 48%;
+    }
+
+.widgetScroll {
+    height: 100%;
+    width: 3%;
+    float: left;
+    position: relative;
+}
+
+.widget {
+    height: 100%;
+    border-radius: 0.73vw;
+    float: left;
+    background: white;
+    box-shadow: 0vw 0vw 0.37vw rgba(0, 0, 0, 0.2);
+    line-height: 1.2;
+}
+
+div#widget_1 {
+    width: 55%;
+}
+
+div#widget_2 {
+    width: 44%;
+    margin-left: 1%;
+}
+
+div#widget_3 {
+    width: 15%;
+}
+
+div#widget_4 {
+    width: 15%;
+    margin: 0 1%;
+}
+
+div#widget_5 {
+    width: 23%;
+}
+
+div#widget_6 {
+    width: 44%;
+    margin-left: 1%;
+}
+
+div#widget_7 {
+    width: 55%;
+}
+
+div#widget_8 {
+    width: 44%;
+    margin-left: 1%;
+}
+
+div#widget_9 {
+    width: 55%;
+}
+
+div#widget_10 {
+    width: 44%;
+    margin-left: 1%;
+}
+
+.page1:not(.widgetScroll), .page2:not(.widgetScroll) {
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
+.page2 {
+    display: none;
+}
+
+    .page1 .topScroll, .page1 .bottomScroll, .page2 .topScroll, .page2 .bottomScroll {
+        background: url('../Images/icons SVG/topScrollIcon.svg');
+        width: 3.15vw;
+        height: 3vw;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        cursor: pointer;
+        transform: scale(1.15);
+    }
+
+.page1 .bottomScroll {
+    background: url('../Images/icons SVG/bottomScrollIcon_active.svg');
+}
+
+.page1 .topPages {
+    height: 1.1vw;
+    width: 0.37vw;
+    background: #D31245;
+    margin-left: calc((100% - 0.37vw) / 2);
+    border-radius: 0.73vw;
+}
+
+.page1 .bottomPages {
+    height: 0.37vw;
+    width: 0.37vw;
+    background: grey;
+    margin-left: calc((100% - 0.37vw) / 2);
+    border-radius: 0.73vw;
+    margin-top: 0.37vw;
+}
+
+
+.widgetScroll div:not(.middleAlign) {
+    margin-bottom: 0.37vw;
+}
+
+.page2 .topScroll {
+    background: url('../Images/icons SVG/topScrollIcon_active.svg');
+}
+
+.page2 .bottomScroll {
+    background: url('../Images/icons SVG/bottomScroll.svg');
+}
+
+.page2 .topPages {
+    height: 0.37vw;
+    width: 0.37vw;
+    background: grey;
+    margin-left: calc((100% - 0.37vw) / 2);
+    border-radius: 0.73vw;
+    margin-bottom: 0.37vw;
+}
+
+.page2 .bottomPages {
+    height: 1.1vw;
+    width: 0.37vw;
+    background: #D31245;
+    margin-left: calc((100% - 0.37vw) / 2);
+    border-radius: 0.73vw;
+}
+
+.widget-header {
+    height: 3vw;
+    position: relative;
+}
+
+.widget-head-icon, .widget-head-save-icon, .widget-head-msg, .widget-head-info-icon {
+    height: 100%;
+    width: 15%;
+    float: left;
+    position: relative;
+    font-size: calc(.7vw + .6vh + .3vmin);
+    font-weight: bold;
+}
+
+
+
+/*.widget-head-save-icon.active, .widget-head-save-icon:hover {
+        background: url(../Images/Kelloggs_Sprite.svg) no-repeat -268px -324px;
+        width: 1.1vw;
+        height: 1vw;
+        cursor: pointer;
+    }*/
+
+.widget-head-info-icon {
+    background: url('../Images/icons SVG/infoIcon.svg');
+    width: 1vw;
+    height: 1.2vw;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.widget-head-icon {
+    width: 4.76vw;
+}
+
+div#custom_message {
+    width: calc(100% - 7vw);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.widgetIconDiv {
+    float: left;
+    height: 100%;
+    margin: 0 0.14vw 0 0.73vw;
+}
+
+
+
+div#custom_message .middleAlign {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+#widget_1 .widget-icon, #widget_2 .widget-icon, #widget_3 .widget-icon, #widget_4 .widget-icon, #widget_5 .widget-icon, #widget_6 .widget-icon, #widget_7 .widget-icon,
+#widget_8 .widget-icon, #widget_9 .widget-icon, #widget_10 .widget-icon {
+    background: url('../Images/icons SVG/eatingOccasionIcon.svg');
+    width: 1.7vw;
+    height: 1.8vw;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.widget-head-save-icon {
+    background: url('../Images/icons SVG/widgetSaveIcon.svg');
+    width: 1.1vw;
+    height: 1.4vw;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+}
+
+.head-right-shadow {
+    background: url('../Images/icons SVG/headRightShadow.svg');
+    width: 1.5vw;
+    height: 2.5vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
+    /*margin-left: 0.2vw;*/
+}
+
+#widget_2 .widget-icon {
+    background: url('../Images/icons SVG/whoIcon.svg');
+}
+
+#widget_3 .widget-icon {
+    background: url('../Images/icons SVG/whoWithIcon.svg');
+}
+
+#widget_4 .widget-icon {
+    background: url('../Images/icons SVG/whenIcon.svg');
+}
+
+#widget_5 .widget-icon {
+    background: url('../Images/icons SVG/whereIcon.svg');
+}
+
+#widget_6 .widget-icon {
+    background: url('../Images/icons SVG/whyIcon.svg');
+}
+
+#widget_7 .widget-icon {
+    background: url('../Images/icons SVG/whatIcon.svg');
+}
+
+#widget_8 .widget-icon {
+    background: url('../Images/icons SVG/activitiesIcon.svg');
+}
+
+#widget_9 .widget-icon {
+    background: url('../Images/icons SVG/purchaseIcon.svg');
+}
+
+#widget_10 .widget-icon {
+    background: url('../Images/icons SVG/shopperMissionIcon.svg');
+}
+
+.headSaveIcon {
+    width: 2.2vw;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.columnShadow {
+    height: 90%;
+    width: 0.6vw;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    top: 0;
+}
+
+.bottomShadow {
+    position: absolute;
+    bottom: 0vw;
+    width: 100%;
+    height: 0.73vw;
+    z-index: 2;
+    left: 0;
+}
+
+    .bottomShadow img, .columnShadow img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+    }
+
+.widget-body {
+    height: calc(100% - 3vw);
+    width: 100%;
+    position: relative;
+}
+
+/*widget 1 start*/
+.portion {
+    height: 50%;
+    width: 100%;
+}
+
+.leftPortion {
+    height: 100%;
+    width: 10%;
+    position: relative;
+    float: left;
+}
+
+.rightPortion {
+    height: 100%;
+    width: 90%;
+    float: right;
+}
+
+.subPortion {
+    height: calc(100% / 3);
+    width: 100%;
+    text-align: right;
+    font-size: 0.7vw;
+    color: #161616;
+    padding: 0 0.22vw;
+    position: relative;
+}
+
+    .subPortion .middleAlign {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+.leftPortion .columnShadow {
+    right: 0;
+    left: auto;
+    transform: rotate(180deg);
+    height: 200%;
+}
+
+.circleContainer {
+    width: calc((100% - 1.1vw) / 7);
+    height: 90%;
+    float: left;
+}
+
+.portion:nth-child(2) .circleContainer {
+    margin-top: 1%;
+}
+
+.circleText {
+    height: 30%;
+    width: 70%;
+    font-size: 0.77vw;
+    color: #161616;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 15%;
+}
+
+.circleDiv {
+    height: 50%;
+    width: 100%;
+}
+
+.circlePercentage {
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+.circleText .middleAlign {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.emptyArea {
+    width: 1.5vw;
+    float: left;
+    height: 100%;
+}
+
+.circleArea {
+    width: calc(100% - 3.1vw);
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.circles-text {
+    line-height: inherit !important;
+}
+
+    .circles-text span {
+        display: block;
+        font-size: 0.8vw;
+    }
+
+.circle-text {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 0.7vw;
+    line-height: 0.9vw;
+}
+
+span.change {
+    font-size: 0.7vw;
+}
+
+.circle {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.circles-wrp {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+    .circles-wrp svg, .circles-wrp .circles-text {
+        float: left;
+    }
+
+#circleContainer_1 .circle-connector, #circleContainer_2 .circle-connector, #circleContainer_3 .circle-connector, #circleContainer_4 .circle-connector, #circleContainer_5 .circle-connector, #circleContainer_6 .circle-connector, #circleContainer_7 .circle-connector, #circleContainer_8 .circle-connector, #circleContainer_9 .circle-connector, #circleContainer_10 .circle-connector, #circleContainer_11 .circle-connector, #circleContainer_12 .circle-connector, #circleContainer_13 .circle-connector {
+    width: 2.95vw;
+    height: 1.2vw;
+    background: url(../Images/Kelloggs_Sprite_Color_line_01.svg);
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+#circleContainer_1 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_01.svg);
+}
+
+#circleContainer_2 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_02.svg);
+}
+
+#circleContainer_3 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_03.svg);
+}
+
+#circleContainer_4 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_04.svg);
+}
+
+#circleContainer_5 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_05.svg);
+}
+
+#circleContainer_6 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_06.svg);
+}
+
+#circleContainer_7 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_07.svg);
+}
+
+#circleContainer_8 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_08.svg);
+    margin-left: -1.5vw;
+}
+
+#circleContainer_9 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_09.svg);
+    margin-left: -1.5vw;
+}
+
+#circleContainer_10 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_10.svg);
+    margin-left: -1.5vw;
+}
+
+#circleContainer_11 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_11.svg);
+    margin-left: -1.5vw;
+}
+
+#circleContainer_12 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_12.svg);
+    margin-left: -1.5vw;
+}
+
+#circleContainer_13 .circle-connector {
+    background: url(../Images/Kelloggs_Sprite_Color_line_13.svg);
+    margin-left: -1.5vw;
+}
+
+.connector {
+    position: absolute;
+    width: 0.07vw;
+    background: deepskyblue;
+    margin-left: 1.8vw;
+    margin-top: 0.9vw;
+}
+
+#circleContainer_8 .emptyArea:not(:first-child) .circle-connector {
+    margin-left: 0;
+    width: 1.45vw;
+    background-size: cover !important;
+}
+
+.connectorLine {
+    width: 0.08vw;
+    height: 53%;
+    position: absolute;
+    /* background: linear-gradient(45deg, #5673EE, deepskyblue); */
+    background: deepskyblue;
+    right: 1.25vw;
+    top: 24.5%;
+}
+/*widget 1 end*/
+
+
+
+/*widget 2 start*/
+.portion-widget-2 {
+    height: 50%;
+    width: 100%;
+}
+
+.leftPortion-widget-2 {
+    height: 100%;
+    width: 35%;
+    position: relative;
+    float: left;
+}
+
+.rightPortion-widget-2 {
+    height: 100%;
+    width: 65%;
+    float: right;
+}
+
+.leftPortion-widget-2 .subPortion {
+    height: 50%;
+    width: 100%;
+    text-align: right;
+    font-size: 0.8vw;
+    color: #161616;
+    padding: 0 0.37vw;
+    position: relative;
+}
+
+.leftPortion-widget-2 .bottomShadow, .rightPortion-widget-2 .bottomShadow {
+    width: 95%;
+}
+
+.leftPortion-widget-2 .columnShadow {
+    right: 0;
+    left: auto;
+    transform: rotate(180deg);
+    height: 100%;
+}
+
+.rightPortion-widget-2 .subPortion:first-child {
+    height: 70%;
+    width: 100%;
+    position: relative;
+}
+
+.rightPortion-widget-2 .subPortion:last-child {
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+
+.triangleDiv {
+    height: 100%;
+    width: 70%;
+    float: left;
+    position: relative;
+}
+
+#triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 3.6vw solid transparent;
+    border-right: 3.6vw solid transparent;
+    border-bottom: 7.3vw solid red;
+}
+
+div#triangle-up.outer {
+    width: 0;
+    height: 0;
+    border-left: 3vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-bottom: 4.4vw solid #eee;
+    position: relative;
+}
+
+div#triangle-up.inner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 3vw solid transparent;
+    border-right: 3vw solid transparent;
+    border-bottom: 1.5vw solid red;
+    left: -3vw;
+    top: 3vw;
+}
+
+.textDiv {
+    height: 100%;
+    width: 30%;
+    float: left;
+    text-align: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    padding-bottom: 0.7vw;
+}
+
+    .textDiv span {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+        .textDiv span.change {
+            font-weight: normal;
+        }
+
+.notApplicable {
+    width: 30%;
+    font-size: 0.8vw;
+    padding-left: 0.07vw;
+    height: 100%;
+    float: left;
+    text-align: left;
+}
+
+.sub-subPortion:first-child {
+    width: 20%;
+}
+
+.sub-subPortion:last-child {
+    width: 80%;
+}
+
+.sub-subPortion {
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+    .sub-subPortion:last-child .middleAlign {
+        /*height: 54%;*/
+    }
+
+.householdIncomeIcon {
+    background: url('../Images/icons SVG/householdIncomeIcon.svg');
+    width: 2.5vw;
+    height: 3.1vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 1vw;
+}
+
+.houseHoldText {
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: bold;
+    height: 100%;
+    width: 70%;
+    float: left;
+}
+
+.incomeText {
+    height: 100%;
+    font-weight: bold;
+    width: 30%;
+    float: left;
+    text-align: center;
+}
+
+.barDiv {
+    height: 20%;
+    min-height: 0.5vw;
+    background: #E2E2E2;
+    border: 0.08vw solid #FFFFFF;
+    box-shadow: 0vw 0vw 0.22vw 0vw rgba(0,0,0,0.06);
+    width: 80%;
+    position: relative;
+}
+
+.percentageDiv {
+    position: absolute;
+    height: calc(100% - 0.14vw);
+    min-height: 0.37vw;
+    background: #DB1348;
+    width: 50%;
+}
+
+.stackDiv {
+    height: 100%;
+    width: 25%;
+    float: left;
+    position: relative;
+}
+
+.GenNameDiv {
+    height: 100%;
+    width: 75%;
+    float: left;
+}
+
+.stackBar {
+    /*height: 80%;
+    margin-top: 10%;
+    background: #eee;
+    width: 40%;
+    margin-left: 30%;
+    position: relative;*/
+    height: 80%;
+    width: 40%;
+    margin-left: 30%;
+    position: absolute;
+    top: 10%;
+}
+
+.stack {
+    border-bottom: 0.08vw solid white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.generation {
+    height: 17%;
+    width: 100%;
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+    .generation:first-child {
+        margin-top: 4%;
+    }
+
+.genDotDiv {
+    width: 5%;
+    height: 100%;
+    float: left;
+}
+
+.genDot {
+    background: #308219;
+    height: 0.44vw;
+    width: 0.44vw;
+    border-radius: 0.3vw;
+}
+
+.genText {
+    text-align: left;
+    width: 75%;
+    height: 100%;
+    float: left;
+}
+
+.genPercentage {
+    width: 20%;
+    float: left;
+    height: 100%;
+}
+/*widget 2 end*/
+
+
+
+
+/*widget 3 start*/
+
+#widget_3 .bottomShadow {
+    width: 95%;
+}
+
+#widget_3 .subPortion .bottomShadow {
+    bottom: -0.44vw;
+}
+
+.AttributeName {
+    height: 25%;
+    width: 100%;
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: bold;
+    padding-left: 0.73vw;
+}
+
+.squareChartDiv {
+    height: 70%;
+    width: 100%;
+    padding-left: 0.73vw;
+}
+
+.squareArea {
+    height: 100%;
+    width: 80%;
+    float: left;
+}
+
+.squarePercentage {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+
+.squareContainer {
+    float: left;
+    /*width: 3.7%;*/
+    margin: 0.07vw;
+    height: 100%;
+    min-width: 0.38vw;
+}
+
+.square {
+    width: 96%;
+    background: #dddddd;
+    height: calc(20% - 0.14vw);
+    margin-bottom: 0.16vw;
+    min-height: 0.3vw;
+}
+
+.squarePercentage {
+    height: calc(100% - 0.6vw);
+    width: 20%;
+    float: left;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+/*widget 3 end*/
+
+
+/*widget 4 start*/
+
+#widget_4 .subPortion .bottomShadow {
+    bottom: -0.14vw;
+}
+
+.donutDiv {
+    height: 100%;
+    width: 55%;
+    float: left;
+    position: relative;
+}
+
+#widget_4 .textDiv {
+    width: 45%;
+}
+
+div#widget_4 .textDiv .middleAlign div.whenText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/*widget 4 end*/
+
+
+/*widget 5 start*/
+.barDiv-widget-5 {
+    float: left;
+    margin-left: 7%;
+    height: 100%;
+    width: 43%;
+}
+
+.percentageDiv-widget-5 {
+    float: left;
+    height: 100%;
+    width: 20%;
+    /*margin-left:9%;*/
+    text-align: center;
+    font-weight: bold;
+}
+
+.barMarkerDiv {
+    float: left;
+    height: 100%;
+    width: 1vw;
+    margin-left: -0.3vw;
+    margin-top: 0.07vw;
+}
+
+.textDiv-widget-5 {
+    width: 30%;
+    text-align: left;
+    float: left;
+    height: 100%;
+    font-weight: bold;
+    font-size: 0.8vw;
+    padding: 0 0.37vw;
+    line-height: normal;
+}
+
+.barLineDiv {
+    height: 100%;
+    float: left;
+    max-width: calc(100% - 1vw);
+}
+
+.barMarker {
+    width: 1.1vw;
+    height: 1vw;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+#widget_5 .subPortion:nth-child(even) {
+    background: #f9f9f9;
+}
+
+#barMarker_0 {
+    background: url('../Images/icons SVG/barMarker0.svg');
+}
+
+#barMarker_1 {
+    background: url('../Images/icons SVG/barMarker1.svg');
+}
+
+#barMarker_2 {
+    background: url('../Images/icons SVG/barMarker2.svg');
+}
+
+#barMarker_3 {
+    background: url('../Images/icons SVG/barMarker3.svg');
+}
+
+#barMarker_4 {
+    background: url('../Images/icons SVG/barMarker4.svg');
+}
+
+#barMarker_5 {
+    background: url('../Images/icons SVG/barMarker5.svg');
+}
+
+#barMarker_6 {
+    background: url('../Images/icons SVG/barMarker6.svg');
+}
+
+#barMarker_7 {
+    background: url('../Images/icons SVG/barMarker7.svg');
+}
+
+#barMarker_8 {
+    background: url('../Images/icons SVG/barMarker8.svg');
+}
+
+.textDiv-widget-5 .middleAlign {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    margin-left: 7%;
+}
+/*widget 5 end*/
+
+
+
+/*widget 6,8,10 start*/
+.barDiv-widget-6 {
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+
+#widget_8 .barDiv-widget-6, #widget_10 .barDiv-widget-6 {
+    width: 30%;
+}
+
+
+.percentageDiv-widget-6 {
+    float: left;
+    height: 100%;
+    width: 15%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.textDiv-widget-6 {
+    width: 20%;
+    text-align: left;
+    float: left;
+    height: 100%;
+    font-weight: bold;
+    font-size: 0.8vw;
+    padding: 0 0.73vw;
+}
+
+
+#widget_8 .textDiv-widget-6, #widget_10 .textDiv-widget-6 {
+    width: 40%;
+}
+
+.textDiv-widget-6-right {
+    float: left;
+    margin-left: 2.5%;
+    width: 12%;
+    text-align: center;
+    height: 100%;
+    font-weight: bold;
+    position: relative;
+    font-size: 0.7vw;
+}
+
+.subPortion:first-child .textDiv-widget-6 {
+    width: 70% !important;
+}
+
+#widget_6 .subPortion:nth-child(even), #widget_8 .subPortion:nth-child(even), #widget_10 .subPortion:nth-child(even) {
+    background: #f9f9f9;
+}
+
+#widget_6 .percentageDiv, #widget_8 .percentageDiv, #widget_10 .percentageDiv {
+    height: 0.2vw;
+    top: 0.25vw;
+    background: #BFBFBF;
+    min-height: 0.2vw;
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    left: 0;
+}
+
+#widget_6 .bar, #widget_8 .bar, #widget_10 .bar {
+    height: 0.7vw;
+    background: #c00000;
+    border: 0.08vw solid rgba(219, 19, 72, 0.5);
+}
+
+#widget_6 .barLineDiv, #widget_8 .barLineDiv, #widget_10 .barLineDiv {
+    max-width: 100%;
+    width: 100%;
+}
+
+.textDiv-widget-6 .middleAlign {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.DotDiv {
+    width: 0.5vw;
+    height: 100%;
+    float: left;
+    margin: 0 0.37vw 0 0.73vw;
+}
+
+.headText {
+    height: 100%;
+    max-width: calc(100% - 1.6vw);
+    float: left;
+}
+
+    .headText .middleAlign {
+        white-space: nowrap;
+        overflow: visible;
+    }
+
+#widget_10 .widget-header div#custom_message {
+    width: calc(100% - 9.2vw);
+}
+/*widget 6 end*/
+
+
+/*widget 7 start*/
+.subPortion-widget-7 {
+    height: 100%;
+    float: left;
+    width: 40%;
+    position: relative;
+}
+
+    .subPortion-widget-7 .columnShadow {
+        height: 100%;
+    }
+
+    .subPortion-widget-7:nth-child(2) {
+        width: 35%;
+    }
+
+    .subPortion-widget-7:nth-child(3) {
+        width: 25%;
+    }
+
+.sub-subPortion-widget-7 {
+    width: 100%;
+    height: calc(90% / 6);
+}
+
+.squareChart {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.thisOccasionPer, .TotalOccasionPer {
+    width: 25%;
+    height: 100%;
+    float: left;
+    font-size: 0.8vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+.widget .headerText {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8vw;
+    position: relative;
+    height: 1.9vw;
+    width: 100%;
+}
+
+.widget .headerBorder {
+    width: 0.73vw;
+    height: 0.14vw;
+    background: #BC0F34;
+    position: absolute;
+    left: calc((100% - 0.73vw) / 2);
+    bottom: 0;
+}
+
+.categoryName {
+    padding-left: 0.37vw;
+    font-size: 0.8vw;
+    font-weight: bold;
+    height: 50%;
+}
+
+    .categoryName .middleAlign {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+.categoryChart {
+    width: 100%;
+    padding-left: 0.37vw;
+    height: 50%;
+}
+
+#widget_7 .square {
+    width: calc(5% - 0.14vw);
+    margin: 0.07vw;
+}
+
+#widget_7 .barDiv {
+    width: 100%;
+}
+
+.subPortion-widget-7:nth-child(2) .squareChart {
+    width: 75%;
+}
+
+/*widget 7 end*/
+.shareOfOccasion, .avgItemPerOccasion {
+    height: 50%;
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+.consumption {
+    height: 50%;
+    width: 100%;
+    float: left;
+}
+
+.avgIconDiv {
+    width: 100%;
+    height: 40%;
+}
+
+.avgIcon {
+    background: url('../Images/icons SVG/avgIcon.svg');
+    height: 2.2vw;
+    width: 2.2vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: calc((100% - 2.2vw) / 2);
+}
+
+.avgValue {
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2vw;
+    padding-top: 0.5vw;
+}
+
+.avttext {
+    height: 35%;
+    text-align: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    padding: 0.37vw;
+    line-height: 1.2;
+}
+
+.kelloggsIconDiv {
+    width: 100%;
+    height: 40%;
+}
+
+.kelloggsIcon {
+    background: url('../Images/icons SVG/kelloggsIcon.svg');
+    width: 4vw;
+    height: 1.5vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: calc((100% - 4vw) / 2);
+}
+
+.shareValue {
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2vw;
+    padding-top: 0.5vw;
+}
+
+.sharetext {
+    height: 35%;
+    text-align: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    padding: 0.37vw;
+    line-height: 1.2;
+}
+
+.consumption .headerText {
+    height: 20%;
+    margin-top: 0.6vw;
+}
+
+.radialChart {
+    height: calc(50% - 0.6vw);
+    width: 100%;
+    position: relative;
+}
+
+    .radialChart .bottomShadow {
+        bottom: -0.3vw;
+        width: calc(50% - 0.6vw);
+        left: 25%;
+    }
+
+.consumptionText, .consumptionValue {
+    height: 15%;
+    width: 50%;
+    font-size: 0.8vw;
+    font-weight: bold;
+    text-align: left;
+}
+
+.consumptionText {
+    width: 65%;
+    padding-left: 0.73vw;
+}
+
+.consumptionValue {
+    width: 35%;
+    text-align: center;
+}
+
+.consumption div {
+    float: left;
+}
+/*widget 7 start*/
+
+/*widget 9 start*/
+.subPortion-widget-9 {
+    height: 100%;
+    width: 20%;
+    float: left;
+    position: relative;
+}
+
+    .subPortion-widget-9:nth-child(2) {
+        width: 55%;
+    }
+
+    .subPortion-widget-9:nth-child(3) {
+        width: 25%;
+    }
+
+#widget_9 .subPortion:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.subPortion-widget-9 .sub-subPortion {
+    width: 100%;
+    height: 30%;
+    position: relative;
+}
+
+.radialChart-widget-9 {
+    height: calc(70% - 1.9vw);
+    width: 100%;
+    position: relative;
+    padding-top: 0.73vw;
+}
+
+.purchaser {
+    float: left;
+    height: 15%;
+    width: 100%;
+    font-size: 0.8vw;
+    font-weight: bold;
+}
+
+.purchaserName {
+    width: 60%;
+    float: left;
+    height: 100%;
+    padding-left: 2.2vw;
+    position: relative;
+}
+
+    .purchaserName .headLeftBorder {
+        left: 1.5vw;
+    }
+
+.purchaserValue {
+    width: 40%;
+    float: left;
+    height: 100%;
+    text-align: center;
+}
+
+.typeName {
+    height: 100%;
+    width: 44%;
+    font-size: 0.8vw;
+    font-weight: bold;
+    float: left;
+    padding: 0 0.37vw;
+    margin-left: 1%;
+}
+
+.typeChart {
+    height: 100%;
+    width: 23%;
+    float: left;
+    position: relative;
+}
+
+.typeValue {
+    height: 100%;
+    width: 32%;
+    float: left;
+    text-align: center;
+}
+
+    .typeValue .percentage, .typeValue .change {
+        font-size: 0.8vw;
+        font-weight: bold;
+    }
+
+
+
+.typeName .middleAlign {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.typeValue .middleAlign {
+    margin-top: 0vw;
+}
+
+.barChart {
+    height: 1.8vw;
+    width: 100%;
+}
+
+.headerText .middleAlign {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.subPortion-widget-9:nth-child(2) .columnShadow:last-child {
+    top: 10%;
+    left: 37%;
+}
+
+.OccasionName {
+    height: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #D11245;
+    font-size: 1vw;
+}
+
+.property {
+    height: auto;
+    width: 100%;
+    float: left;
+    text-align: left;
+    padding: 0.37vw 1.1vw;
+    box-shadow: 0vw 0vw 0.07vw rgba(0, 0, 0, 0.2);
+    font-size: 0.9vw;
+    position: relative;
+    min-height: 3.6vw;
+}
+
+.propName, .propInfo {
+    height: auto;
+    width: 50%;
+    float: left;
+    font-weight: normal;
+    position: relative;
+    min-height: 5.1vw;
+}
+
+.propName {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.propInfo {
+    float: right;
+}
+
+.propName .middleAlign {
+    padding-right: 0.37vw;
+}
+
+.header-arrow-occasion {
+    margin-left: 37%;
+    background: url('../Images/LeftPanel SVG/arrow_active.svg');
+    height: 0.9vw;
+    width: 1.2vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.OccasionName, .OccasionName .middleAlign {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.saveDashboardCapture {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    .saveDashboardCapture .widget {
+        width: 100% !important;
+        height: 100%;
+    }
+
+.consumption svg {
+    position: absolute;
+    bottom: 0.1vw;
+}
+
+.notAvailable {
+    height: 100%;
+    text-align: center;
+    font-size: 1.1vw;
+    font-weight: bold;
+}

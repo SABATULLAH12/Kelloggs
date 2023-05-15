@@ -1,0 +1,66 @@
+﻿@using AQ.Kelloggs.Resources
+@{
+    ViewBag.Title = @Resources.PerformanceDashboard;
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta content="utf-8" http-equiv="encoding">
+
+<script>
+    document.write('<script src="../Scripts/PerformanceDashboard/PerformanceDashboard.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<link href="../Content/CrossTab/CrossTab.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/CrossTab/_chart.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/AdvancedAnalytics/Osp.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/PerformanceDashboard/PerformanceDashboard.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+
+
+</script>
+
+@using AQ.Kelloggs.Resources
+<div class="view-container" ng-controller="PerformanceDashboard-Controller">
+    <div>
+        <div class="calloutArrow"></div>
+        <div class="selectionButtonCallout">Click here to make selections</div>
+    </div>
+
+    <div class="leftpanelarea" ng-hide="leftMenuIsHidden"></div>
+    @*bind left panel from partial start*@
+    <div class="left-panel-load animate-hide" ng-hide="leftMenuIsHidden">
+        @{Html.RenderPartial("LeftPanel");}
+    </div>
+    @*bind left panel from partial view end*@
+
+    @*bind content start*@
+
+
+
+    <div class="view-load" ng-click="hideLeftPanel()">
+        <div class="output-container">
+            <div class="OSPHeader headerArea">
+                <div class="headerLeftBorder"></div>
+                <div class="headerText"><div class="middleAlign">PERFORMANCE DASHBOARD</div></div>
+                <div class="legend">
+                    <div class="sigBetter legendContent middleAlign">Significantly Better</div>
+                    <div class="dirBetter legendContent middleAlign">Directionally Better</div>
+                    <div class="dirWorse legendContent middleAlign">Directionally Worse</div>
+                    <div class="sigWorse legendContent middleAlign">Significantly Worse</div>
+                    <div class="flat legendContent middleAlign"><div></div>Flat</div>
+                    <div class="saveDashboard">
+                        <div class="headSaveIcon" onclick="saveDashboard(event,1)">
+                            <div class="middleAlignHorizontal" style="position: absolute;">
+                                <div class="widget-head-save-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="chartArea distributionChartArea" id="PDchartArea"> </div>
+        </div>
+
+    </div>
+    @*bind content end*@
+
+
+</div>
+
+

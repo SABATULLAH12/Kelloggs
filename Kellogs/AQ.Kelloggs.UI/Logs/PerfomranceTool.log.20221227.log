@@ -1,0 +1,32 @@
+2022-12-27 15:32:02,568 [11] ERROR  Application (null) (null) - A public action method 'Homw' was not found on controller 'AQ.Kelloggs.UI.Controllers.HomeController'.
+2022-12-27 15:33:35,414 [28] ERROR  Application (null) (null) - A public action method 'Homw' was not found on controller 'AQ.Kelloggs.UI.Controllers.HomeController'.
+2022-12-27 16:18:07,118 [10] ERROR  Application (null) (null) - Name:Sabat.Ullah@kantar.com
+2022-12-27 16:19:57,091 [10] ERROR  Application (null) (null) -    at System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   at System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.<>c__DisplayClass1.<ResolveManifestToken>b__0(Tuple`3 k)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.ResolveManifestToken(DbConnection connection)
+   at System.Data.Entity.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   at System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   at System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   at System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Data.Entity.QueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate, CancellationToken cancellationToken)
+   at System.Data.Entity.QueryableExtensions.FirstOrDefaultAsync[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Microsoft.AspNet.Identity.EntityFramework.UserStore`6.<GetUserAggregateAsync>d__67.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.AsyncHelper.RunSync[TResult](Func`1 func)
+   at Microsoft.AspNet.Identity.UserManagerExtensions.FindByName[TUser,TKey](UserManager`2 manager, String userName)
+   at AQ.Kelloggs.UI.Controllers.CommonController.CheckUser(String username, String env) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 338
+   at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 277
+2022-12-27 16:19:57,094 [10] ERROR  Application (null) (null) - An error occurred accessing the database. This usually means that the connection to the database failed. Check that the connection string is correct and that the appropriate DbContext constructor is being used to specify it or find it in the application's config file. See http://go.microsoft.com/fwlink/?LinkId=386386 for information on DbContext and connections. See the inner exception for details of the failure.
+2022-12-27 16:20:00,308 [10] ERROR  Application (null) (null) - An error occurred accessing the database. This usually means that the connection to the database failed. Check that the connection string is correct and that the appropriate DbContext constructor is being used to specify it or find it in the application's config file. See http://go.microsoft.com/fwlink/?LinkId=386386 for information on DbContext and connections. See the inner exception for details of the failure.
+2022-12-27 16:20:24,137 [10] ERROR  Application (null) (null) - Name:Sabat.Ullah@kantar.com
+2022-12-27 16:28:21,531 [15] ERROR  Application (null) (null) - Name:Sabat.Ullah@kantar.com
+2022-12-27 16:32:21,097 [15] ERROR  Application (null) (null) - Name:Sabat.Ullah@kantar.com
+2022-12-27 16:35:48,862 [15] ERROR  Application (null) (null) - Name:Sabat.Ullah@kantar.com

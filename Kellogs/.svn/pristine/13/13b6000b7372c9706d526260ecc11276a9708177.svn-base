@@ -1,0 +1,158 @@
+﻿@using AQ.Kelloggs.Resources
+@{
+    ViewBag.Title = @Resources.Dashboard;
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta content="utf-8" http-equiv="encoding">
+<script>
+    document.write('<script src="../Scripts/PerformanceDashboard/PerformanceDashboard.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<script src="../Scripts/Dashboard/Dashboard.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<script src="../Scripts/CrossTab/Charts/_chart.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<link href="../Content/Snapshot/Snapshot.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/Dashboard/Dashboard.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/Shared/LeftPanel.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/CrossTab/_chart.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/CrossTab/CrossTab.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<link href="../Content/PerformanceDashboard/PerformanceDashboard.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+        
+</script>
+<div class="view-container" ng-controller="Dashboard-Controller">
+    <div class="view-load" ng-click="hideLeftPanel()">
+        <div class="dashboardHeader">
+            <div class="middleAlign">
+                <div id="mySavedDashboard" class="headerButton{{DashboardMaster.select('DashBoardTypeId').distinct().indexOf(1) > -1 ? '':' disableSelection'}}" ng-click="showDashboardList(1)">
+                    <div class="saveIcon func middleAlign"></div>
+
+                    <div class="middleAlign">MY SAVED DASHBOARDS</div>
+                </div>
+                <div id="dashboardSharedWithMe" class="headerButton{{DashboardMaster.select('DashBoardTypeId').distinct().indexOf(2) > -1 ? '':' disableSelection'}}" ng-click="showDashboardList(2)">
+                    <div class="sharedUserIcon func middleAlign"></div>
+                    <div class="middleAlign">DASHBOARDS SHARED WITH ME</div>
+                </div>
+                <div id="dashboardSharedByMe" class="headerButton{{DashboardMaster.select('DashBoardTypeId').distinct().indexOf(3) > -1 ? '':' disableSelection'}}" ng-click="showDashboardList(3)">
+                    <div class="sharedUserIcon func middleAlign"></div>
+                    <div class="middleAlign">DASHBOARDS SHARED BY ME</div>
+                </div>
+                <div id="share" class="headerButton{{DashboardMaster.select('DashBoardTypeId').distinct().indexOf(1) > -1 ? '':' disableSelection'}}" ng-click="openShareDashbaord()">
+                    <div class="shareIcon func middleAlign"></div>
+                    <div class="middleAlign">SHARE</div>
+                </div>
+                <div id="search-container" class="headerButton{{DashboardsNameList.length > 0 ? '':' disableSelection'}}">
+                    <input type="text" placeholder="Search" id="searchBox" ng-model="searchText.text" class="middleAlign" />
+                    <div id="searchIcon-container" class="middleAlign">
+                        <div id="searchIcon"></div>
+                    </div>
+                    <div class="search-item-container">
+                        <div class="search-item" ng-repeat="item in DashboardsNameList|search:{searchText : searchText.text}" ng-bind-html="getTrustedHtml(item)" ng-click="searchItemClick(item,searchText)"><div class="middleAlign">{{item.DashboardName}}</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboardList">
+            <div class="left-arrow" ng-class="{'active':begin>0}" ng-click="moveLeft()"></div>
+            <div class="dashboardNameList-container">
+                <div class="dashboardNameList" ng-class="{'active':dashboard.isSelected}" ng-repeat="dashboard in DashboardsNameList|limitTo:5:begin" ng-click="selectDashboard(dashboard)" id="{{dashboard.DashBoardID}}">
+                    <div class="dashboardName" title="{{dashboard.DashboardName}}">
+                        <div class="middleAlign">{{dashboard.DashboardName}}</div>
+                    </div>
+                    <div class="dashboardFeature middleAlign">
+                        <div class="feature-container" title="Update Dashboard">
+                            <div class="updateTimePeriodIcon func{{DashboardsNameList.select('DashBoardTypeId').distinct().indexOf(2) > -1 ? ' disableSelection':''}}" ng-click="updateTimePeriod(dashboard)"></div>
+                        </div>
+                        <div class="feature-container" title="Download Dashboard">
+                            <div class="downloadIcon func" ng-click="downloadSelectedSlides(dashboard)"></div>
+                        </div>
+                        <div class="feature-container" title="Edit Dashboard Name">
+                            <div class="editDashboardNameIcon func{{DashboardsNameList.select('DashBoardTypeId').distinct().indexOf(2) > -1 ? ' disableSelection':''}}" ng-click="editDashboardName(dashboard)"></div>
+                        </div>
+                        <div class="feature-container" title="Delete Dashboard">
+                            <div class="deleteDashboardIcon func" ng-click="deleteDashboard(dashboard)"></div>
+                        </div>
+                    </div>
+                    <div class="dashboardSeparator"></div>
+                </div>
+            </div>
+            <div class="right-arrow" ng-class="{'active':end-begin>5}" ng-click="moveRight()"></div>
+
+        </div>
+        <div class="slides-container">
+            <div class="slide-widget" ng-repeat="widget in DashboardWidgetList" id="{{widget.WidgetID }}" type="{{widget.WidgetType}}">
+                <div class="widget-header">
+                    <div class="widget-head-icon">
+                        <div class="headLeftBorder"></div>
+                        <div class="widgetIconDiv">
+                            <div class="middleAlign">
+                                <div class="widget-icon" ng-style="{'background':'url('+widget.Url+')'}"></div>
+                                @* 'margin-top':widget.marginTop *@
+                            </div>
+                        </div>
+                        <div class="head-right-shadow"></div>
+                    </div>
+                    <div class="widget-head-msg" id="custom_message" title="">
+                        <div class="middleAlign widget-title" title="{{widget.DisplayName}}">{{widget.DisplayName}}</div>
+                        <div class="slides-feature-container middleAlign">
+                            <div class="icon-container" title="Edit Widget Name">
+                                <div class="editDashboardNameIcon" ng-click="editWidgetName(widget)"></div>
+                            </div>
+                            <div class="icon-container" title="Expand">
+                                <div class="expandIcon" ng-click="expandWidget(widget)"></div>
+                            </div>
+                            <div class="icon-container" title="Info">
+                                <div class="infoIcon" ng-click="getInfo(widget)"></div>
+                            </div>
+                            <div class="icon-container" title="Go To Origin">
+                                <div class="goToOriginIcon" ng-click="goToOriginalModule(widget)"></div>
+                            </div>
+                            <div class="icon-container" title="Select">
+                                <div class="selectSlideIcon" ng-click="selectSlide(widget.WidgetID)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomShadow"><img no-repeat="" src="../Content/Images/Kelloggs_horizontal_shadow.png"></div>
+                </div>
+                <div class="imageContainer" style="position: relative;height: calc(100% - 3vw);width: 100%;padding: 0 0.7vw;">
+                    <img class="image" src="{{widget!=undefined ? widget.ImageUrl : ''}}" style="max-width: 100%; max-height: 100%;height: auto;" />
+                </div>
+                @*<div class="middleAlignHorizontal" style="position : {{ExceptionList.indexOf(widget.widgetType) > -1 ? 'absolute': 'relative'}}">
+                        <img src="{{widget.ImageUrl}} " style="{{ExceptionList.indexOf(widget.widgetType) > -1 ? 'margin-top: 1.4vw;': 'width: 100%;margin-top: -4.2vw;'}}" />
+                    </div>*@
+            </div>
+            @*<div  class="slide-widget"></div>
+                <div  class="slide-widget"></div>
+                <div class="slide-widget"></div>*@
+
+        </div>
+        <div class="bottomSeparator"></div>
+        <div class="slides-functionality{{DashboardWidgetList.length > 0 ? '' :' disableSelection'}}">
+            <div class="selectAllSlides middleAlign" ng-click="selectAllSlides()">
+                <div class="middleAlign" style="float:left;width:auto">
+                    <div class="selectAllSlideIcon"></div>
+                </div>
+                <div style="float:left;width:auto" class="middleAlign">SELECT ALL SLIDES</div>
+
+            </div>
+            <div class="slidesFunc middleAlign" style="position:absolute;width:100%;">
+                <div class="downloadPPT" ng-click="downloadSelectedSlides()" ng-style="{'margin-left':DashboardWidgetList[0].DashBoardTypeId == 2 ? 'calc((100% - 25vw) / 2 - 3% * 2)': 'calc((100% - 18vw) / 2 - 3%)'}">
+                    <div class="middleAlign func" style="width:15%">
+                        <div class="downloadPPTIcon"></div>
+                    </div>
+                    <div class="middleAlign">DOWNLOAD PPT</div>
+                </div>
+                <div class="saveSlides" ng-show="DashboardWidgetList[0].DashBoardTypeId == 2" ng-click="saveSelectedSlides()">
+                    <div class="middleAlign func" style="width:20%">
+                        <div class="saveSlidesIcon"></div>
+                    </div>
+                    <div class="middleAlign">SAVE AS</div>
+                </div>
+                <div class="deleteSlides" ng-click="deleteSelectedSlides()">
+                    <div class="middleAlign func" style="width:20%">
+                        <div class="deleteSlidesIcon"></div>
+                    </div>
+                    <div class="middleAlign">DELETE</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

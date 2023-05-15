@@ -1,0 +1,57 @@
+2022-06-02 11:42:51,077 [12] ERROR  Application (null) (null) - Name:AQ\11173
+2022-06-02 11:50:22,712 [14] ERROR  Application (null) (null) - One or more errors occurred.
+2022-06-02 11:50:28,557 [14] ERROR  Application (null) (null) - System.AggregateException: One or more errors occurred. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Data.DataTable.RecordStateChanged(Int32 record, DataViewRowState oldState, DataViewRowState newState)
+   at System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID)
+   at System.Data.DataTable.MergeRow(DataRow row, DataRow targetRow, Boolean preserveChanges, Index idxSearch)
+   at System.Data.Merger.MergeTable(DataTable src, DataTable dst)
+   at System.Data.Merger.MergeTableData(DataTable src)
+   at System.Data.Merger.MergeDataSet(DataSet source)
+   at System.Data.DataSet.Merge(DataSet dataSet, Boolean preserveChanges, MissingSchemaAction missingSchemaAction)
+   at System.Data.DataSet.Merge(DataSet dataSet)
+   at AQ.Kelloggs.BAL.ReportGeneratorBAL.<>c__DisplayClass19_0.<GetBrData>b__0(Int32 i) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.BAL\ReportGeneratorBAL.cs:line 160
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   at System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object <p0>)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at System.Threading.Tasks.Parallel.ForWorker[TLocal](Int32 fromInclusive, Int32 toExclusive, ParallelOptions parallelOptions, Action`1 body, Action`2 bodyWithState, Func`4 bodyWithLocal, Func`1 localInit, Action`1 localFinally)
+   at System.Threading.Tasks.Parallel.For(Int32 fromInclusive, Int32 toExclusive, Action`1 body)
+   at AQ.Kelloggs.BAL.ReportGeneratorBAL.GetBrData(ReportRequest request) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.BAL\ReportGeneratorBAL.cs:line 136
+   at AQ.Kelloggs.BAL.ReportGeneratorBAL.GetPptDetails(ReportRequest request, IList`1 data, IList`1 origTimeList) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.BAL\ReportGeneratorBAL.cs:line 3098
+   at AQ.Kelloggs.UI.Controllers.ReportGeneratorController.DownloadReport(String request, String origTimeList) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\ReportGeneratorController.cs:line 32
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+---> (Inner Exception #0) System.NullReferenceException: Object reference not set to an instance of an object.
+   at System.Data.DataTable.RecordStateChanged(Int32 record, DataViewRowState oldState, DataViewRowState newState)
+   at System.Data.DataTable.InsertRow(DataRow row, Int64 proposedID)
+   at System.Data.DataTable.MergeRow(DataRow row, DataRow targetRow, Boolean preserveChanges, Index idxSearch)
+   at System.Data.Merger.MergeTable(DataTable src, DataTable dst)
+   at System.Data.Merger.MergeTableData(DataTable src)
+   at System.Data.Merger.MergeDataSet(DataSet source)
+   at System.Data.DataSet.Merge(DataSet dataSet, Boolean preserveChanges, MissingSchemaAction missingSchemaAction)
+   at System.Data.DataSet.Merge(DataSet dataSet)
+   at AQ.Kelloggs.BAL.ReportGeneratorBAL.<>c__DisplayClass19_0.<GetBrData>b__0(Int32 i) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.BAL\ReportGeneratorBAL.cs:line 160
+   at System.Threading.Tasks.Parallel.<>c__DisplayClass17_0`1.<ForWorker>b__1()
+   at System.Threading.Tasks.Task.InnerInvoke()
+   at System.Threading.Tasks.Task.InnerInvokeWithArg(Task childTask)
+   at System.Threading.Tasks.Task.<>c__DisplayClass176_0.<ExecuteSelfReplicating>b__0(Object <p0>)<---
+
+2022-06-02 11:50:28,614 [14] ERROR  Application (null) (null) - One or more errors occurred.

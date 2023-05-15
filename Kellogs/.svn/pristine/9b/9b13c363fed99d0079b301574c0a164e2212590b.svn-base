@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D4F40F7-E70D-4ADA-A4B5-DEA60E54ADB0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AQ.Kelloggs.UI</RootNamespace>
+    <AssemblyName>AQ.Kelloggs.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44329</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AQ.Kelloggs.UI.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AQ.Kelloggs.UI.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AQ.Logger, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AQ.Logger.1.1.0\lib\net45\AQ.Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AQ.Utilities, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AQ.Utilities.1.0.1\lib\net40\AQ.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AQLogger">
+      <HintPath>..\packages\AQLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlRenderer.WinForms.1.5.0.6\lib\net45\HtmlRenderer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.3.1\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.3.1\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.3.1\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.1.3.1\lib\net45\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.1.3.1\lib\net45\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.3.1\lib\net45\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.3.1\lib\net45\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Graph, Version=1.20.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.1.20.0\lib\net45\Microsoft.Graph.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Graph.Auth">
+      <HintPath>..\packages\Microsoft.Graph.Auth.0.1.0-preview\lib\net45\Microsoft.Graph.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Graph.Core, Version=1.18.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Graph.Core.1.18.0\lib\net45\Microsoft.Graph.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client">
+      <HintPath>..\packages\Microsoft.Identity.Client.2.7.1\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.3.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.3.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.5.3.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.5.3.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.3.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.4.1.0\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.0.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.0.1\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.3.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection.Metadata, Version=1.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Reflection.Metadata.1.3.0\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.0.1\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.0.0\lib\net46\System.Threading.Thread.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.0.1\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.0.1\lib\net46\System.Xml.XPath.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.0.1\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\CrossTabController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\AdvancedAnalyticsController.cs" />
+    <Compile Include="Controllers\PerformanceDashboardController.cs" />
+    <Compile Include="Controllers\ReportGeneratorController.cs" />
+    <Compile Include="Controllers\SnapshotController.cs" />
+    <Compile Include="Controllers\SnapshotRequestData.cs" />
+    <Compile Include="Controllers\UserManagementController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_LocalResources\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AngularTemplates\LeftPanel.html" />
+    <Content Include="Content\AdvancedAnalytics\CorrespondenceMap.css" />
+    <Content Include="Content\bootstrap-combined.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CrossTab\bootstrap-multiselect.css" />
+    <Content Include="Content\CrossTab\CrossTab.css" />
+    <Content Include="Content\CrossTab\pagination.css" />
+    <Content Include="Content\CrossTab\_chart.css" />
+    <Content Include="Content\Dashboard\Dashboard.css" />
+    <Content Include="Content\Fonts\CustomFonts.css" />
+    <Content Include="Content\Fonts\OFL.txt" />
+    <Content Include="Content\Fonts\vjs.svg" />
+    <Content Include="Content\Images\button_play.svg" />
+    <Content Include="Content\Images\download-button.svg" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\HomePage SVG\advana.svg" />
+    <Content Include="Content\Images\HomePage SVG\advana_active.svg" />
+    <Content Include="Content\Images\HomePage SVG\bg.svg" />
+    <Content Include="Content\Images\HomePage SVG\bg_active.svg" />
+    <Content Include="Content\Images\HomePage SVG\dash.svg" />
+    <Content Include="Content\Images\HomePage SVG\dash_active.svg" />
+    <Content Include="Content\Images\HomePage SVG\occpro.svg" />
+    <Content Include="Content\Images\HomePage SVG\occpro_active.svg" />
+    <Content Include="Content\Images\HomePage SVG\pdash.svg" />
+    <Content Include="Content\Images\HomePage SVG\pdash_active.svg" />
+    <Content Include="Content\Images\HomePage SVG\report.svg" />
+    <Content Include="Content\Images\HomePage SVG\report_active.svg" />
+    <Content Include="Content\Images\HomePage SVG\vcrosstab.svg" />
+    <Content Include="Content\Images\HomePage SVG\vcrosstab_active.svg" />
+    <Content Include="Content\Images\icons SVG\benchmarkIcon_Active.svg" />
+    <Content Include="Content\Images\icons SVG\inactiveIcon_delete.svg" />
+    <Content Include="Content\Images\icons SVG\inactiveIcon_delete_active.svg" />
+    <Content Include="Content\Images\icons SVG\pdashIcon.svg" />
+    <Content Include="Content\Images\icons SVG\pdashIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\productAttributeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\editDashboardNameIcon.svg" />
+    <Content Include="Content\Images\icons SVG\editDashboardNameIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\deleteDashboardIcon.svg" />
+    <Content Include="Content\Images\icons SVG\deleteDashboardIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\expandIcon.svg" />
+    <Content Include="Content\Images\icons SVG\expandIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\infoIcon.svg" />
+    <Content Include="Content\Images\icons SVG\infoIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\goToOriginIcon.svg" />
+    <Content Include="Content\Images\icons SVG\goToOriginIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\homeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\homeIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\eatingOccasionIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whoWithIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whoIcon.svg" />
+    <Content Include="Content\Images\icons SVG\reportBGgrey.svg" />
+    <Content Include="Content\Images\icons SVG\reportBGred.svg" />
+    <Content Include="Content\Images\icons SVG\rightArrow_active.svg" />
+    <Content Include="Content\Images\icons SVG\leftArrow_active.svg" />
+    <Content Include="Content\Images\icons SVG\selectSlideIcon.svg" />
+    <Content Include="Content\Images\icons SVG\selectSlideIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\addToGroupIcon.svg" />
+    <Content Include="Content\Images\icons SVG\addToGroupIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\removeFromGroupIcon.svg" />
+    <Content Include="Content\Images\icons SVG\removeFromGroupIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\searchUserIcon.svg" />
+    <Content Include="Content\Images\icons SVG\searchUserIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\saveIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\saveIcon.svg" />
+    <Content Include="Content\Images\icons SVG\sharedUserIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\sharedUserIcon.svg" />
+    <Content Include="Content\Images\icons SVG\shareIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\shareIcon.svg" />
+    <Content Include="Content\Images\icons SVG\downloadPPTIcon.svg" />
+    <Content Include="Content\Images\icons SVG\saveSlidesIcon.svg" />
+    <Content Include="Content\Images\icons SVG\deleteSlidesIcon.svg" />
+    <Content Include="Content\Images\icons SVG\yesIcon.svg" />
+    <Content Include="Content\Images\icons SVG\noIcon.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 117.svg" />
+    <Content Include="Content\Images\icons SVG\updateIcon.svg" />
+    <Content Include="Content\Images\icons SVG\addUserIcon.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 120.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 121.svg" />
+    <Content Include="Content\Images\icons SVG\downloadTemplateIcon.svg" />
+    <Content Include="Content\Images\icons SVG\uploadIcon.svg" />
+    <Content Include="Content\Images\icons SVG\addIcon.svg" />
+    <Content Include="Content\Images\icons SVG\clearIcon.svg" />
+    <Content Include="Content\Images\icons SVG\moduleNameIcon.svg" />
+    <Content Include="Content\Images\icons SVG\timeperiodInfoIcon.svg" />
+    <Content Include="Content\Images\icons SVG\marketInfoIcon.svg" />
+    <Content Include="Content\Images\icons SVG\occasionInfoIcon.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 130.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 131.svg" />
+    <Content Include="Content\Images\icons SVG\genderIcon.svg" />
+    <Content Include="Content\Images\icons SVG\generationIcon.svg" />
+    <Content Include="Content\Images\icons SVG\avgHHIncomeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\householdSizeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\ethnicityIcon.svg" />
+    <Content Include="Content\Images\icons SVG\motivationIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whoWithHeaderIcon.svg" />
+    <Content Include="Content\Images\icons SVG\dayOfWeekIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whereHeaderIcon.svg" />
+    <Content Include="Content\Images\icons SVG\shareOfOccasionIcon.svg" />
+    <Content Include="Content\Images\icons SVG\avgOccasionIcon.svg" />
+    <Content Include="Content\Images\icons SVG\typeOfConsumptionIcon.svg" />
+    <Content Include="Content\Images\icons SVG\activityHeaderIcon.svg" />
+    <Content Include="Content\Images\icons SVG\purchaserIcon.svg" />
+    <Content Include="Content\Images\icons SVG\packageTypeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\shopperMissionHeaderIcon.svg" />
+    <Content Include="Content\Images\icons SVG\timeperiodIcon.svg" />
+    <Content Include="Content\Images\icons SVG\timeperiodIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\marketIcon.svg" />
+    <Content Include="Content\Images\icons SVG\marketIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\reportIcon.svg" />
+    <Content Include="Content\Images\icons SVG\reportIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\benchmarkIcon.svg" />
+    <Content Include="Content\Images\icons SVG\headerLogo.svg" />
+    <Content Include="Content\Images\icons SVG\settingIcon.svg" />
+    <Content Include="Content\Images\icons SVG\settingIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\summaryViewIcon.svg" />
+    <Content Include="Content\Images\icons SVG\summaryPopupIcon.svg" />
+    <Content Include="Content\Images\icons SVG\excelicon.svg" />
+    <Content Include="Content\Images\icons SVG\excelIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\pptIcon.svg" />
+    <Content Include="Content\Images\icons SVG\pptIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 45.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 45_1.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 46.svg" />
+    <Content Include="Content\Images\icons SVG\helpIcon.svg" />
+    <Content Include="Content\Images\icons SVG\helpIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 48.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 48_1.svg" />
+    <Content Include="Content\Images\icons SVG\myDashboardIcon.svg" />
+    <Content Include="Content\Images\icons SVG\myDashboardIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\crosstabIcon.svg" />
+    <Content Include="Content\Images\icons SVG\crosstabIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\advancedAnalyticsIcon.svg" />
+    <Content Include="Content\Images\icons SVG\advancedAnalyticsIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\occasionIcon.svg" />
+    <Content Include="Content\Images\icons SVG\occasionIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\reportModuleIcon.svg" />
+    <Content Include="Content\Images\icons SVG\reportModuleIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\closePopupIcon.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 55.svg" />
+    <Content Include="Content\Images\icons SVG\activeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\inactiveIcon.svg" />
+    <Content Include="Content\Images\icons SVG\sortIcon.svg" />
+    <Content Include="Content\Images\icons SVG\sortIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\trendChartIcon.svg" />
+    <Content Include="Content\Images\icons SVG\trendChartIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\stackChartIcon.svg" />
+    <Content Include="Content\Images\icons SVG\stackChartIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\tableChartIcon.svg" />
+    <Content Include="Content\Images\icons SVG\tableChartIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 62.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 62_1.svg" />
+    <Content Include="Content\Images\icons SVG\saveFilterIcon.svg" />
+    <Content Include="Content\Images\icons SVG\calloutArrow.svg" />
+    <Content Include="Content\Images\icons SVG\whyIcon.svg" />
+    <Content Include="Content\Images\icons SVG\widgetSaveIcon.svg" />
+    <Content Include="Content\Images\icons SVG\topScrollIcon.svg" />
+    <Content Include="Content\Images\icons SVG\topScrollIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\bottomScroll.svg" />
+    <Content Include="Content\Images\icons SVG\bottomScrollIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\householdIncomeIcon.svg" />
+    <Content Include="Content\Images\icons SVG\headRightShadow.svg" />
+    <Content Include="Content\Images\icons SVG\avgIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whatIcon.svg" />
+    <Content Include="Content\Images\icons SVG\purchaseIcon.svg" />
+    <Content Include="Content\Images\icons SVG\activitiesIcon.svg" />
+    <Content Include="Content\Images\icons SVG\shopperMissionIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whenIcon.svg" />
+    <Content Include="Content\Images\icons SVG\whereIcon.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 80.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker5.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker4.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker3.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker2.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker1.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker0.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker6.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker7.svg" />
+    <Content Include="Content\Images\icons SVG\barMarker8.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 90.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 91.svg" />
+    <Content Include="Content\Images\icons SVG\kelloggsIcon.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 93.svg" />
+    <Content Include="Content\Images\icons SVG\Kelloggs_Sprite_icon 94.svg" />
+    <Content Include="Content\Images\icons SVG\trendIcon.svg" />
+    <Content Include="Content\Images\icons SVG\leftArrow.svg" />
+    <Content Include="Content\Images\icons SVG\rightArrow.svg" />
+    <Content Include="Content\Images\icons SVG\updateTimePeriodIcon.svg" />
+    <Content Include="Content\Images\icons SVG\updateTimePeriodIcon_active.svg" />
+    <Content Include="Content\Images\icons SVG\downloadIcon.svg" />
+    <Content Include="Content\Images\icons SVG\downloadIcon_active.svg" />
+    <Content Include="Content\Images\Kelloggs-Loader_large.gif" />
+    <Content Include="Content\Images\Kelloggs-Loader_small.gif" />
+    <Content Include="Content\Images\Kelloggs_chart_texture.png" />
+    <Content Include="Content\Images\Kelloggs_horizontal_shadow.png" />
+    <Content Include="Content\Images\Kelloggs_Login_Landing.jpg" />
+    <Content Include="Content\Images\Kelloggs_Login_Landing_Sprite.svg" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_mailer_01.jpg" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_mailer_02.jpg" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_mailer_04.jpg" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_mailer_05.jpg" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_BG.jpg" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_BRAZIL flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_BRAZIL flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_CANADA flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_CANADA flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_FRANCE flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_FRANCE flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_KOREA flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_KOREA flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_logo.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_MEXICO flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_MEXICO flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_THAILAND flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_THAILAND flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_UK flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_UK flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_USA flag big.png" />
+    <Content Include="Content\Images\Kelloggs_Mailer_Elements\Kelloggs_Mailer_USA flag small.png" />
+    <Content Include="Content\Images\Kelloggs_Menu bg thick.jpg" />
+    <Content Include="Content\Images\Kelloggs_Menu bg thin.jpg" />
+    <Content Include="Content\Images\Kelloggs_Sprite.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_01.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_02.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_03.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_04.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_05.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_06.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_07.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_08.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_09.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_10.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_11.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_12.svg" />
+    <Content Include="Content\Images\Kelloggs_Sprite_Color_line_13.svg" />
+    <Content Include="Content\Images\Kelloggs_vertical_shadow.png" />
+    <Content Include="Content\AdvancedAnalytics\Osp.css" />
+    <Content Include="Content\Images\LeftPanel SVG\cancel.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\checkbox.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\checkbox_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\column.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\column_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\downloadIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\down_arrow.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\reportModuleIconLP.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\rows.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\rows_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\rowNesting.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\rowNesting_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\timeperiod.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\timeperiod_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\market.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\market_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\occasion.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\occasion_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\category.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\category_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\fiveWs.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\fiveWs_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\demographics.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\demographics_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\addnlFilter.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\addnlFilter_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\benchmark.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\benchmark_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\findOppFor.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\findOppFor_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\manufacture.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\manufacture_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\channel.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\channel_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\retail.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\retail_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\dimension1.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\dimension1_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\dimension2.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\dimension2_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\weightedSampleIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\weightedSampleIcon_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\unweightedSampleIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\unweightedSampleIcon_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\saveFilterIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\Kelloggs_sprite_icon 32.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\coin.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\retailValueIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\retailValueIcon_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\distributionIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\distributionIcon_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\motivationIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\motivationIcon_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\5wsIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\5wsIcon_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\moduleArrowIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\arrow.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\arrow_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\plusArrow.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\plusArrow_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\selected-arrow-icon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\leftPanelIcon.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\leftPanelIcon_Close.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\radio.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\radio_active.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\search.svg" />
+    <Content Include="Content\Images\LeftPanel SVG\submit.svg" />
+    <Content Include="Content\Images\tickIcon.png" />
+    <Content Include="Content\PerformanceDashboard\PerformanceDashboard.css" />
+    <Content Include="Content\ReportGenerator\ReportGenerator.css" />
+    <Content Include="Content\Images\questionairre_Active.png" />
+    <Content Include="Content\Images\questionairre_Inactive.png" />
+    <Content Include="Content\Images\regionalContacts_Active.png" />
+    <Content Include="Content\Images\regionalContacts_Inactive.png" />
+    <Content Include="Content\Shared\EmailTemplate.css" />
+    <Content Include="Content\Shared\Landing.css" />
+    <Content Include="Content\Shared\LeftPanel.css" />
+    <Content Include="Content\Shared\Master.css" />
+    <Content Include="Content\Snapshot\Snapshot.css" />
+    <Content Include="Content\User Management\UserManagement.css" />
+    <Content Include="Content\video-js.css" />
+    <Content Include="Content\video-js.min.css" />
+    <Content Include="Content\video-js.swf" />
+    <Content Include="Content\Videos\Training_Video-Correspondence_Maps.mp4" />
+    <Content Include="Content\Videos\Training_Video-My_Dashboard.mp4" />
+    <Content Include="Content\Videos\Training_Video-Occasion_Profile.mp4" />
+    <Content Include="Content\Videos\Training_Video-Occasion_Strategic_Postures.mp4" />
+    <Content Include="Content\Videos\Training_Video-Report_Generator.mp4" />
+    <Content Include="Content\Videos\Training_Video-Visual_Crosstab.mp4" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\vjs.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\AdvancedAnalytics\CorrespondenceMap.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Chivo-Black.ttf" />
+    <Content Include="Content\Fonts\Chivo-BlackItalic.ttf" />
+    <Content Include="Content\Fonts\Chivo-Bold.ttf" />
+    <Content Include="Content\Fonts\Chivo-BoldItalic.ttf" />
+    <Content Include="Content\Fonts\Chivo-Italic.ttf" />
+    <Content Include="Content\Fonts\Chivo-Light.ttf" />
+    <Content Include="Content\Fonts\Chivo-LightItalic.ttf" />
+    <Content Include="Content\Fonts\Chivo-Regular.ttf" />
+    <Content Include="Content\Fonts\MYRIADPROREGULAR.ttf" />
+    <Content Include="Content\Fonts\MYRIADPROREGULAR.woff" />
+    <EmbeddedResource Include="Aspose.Slides.167923.lic" />
+    <Content Include="AQ.Kelloggs.UI.ruleset" />
+    <EmbeddedResource Include="App_LocalResources\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>AQ.Kelloggs.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="App_Code\Helpers.cshtml" />
+    <Content Include="App_Data\distribution.json" />
+    <Content Include="json\distribution.json" />
+    <Content Include="Content\video-js.less" />
+    <Content Include="fonts\vjs.eot" />
+    <Content Include="fonts\vjs.ttf" />
+    <Content Include="fonts\vjs.woff" />
+    <Content Include="Content\Fonts\vjs.eot" />
+    <Content Include="Content\Fonts\vjs.ttf" />
+    <Content Include="Content\Fonts\vjs.woff" />
+    <Content Include="json\leftPanelCorrespondenceMap.json" />
+    <Content Include="json\leftPanelCrossTab.json" />
+    <Content Include="json\leftPanelOccasionStrategicPostures.json" />
+    <Content Include="json\leftPanelPerformanceDashboard.json" />
+    <Content Include="json\leftPanelReportGenerator.json" />
+    <Content Include="json\leftPanelSnapshot.json" />
+    <Content Include="json\leftPanelMarketTimePeriod.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Common\App.js" />
+    <Content Include="Scripts\Common\Common.js" />
+    <Content Include="Scripts\Common\Constans.js" />
+    <Content Include="Scripts\Common\HelperFunction.js" />
+    <Content Include="Scripts\Common\Services.js" />
+    <Content Include="Scripts\CrossTab\bootstrap-multiselect.js" />
+    <Content Include="Scripts\CrossTab\Charts\_chart.js" />
+    <Content Include="Scripts\CrossTab\CrossTab.js" />
+    <Content Include="Scripts\Dashboard\Dashboard.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\AdvancedAnalytics\Osp.js" />
+    <Content Include="Scripts\PerformanceDashboard\PerformanceDashboard.js" />
+    <Content Include="Scripts\Plugins\angular-animate.min.js" />
+    <Content Include="Scripts\Plugins\angular-recursion.min.js" />
+    <Content Include="Scripts\Plugins\angular-route.js" />
+    <Content Include="Scripts\Plugins\angular.js" />
+    <Content Include="Scripts\Plugins\angular.min.js" />
+    <Content Include="Scripts\Plugins\angular1.5.8\angular-animate.js" />
+    <Content Include="Scripts\Plugins\angular1.5.8\angular-route.js" />
+    <Content Include="Scripts\Plugins\angular1.5.8\angular.js" />
+    <Content Include="Scripts\Plugins\AngularAutoComplete.js" />
+    <Content Include="Scripts\Plugins\bootstrap.min.css" />
+    <Content Include="Scripts\Plugins\bootstrap.min.js" />
+    <Content Include="Scripts\Plugins\d3\d3.js" />
+    <Content Include="Scripts\Plugins\HighCharts\export-data.js" />
+    <Content Include="Scripts\Plugins\HighCharts\exporting.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\canvg.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\canvg.min.js" />
+    <Content Include="Scripts\Plugins\d3\d3.min.js" />
+    <Content Include="Scripts\Plugins\HighCharts\highcharts-more.js" />
+    <Content Include="Scripts\Plugins\HighCharts\highcharts.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvas.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvas.min.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvas.svg.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvas.svg.min.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvasIE.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvasIE.min.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\html2canvasIE.svg.min.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\promise.js" />
+    <Content Include="Scripts\Plugins\Html2Canvas\rgbcolor.js" />
+    <Content Include="Scripts\Plugins\ngAutocomplete.js" />
+    <Content Include="Scripts\Plugins\niceScroll.js" />
+    <Content Include="Scripts\Plugins\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\Plugins\xlsx.full.min.js" />
+    <Content Include="Scripts\ReportGenerator\ReportGenerator.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Shared\Landing.js" />
+    <Content Include="Scripts\Shared\LeftPanel.js" />
+    <Content Include="Scripts\Snapshot\Snapshot.js" />
+    <Content Include="Scripts\User Management\UserManagement.js" />
+    <Content Include="Scripts\video.dev.js" />
+    <Content Include="Scripts\video.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\Email\DashboardShare.html" />
+    <Content Include="Templates\Email\DataUpdate.html" />
+    <Content Include="Templates\Email\Kelloggs_mailer.html" />
+    <Content Include="Templates\Email\NewMarketAddition.html" />
+    <Content Include="Templates\CorrespondenceMap_Kellogg%27s_ExportPPT_Template.pptx" />
+    <Content Include="Views\AdvancedAnalytics\OSP.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Crosstab\CrossTab.cshtml" />
+    <Content Include="Views\Shared\Master.cshtml" />
+    <Content Include="Views\Shared\LeftPanel.cshtml" />
+    <Content Include="Templates\Crosstab_Export_Template.xlsx" />
+    <Content Include="Templates\Chart_ExportPPT_Template.pptx" />
+    <Content Include="Views\Snapshot\Snapshot.cshtml" />
+    <Content Include="UserGuide\Crosstab.pdf" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Templates\Snapshot_Excel_Template.xlsx" />
+    <Content Include="Templates\Snapshot_PPT_Template.pptx" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\HttpError404.cshtml" />
+    <Content Include="Views\Error\HttpError500.cshtml" />
+    <Content Include="Views\Shared\_LayoutError.cshtml" />
+    <Content Include="Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Views\UserManagement\UserManagement.cshtml" />
+    <Content Include="Templates\Dashboard_PPT_Template.pptx" />
+    <Content Include="Templates\User_Management_Create_Batch_Users_Template.xlsm" />
+    <Content Include="Templates\User_Management_Delete_Batch_User_Template.xlsx" />
+    <Content Include="Templates\User_Management_Group_List_Template.xlsx" />
+    <Content Include="Templates\User_Management_User_List_Template.xlsx" />
+    <Content Include="UserGuide\Kellogg%27s All Modules User Guide.pdf" />
+    <Content Include="UserGuide\Kellogg%27s Occasion Profile User Guide.pdf" />
+    <Content Include="UserGuide\Kellogg%27s Visual Cross Tab User Guide.pdf" />
+    <Content Include="Views\Error\AccessDenied.cshtml" />
+    <Content Include="Views\Error\NoAccess.cshtml" />
+    <Content Include="UserGuide\Kellogg%27s My Dashboard User Guide.pdf" />
+    <Content Include="Views\ReportGenerator\ReportGenerator.cshtml" />
+    <Content Include="UserGuide\Questionairre.pdf" />
+    <Content Include="UserGuide\RegionalContacts.pdf" />
+    <Content Include="Templates\Report_Generator_Category.pptx" />
+    <Content Include="Templates\Report_Generator_Kids.pptx" />
+    <Content Include="Templates\Report_Generator_OBPPC.pptx" />
+    <Content Include="Templates\Report_Generator_Occasion.pptx" />
+    <Content Include="Templates\OSP_Kellogg%27s_ExportPPT_Template.pptx" />
+    <Content Include="Templates\Report_Generator_Channel_Retailer.pptx" />
+    <Content Include="Templates\Occasion_Strategic_Postures_Excel_Template.xlsx" />
+    <Content Include="Templates\Occasion_Strategic_Postures _Profile_Excel_Template.xlsx" />
+    <Content Include="UserGuide\UserManagementUserGuide.pdf" />
+    <Content Include="Views\AdvancedAnalytics\CorrespondenceMap.cshtml" />
+    <Content Include="UserGuide\Kellogg%27s Report Generator User Guide.pdf" />
+    <Content Include="UserGuide\Kellogg%27s Correspondence Maps User Guide.pdf" />
+    <Content Include="UserGuide\Kellogg%27s Occasion Strategic Postures User Guide.pdf" />
+    <Content Include="Templates\LOV_Usage_Template.xlsx" />
+    <Content Include="Templates\Report_Generator_Channel_Retailer_Nets.pptx" />
+    <Content Include="Templates\Report_Generator_Custom_Category.pptx" />
+    <Content Include="Views\PerformanceDashboard\PerformanceDashboard.cshtml" />
+    <Content Include="Templates\Occasion_Performance_Dashboard.pptx" />
+    <Content Include="Templates\Occasion_Performance_Dashboard.xlsx" />
+    <Content Include="UserGuide\Kellogg%27s Performance Dashboard User Guide.pdf" />
+    <Content Include="Templates\Occasion_Trend_Report.pptx" />
+    <Content Include="Views\Error\Maintainence.cshtml" />
+    <Content Include="Templates\BusinessReviewReport.pptx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Resources\" />
+    <Folder Include="SnapshotImages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AQ.Kelloggs.BAL\AQ.Kelloggs.BAL.csproj">
+      <Project>{cbced9e7-5ebd-4a52-8e3c-fce522284503}</Project>
+      <Name>AQ.Kelloggs.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQ.Kelloggs.DAL\AQ.Kelloggs.DAL.csproj">
+      <Project>{98539bf4-5525-4157-a05c-6f16d42319a3}</Project>
+      <Name>AQ.Kelloggs.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AQ.Kelloggs.Models\AQ.Kelloggs.Models.csproj">
+      <Project>{45ff4075-13a0-492a-b751-bbf205458f2e}</Project>
+      <Name>AQ.Kelloggs.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.16.0.8981\analyzers\SonarAnalyzer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62173</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44300/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

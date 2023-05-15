@@ -1,0 +1,1830 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\KelloggsPublishedProjects\KelloggsNewServerMovement\kelloggs_29_12_2022</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AngularTemplates/LeftPanel.html">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="ApplicationInsights.config">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="App_Code/Helpers.cshtml">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="App_Data/distribution.json">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="AQ.Kelloggs.UI.ruleset">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/28/2021 16:03:39</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="bin/AQ.DAL.dll">
+      <publishTime>10/28/2021 15:59:40</publishTime>
+    </File>
+    <File Include="bin/AQ.Kelloggs.BAL.dll">
+      <publishTime>12/29/2022 15:28:34</publishTime>
+    </File>
+    <File Include="bin/AQ.Kelloggs.DAL.dll">
+      <publishTime>12/29/2022 15:28:03</publishTime>
+    </File>
+    <File Include="bin/AQ.Kelloggs.Models.dll">
+      <publishTime>12/29/2022 15:28:02</publishTime>
+    </File>
+    <File Include="bin/AQ.Kelloggs.UI.dll">
+      <publishTime>12/29/2022 15:28:41</publishTime>
+    </File>
+    <File Include="bin/AQ.Logger.dll">
+      <publishTime>10/28/2021 15:59:40</publishTime>
+    </File>
+    <File Include="bin/AQ.Statistics.dll">
+      <publishTime>12/29/2022 15:27:58</publishTime>
+    </File>
+    <File Include="bin/AQ.Utilities.dll">
+      <publishTime>10/28/2021 15:59:08</publishTime>
+    </File>
+    <File Include="bin/AQLogger.dll">
+      <publishTime>10/28/2021 15:59:22</publishTime>
+    </File>
+    <File Include="bin/Aspose.Slides.dll">
+      <publishTime>10/28/2021 15:58:35</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/28/2021 15:59:55</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/28/2021 15:59:55</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>10/28/2021 15:59:09</publishTime>
+    </File>
+    <File Include="bin/HtmlRenderer.dll">
+      <publishTime>10/09/2014 18:41:18</publishTime>
+    </File>
+    <File Include="bin/HtmlRenderer.WinForms.dll">
+      <publishTime>05/06/2015 10:39:02</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>10/28/2021 15:59:22</publishTime>
+    </File>
+    <File Include="bin/MathNet.Numerics.dll">
+      <publishTime>10/28/2021 15:58:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>10/28/2021 16:03:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>10/28/2021 16:03:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>10/28/2021 16:03:43</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>10/28/2021 16:03:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>10/28/2021 16:03:43</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>10/28/2021 16:03:43</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>10/28/2021 16:03:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>10/28/2021 15:59:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>10/28/2021 15:59:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>10/28/2021 15:59:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Build.dll">
+      <publishTime>11/12/2018 17:37:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Build.Engine.dll">
+      <publishTime>11/12/2018 17:37:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Build.Framework.dll">
+      <publishTime>11/12/2018 17:37:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Build.Tasks.Core.dll">
+      <publishTime>11/12/2018 17:37:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Build.Utilities.Core.dll">
+      <publishTime>11/12/2018 17:37:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>10/28/2021 16:00:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll">
+      <publishTime>10/28/2021 16:00:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.Workspaces.Desktop.dll">
+      <publishTime>10/28/2021 16:01:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>10/28/2021 16:01:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>10/28/2021 16:03:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Graph.Auth.dll">
+      <publishTime>10/28/2021 15:58:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Graph.Core.dll">
+      <publishTime>10/28/2021 15:58:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Graph.dll">
+      <publishTime>10/28/2021 15:58:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Identity.Client.dll">
+      <publishTime>10/28/2021 15:58:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.JsonWebTokens.dll">
+      <publishTime>10/28/2021 15:59:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Logging.dll">
+      <publishTime>10/28/2021 15:59:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Protocols.dll">
+      <publishTime>10/28/2021 15:59:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll">
+      <publishTime>10/28/2021 15:59:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Tokens.dll">
+      <publishTime>10/28/2021 15:59:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>10/28/2021 15:59:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>10/28/2021 16:01:09</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>10/28/2021 16:01:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>10/28/2021 15:59:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>10/28/2021 16:01:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OpenIdConnect.dll">
+      <publishTime>10/28/2021 15:59:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>10/28/2021 15:59:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>10/28/2021 15:59:45</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/28/2021 16:01:14</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>10/28/2021 16:01:15</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>10/28/2021 16:03:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/System.AppContext.dll">
+      <publishTime>10/28/2021 16:01:19</publishTime>
+    </File>
+    <File Include="bin/System.Collections.Immutable.dll">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/System.Composition.AttributedModel.dll">
+      <publishTime>10/28/2021 16:01:08</publishTime>
+    </File>
+    <File Include="bin/System.Composition.Convention.dll">
+      <publishTime>10/28/2021 16:01:09</publishTime>
+    </File>
+    <File Include="bin/System.Composition.Hosting.dll">
+      <publishTime>10/28/2021 16:01:09</publishTime>
+    </File>
+    <File Include="bin/System.Composition.Runtime.dll">
+      <publishTime>10/28/2021 16:01:09</publishTime>
+    </File>
+    <File Include="bin/System.Composition.TypedParts.dll">
+      <publishTime>10/28/2021 16:01:09</publishTime>
+    </File>
+    <File Include="bin/System.Console.dll">
+      <publishTime>10/28/2021 16:01:33</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>10/28/2021 16:01:35</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.StackTrace.dll">
+      <publishTime>10/28/2021 16:01:37</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>10/28/2021 15:59:07</publishTime>
+    </File>
+    <File Include="bin/System.IO.FileSystem.dll">
+      <publishTime>10/28/2021 16:01:51</publishTime>
+    </File>
+    <File Include="bin/System.IO.FileSystem.Primitives.dll">
+      <publishTime>10/28/2021 16:01:54</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>10/28/2021 15:59:57</publishTime>
+    </File>
+    <File Include="bin/System.Reflection.Metadata.dll">
+      <publishTime>10/28/2021 16:03:55</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>10/28/2021 16:02:54</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Encoding.dll">
+      <publishTime>10/28/2021 16:02:55</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Primitives.dll">
+      <publishTime>10/28/2021 16:02:57</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>10/28/2021 16:02:58</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encoding.CodePages.dll">
+      <publishTime>10/28/2021 16:03:04</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Thread.dll">
+      <publishTime>10/28/2021 16:03:23</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>10/28/2021 15:59:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/28/2021 16:03:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>10/28/2021 15:59:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/28/2021 16:03:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/28/2021 16:03:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/28/2021 16:03:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/28/2021 16:03:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/28/2021 16:03:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/28/2021 16:03:45</publishTime>
+    </File>
+    <File Include="bin/System.Xml.XmlDocument.dll">
+      <publishTime>10/28/2021 16:03:37</publishTime>
+    </File>
+    <File Include="bin/System.Xml.XPath.dll">
+      <publishTime>10/28/2021 16:03:31</publishTime>
+    </File>
+    <File Include="bin/System.Xml.XPath.XDocument.dll">
+      <publishTime>10/28/2021 16:03:34</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/28/2021 16:03:59</publishTime>
+    </File>
+    <File Include="Content/AdvancedAnalytics/CorrespondenceMap.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/AdvancedAnalytics/Osp.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap-combined.min.css">
+      <publishTime>10/28/2021 15:56:36</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>10/28/2021 15:56:36</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>10/28/2021 15:56:36</publishTime>
+    </File>
+    <File Include="Content/CrossTab/bootstrap-multiselect.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/CrossTab/CrossTab.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/CrossTab/pagination.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/CrossTab/_chart.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/Dashboard/Dashboard.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-Black.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-BlackItalic.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-Bold.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-BoldItalic.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-Italic.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-Light.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-LightItalic.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/Chivo-Regular.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/CustomFonts.css">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/MYRIADPROREGULAR.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/MYRIADPROREGULAR.woff">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/OFL.txt">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/vjs.eot">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/vjs.svg">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/vjs.ttf">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Fonts/vjs.woff">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/Images/button_play.svg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/download-button.svg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/favicon.ico">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/advana.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/advana_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/bg.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/bg_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/dash.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/dash_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/occpro.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/occpro_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/pdash.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/pdash_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/report.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/report_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/vcrosstab.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/HomePage SVG/vcrosstab_active.svg">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/activeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/activitiesIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/activityHeaderIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/addIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/addToGroupIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/addToGroupIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/addUserIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/advancedAnalyticsIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/advancedAnalyticsIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/avgHHIncomeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/avgIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/avgOccasionIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker0.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker1.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker2.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker3.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker4.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker5.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker6.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker7.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/barMarker8.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/benchmarkIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/benchmarkIcon_Active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/bottomScroll.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/bottomScrollIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/calloutArrow.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/clearIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/closePopupIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/crosstabIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/crosstabIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/dayOfWeekIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/deleteDashboardIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/deleteDashboardIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/deleteSlidesIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/downloadIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/downloadIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/downloadPPTIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/downloadTemplateIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/eatingOccasionIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/editDashboardNameIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/editDashboardNameIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/ethnicityIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/excelicon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/excelIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/expandIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/expandIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/genderIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/generationIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/goToOriginIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/goToOriginIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/headerLogo.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/headRightShadow.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/helpIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/helpIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/homeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/homeIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/householdIncomeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/householdSizeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/inactiveIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/inactiveIcon_delete.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/inactiveIcon_delete_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/infoIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/infoIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/kelloggsIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 117.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 120.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 121.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 130.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 131.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 45.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 45_1.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 46.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 48.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 48_1.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 55.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 62.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 62_1.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 80.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 90.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 91.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 93.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/Kelloggs_Sprite_icon 94.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/leftArrow.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/leftArrow_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/marketIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/marketIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/marketInfoIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/moduleNameIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/motivationIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/myDashboardIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/myDashboardIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/noIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/occasionIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/occasionIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/occasionInfoIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/packageTypeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/pdashIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/pdashIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/pptIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/pptIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/productAttributeIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/purchaseIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/purchaserIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/removeFromGroupIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/removeFromGroupIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/reportBGgrey.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/reportBGred.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/reportIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/reportIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/reportModuleIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/reportModuleIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/rightArrow.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/rightArrow_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/saveFilterIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/saveIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/saveIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/saveSlidesIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/searchUserIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/searchUserIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/selectSlideIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/selectSlideIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/settingIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/settingIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/sharedUserIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/sharedUserIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/shareIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/shareIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/shareOfOccasionIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/shopperMissionHeaderIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/shopperMissionIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/sortIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/sortIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/stackChartIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/stackChartIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/summaryPopupIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/summaryViewIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/tableChartIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/tableChartIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/timeperiodIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/timeperiodIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/timeperiodInfoIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/topScrollIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/topScrollIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/trendChartIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/trendChartIcon_active.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/trendIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/typeOfConsumptionIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/updateIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/updateTimePeriodIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/updateTimePeriodIcon_active.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/uploadIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whatIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whenIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whereHeaderIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whereIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whoIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whoWithHeaderIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whoWithIcon.svg">
+      <publishTime>10/28/2021 15:52:25</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/whyIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/widgetSaveIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/icons SVG/yesIcon.svg">
+      <publishTime>10/28/2021 15:52:26</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs-Loader_large.gif">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs-Loader_small.gif">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_chart_texture.png">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_horizontal_shadow.png">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Login_Landing.jpg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Login_Landing_Sprite.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_mailer_01.jpg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_mailer_02.jpg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_mailer_04.jpg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_mailer_05.jpg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_BG.jpg">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_BRAZIL flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_BRAZIL flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_CANADA flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_CANADA flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_FRANCE flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_FRANCE flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_KOREA flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_KOREA flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_logo.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_MEXICO flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_MEXICO flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_THAILAND flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_THAILAND flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_UK flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_UK flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_USA flag big.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Mailer_Elements/Kelloggs_Mailer_USA flag small.png">
+      <publishTime>10/28/2021 15:52:28</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Menu bg thick.jpg">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Menu bg thin.jpg">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_01.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_02.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_03.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_04.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_05.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_06.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_07.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_08.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_09.svg">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_10.svg">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_11.svg">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_12.svg">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_Sprite_Color_line_13.svg">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/Kelloggs_vertical_shadow.png">
+      <publishTime>10/28/2021 15:52:36</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/5wsIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/5wsIcon_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/addnlFilter.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/addnlFilter_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/arrow.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/arrow_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/benchmark.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/benchmark_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/cancel.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/category.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/category_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/channel.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/channel_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/checkbox.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/checkbox_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/coin.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/column.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/column_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/demographics.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/demographics_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/dimension1.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/dimension1_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/dimension2.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/dimension2_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/distributionIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/distributionIcon_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/downloadIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/down_arrow.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/findOppFor.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/findOppFor_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/fiveWs.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/fiveWs_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/Kelloggs_sprite_icon 32.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/leftPanelIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/leftPanelIcon_Close.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/manufacture.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/manufacture_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/market.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/market_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/moduleArrowIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/motivationIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/motivationIcon_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/occasion.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/occasion_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/plusArrow.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/plusArrow_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/radio.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/radio_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/reportModuleIconLP.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/retail.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/retailValueIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/retailValueIcon_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/retail_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/rowNesting.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/rowNesting_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/rows.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/rows_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/saveFilterIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/search.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/selected-arrow-icon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/submit.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/timeperiod.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/timeperiod_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/unweightedSampleIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/unweightedSampleIcon_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/weightedSampleIcon.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/LeftPanel SVG/weightedSampleIcon_active.svg">
+      <publishTime>10/28/2021 15:52:27</publishTime>
+    </File>
+    <File Include="Content/Images/questionairre_Active.png">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/questionairre_Inactive.png">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/regionalContacts_Active.png">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/regionalContacts_Inactive.png">
+      <publishTime>10/28/2021 15:52:35</publishTime>
+    </File>
+    <File Include="Content/Images/tickIcon.png">
+      <publishTime>10/28/2021 15:52:21</publishTime>
+    </File>
+    <File Include="Content/PerformanceDashboard/PerformanceDashboard.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/ReportGenerator/ReportGenerator.css">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Content/Shared/EmailTemplate.css">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Content/Shared/Landing.css">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Content/Shared/LeftPanel.css">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Content/Shared/Master.css">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>10/28/2021 15:56:36</publishTime>
+    </File>
+    <File Include="Content/Snapshot/Snapshot.css">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/User Management/UserManagement.css">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/video-js.css">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/video-js.less">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/video-js.min.css">
+      <publishTime>10/28/2021 15:56:35</publishTime>
+    </File>
+    <File Include="Content/video-js.swf">
+      <publishTime>10/28/2021 15:56:36</publishTime>
+    </File>
+    <File Include="Content/Videos/Training_Video-Correspondence_Maps.mp4">
+      <publishTime>10/28/2021 15:56:32</publishTime>
+    </File>
+    <File Include="Content/Videos/Training_Video-My_Dashboard.mp4">
+      <publishTime>10/28/2021 15:56:33</publishTime>
+    </File>
+    <File Include="Content/Videos/Training_Video-Occasion_Profile.mp4">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="Content/Videos/Training_Video-Occasion_Strategic_Postures.mp4">
+      <publishTime>10/28/2021 15:56:31</publishTime>
+    </File>
+    <File Include="Content/Videos/Training_Video-Report_Generator.mp4">
+      <publishTime>10/28/2021 15:56:31</publishTime>
+    </File>
+    <File Include="Content/Videos/Training_Video-Visual_Crosstab.mp4">
+      <publishTime>10/28/2021 15:56:34</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/vjs.eot">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/vjs.svg">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/vjs.ttf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="fonts/vjs.woff">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="json/distribution.json">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="json/leftPanelCorrespondenceMap.json">
+      <publishTime>10/28/2021 15:52:18</publishTime>
+    </File>
+    <File Include="json/leftPanelMarketTimePeriod.json">
+      <publishTime>04/13/2022 13:56:30</publishTime>
+    </File>
+    <File Include="json/leftPanelOccasionStrategicPostures.json">
+      <publishTime>10/28/2021 15:52:18</publishTime>
+    </File>
+    <File Include="json/leftPanelPerformanceDashboard.json">
+      <publishTime>10/28/2021 15:52:18</publishTime>
+    </File>
+    <File Include="json/leftPanelReportGenerator.json">
+      <publishTime>06/22/2022 15:15:57</publishTime>
+    </File>
+    <File Include="json/leftPanelSnapshot.json">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/28/2021 15:57:00</publishTime>
+    </File>
+    <File Include="Scripts/AdvancedAnalytics/CorrespondenceMap.js">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Scripts/AdvancedAnalytics/Osp.js">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/Common/App.js">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Scripts/Common/Common.js">
+      <publishTime>12/01/2021 11:28:44</publishTime>
+    </File>
+    <File Include="Scripts/Common/Constans.js">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Scripts/Common/HelperFunction.js">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Scripts/Common/Services.js">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Scripts/CrossTab/bootstrap-multiselect.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/CrossTab/Charts/_chart.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/CrossTab/CrossTab.js">
+      <publishTime>08/17/2022 17:11:05</publishTime>
+    </File>
+    <File Include="Scripts/Dashboard/Dashboard.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.2.1.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/PerformanceDashboard/PerformanceDashboard.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular-animate.min.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular-recursion.min.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular-route.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular.min.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular1.5.8/angular-animate.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular1.5.8/angular-route.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/angular1.5.8/angular.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/AngularAutoComplete.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/bootstrap.min.css">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/bootstrap.min.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/d3/d3.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/d3/d3.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/HighCharts/export-data.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/HighCharts/exporting.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/HighCharts/highcharts-more.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/HighCharts/highcharts.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/canvg.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/canvg.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvas.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvas.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvas.svg.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvas.svg.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvasIE.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvasIE.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/html2canvasIE.svg.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/promise.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/Html2Canvas/rgbcolor.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/ngAutocomplete.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/niceScroll.js">
+      <publishTime>10/28/2021 15:52:08</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/ui-bootstrap-tpls.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/Plugins/xlsx.full.min.js">
+      <publishTime>10/28/2021 15:52:07</publishTime>
+    </File>
+    <File Include="Scripts/ReportGenerator/ReportGenerator.js">
+      <publishTime>07/08/2022 18:30:54</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/Shared/Landing.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/Shared/LeftPanel.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/Snapshot/Snapshot.js">
+      <publishTime>10/28/2021 15:52:06</publishTime>
+    </File>
+    <File Include="Scripts/User Management/UserManagement.js">
+      <publishTime>10/28/2021 15:52:09</publishTime>
+    </File>
+    <File Include="Scripts/video.dev.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/video.js">
+      <publishTime>10/28/2021 15:52:10</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>10/28/2021 15:52:09</publishTime>
+    </File>
+    <File Include="Templates/BusinessReviewReport.pptx">
+      <publishTime>07/11/2022 18:56:58</publishTime>
+    </File>
+    <File Include="Templates/Chart_ExportPPT_Template.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/CorrespondenceMap_Kellogg%27s_ExportPPT_Template.pptx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Crosstab_Export_Template.xlsx">
+      <publishTime>05/25/2022 12:32:56</publishTime>
+    </File>
+    <File Include="Templates/Dashboard_PPT_Template.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Email/DashboardShare.html">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Email/DataUpdate.html">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Email/Kelloggs_mailer.html">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Email/NewMarketAddition.html">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/LOV_Usage_Template.xlsx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Occasion_Performance_Dashboard.pptx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Occasion_Performance_Dashboard.xlsx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Occasion_Strategic_Postures _Profile_Excel_Template.xlsx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Occasion_Strategic_Postures_Excel_Template.xlsx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Occasion_Trend_Report.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/OSP_Kellogg%27s_ExportPPT_Template.pptx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_Category.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_Channel_Retailer.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_Channel_Retailer_Nets.pptx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_Custom_Category.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_Kids.pptx">
+      <publishTime>04/26/2022 21:20:51</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_OBPPC.pptx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/Report_Generator_Occasion.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Snapshot_Excel_Template.xlsx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/Snapshot_PPT_Template.pptx">
+      <publishTime>10/28/2021 15:52:04</publishTime>
+    </File>
+    <File Include="Templates/User_Management_Create_Batch_Users_Template.xlsm">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/User_Management_Delete_Batch_User_Template.xlsx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/User_Management_Group_List_Template.xlsx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="Templates/User_Management_User_List_Template.xlsx">
+      <publishTime>10/28/2021 15:52:05</publishTime>
+    </File>
+    <File Include="UserGuide/Crosstab.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s All Modules User Guide.pdf">
+      <publishTime>10/28/2021 15:56:58</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s Correspondence Maps User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s My Dashboard User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s Occasion Profile User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s Occasion Strategic Postures User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s Performance Dashboard User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s Report Generator User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Kellogg%27s Visual Cross Tab User Guide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/Questionairre.pdf">
+      <publishTime>10/28/2021 15:56:58</publishTime>
+    </File>
+    <File Include="UserGuide/RegionalContacts.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="UserGuide/UserManagementUserGuide.pdf">
+      <publishTime>10/28/2021 15:56:59</publishTime>
+    </File>
+    <File Include="Views/AdvancedAnalytics/CorrespondenceMap.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/AdvancedAnalytics/OSP.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Crosstab/CrossTab.cshtml">
+      <publishTime>12/28/2022 12:39:24</publishTime>
+    </File>
+    <File Include="Views/Dashboard/Dashboard.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Error/AccessDenied.cshtml">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="Views/Error/HttpError404.cshtml">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="Views/Error/HttpError500.cshtml">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="Views/Error/Index.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Error/Maintainence.cshtml">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="Views/Error/NoAccess.cshtml">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Home/Home.cshtml">
+      <publishTime>07/28/2022 16:19:54</publishTime>
+    </File>
+    <File Include="Views/Login/Login.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Login/Register.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/PerformanceDashboard/PerformanceDashboard.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/ReportGenerator/ReportGenerator.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Shared/LeftPanel.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Shared/Master.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutError.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Snapshot/Snapshot.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/UserManagement/UserManagement.cshtml">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/28/2021 15:52:20</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/28/2021 15:52:19</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/29/2022 15:28:43</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

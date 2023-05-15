@@ -1,0 +1,232 @@
+﻿.domain, .ticks {
+    fill: none;
+    stroke: none;
+}
+
+.y.axis .domain {
+    stroke: #eaeaea !important;
+    stroke-width: 1px !important;
+}
+
+svg text {
+    /*font-family: Montserrat;*/
+    font-size: 0.9vw;
+    /*font-size: 1em;*/
+    color: #000000;
+}
+
+.stop-one {
+    stop-color: #3f51b5;
+}
+
+.stop-two {
+    stop-color: #009688;
+}
+/**********Spider*********/
+.radar-chart .area {
+    fill-opacity: 0.7;
+}
+
+.radar-chart.focus .area {
+    fill-opacity: 0.7;
+}
+
+    .radar-chart.focus .area.focused {
+        fill-opacity: 0.7;
+    }
+
+.radar-chart .circle {
+    z-index: 999;
+}
+
+.radar-chart .axis text {
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 0.8vw !important;
+}
+
+.radar-chart .axis .legend.right {
+    text-anchor: start !important;
+    transform: translate(-15px, 0px);
+}
+
+.radar-chart .axis .legend.left {
+    text-anchor: end !important;
+    transform: translate(15px, 0px);
+}
+
+.radar-chart .axis .legend.middle {
+    text-anchor: middle !important;
+    transform: translate(0px, -10px);
+}
+/*************************/
+/*Tooltip*/
+.d3_tooltip {
+    position: fixed;
+    text-align: center;
+    width: auto;
+    /*font-family: Montserrat;*/
+    height: auto;
+    padding: 5px 8px;
+    color: #666;
+    z-index: 9999;
+    /*font-weight: 100;*/
+    line-height: 15px;
+    font-size: 0.9vw;
+    background: #fff;
+    border: 0px;
+    /*border-radius: 8px;*/
+    pointer-events: none;
+    box-shadow: 1px 1px 5px 2px rgba(0,0,0,0.1);
+}
+
+    .d3_tooltip::before {
+        content: '';
+        position: absolute;
+        top: calc(100% - 1px);
+        left: calc(50% - 7px);
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #fff;
+        z-index: 99999;
+    }
+
+/* Legends */
+.legend-container-hr {
+    width: 100%;
+    position: absolute;
+    bottom: -0.5vw;
+    left: 0;
+    height: 4vw;
+    text-align: center;
+}
+
+.legend-items-hr {
+    width: auto;
+    height: 1.4vw;
+    margin: 0.14vw 0.56vw;
+    display: inline-block;
+    border-bottom: 0.1vw solid #dadada;
+    box-sizing: border-box;
+    font-size: 0.8vw;
+    color: #555555;
+    line-height: 1.4vw;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 13.2vw;
+}
+
+    .legend-items-hr.no-border, .legend-items-vr.no-border {
+        border: none;
+    }
+
+.legend-left-bdr {
+    width: 5px;
+    /*height: 100%;*/
+    height: 20px;
+    float: left;
+}
+
+.legend-sqr-bdr {
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin: 4px 0px;
+}
+
+.legend-container-vr {
+    width: 200px;
+    position: absolute;
+    display: inline-flex;
+    top: -5px;
+    right: 0;
+    height: 100%;
+    text-align: left;
+}
+
+.legend-items-vr {
+    width: 100%;
+    /*height: 20px;*/
+    height: auto;
+    margin: 5px 0px;
+    display: block;
+    border-bottom: 1.3px solid #dadada;
+    box-sizing: border-box;
+    font-size: 0.8vw;
+    color: #555555;
+    line-height: 19px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.legend-radio {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #3f51b5;
+    float: left;
+    margin: 4px 0px;
+    position: relative;
+}
+
+    .legend-radio .inner_circle {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        float: left;
+        margin: 2px 2px;
+    }
+
+.labelDisabled {
+    background-color: #dadada;
+}
+
+.node {
+    cursor: pointer;
+}
+
+    .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 3px;
+    }
+
+    .node text {
+        font: 12px sans-serif;
+    }
+
+/*.link {
+    fill: none;
+    stroke: #AAA;
+    stroke-width: 1px;
+}*/
+
+.chkbox {
+    background: url('../Images/LeftPanel SVG/checkbox.svg');
+    width: 1vw;
+    height: 1vw;
+    margin-left: 16%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(0.94);
+    margin-top: 0.2vw;
+}
+
+.chkbox_active {
+    background: url('../Images/LeftPanel SVG/checkbox_active.svg');
+   width: 1vw;
+    height: 1vw;
+    margin-left: 16%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(0.94);
+    margin-top: 0.2vw;
+}

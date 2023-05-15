@@ -1,0 +1,101 @@
+2022-10-16 00:12:52,780 [28] ERROR  Application (null) (null) - Name:Sabat.Ullah@kantar.com
+2022-10-16 00:13:30,305 [28] ERROR  Application (null) (null) -    at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 268
+2022-10-16 00:13:30,880 [28] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:13:36,869 [28] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:15:47,577 [12] ERROR  Application (null) (null) - Name:AQ\11173
+2022-10-16 00:17:35,547 [12] ERROR  Application (null) (null) -    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Translator.TranslateColumnMap(Translator translator, Type elementType, ColumnMap columnMap, MetadataWorkspace workspace, SpanIndex spanIndex, MergeOption mergeOption, Boolean streaming, Boolean valueLayer)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassc.<GetResultsAsync>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<GetResultsAsync>d__e.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Internal.LazyAsyncEnumerator`1.<FirstMoveNextAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Infrastructure.IDbAsyncEnumerableExtensions.<FirstOrDefaultAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()
+   at Microsoft.AspNet.Identity.EntityFramework.UserStore`6.<GetUserAggregateAsync>d__67.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.AsyncHelper.RunSync[TResult](Func`1 func)
+   at Microsoft.AspNet.Identity.UserManagerExtensions.FindByName[TUser,TKey](UserManager`2 manager, String userName)
+   at AQ.Kelloggs.UI.Controllers.CommonController.CheckUser(String username, String env) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 338
+   at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 268
+2022-10-16 00:17:36,204 [12] ERROR  Application (null) (null) - Exception has been thrown by the target of an invocation.
+2022-10-16 00:17:44,033 [12] ERROR  Application (null) (null) - Exception has been thrown by the target of an invocation.
+2022-10-16 00:18:10,166 [12] ERROR  Application (null) (null) - Name:111
+2022-10-16 00:18:10,213 [12] ERROR  Application (null) (null) -    at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 268
+2022-10-16 00:18:10,217 [12] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:18:25,955 [12] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:18:39,644 [12] ERROR  Application (null) (null) - Name:111
+2022-10-16 00:18:39,667 [12] ERROR  Application (null) (null) -    at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 268
+2022-10-16 00:18:39,668 [12] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:18:41,298 [12] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:19:37,740 [28] ERROR  Application (null) (null) - Name:AQ\11173
+2022-10-16 00:19:37,779 [28] ERROR  Application (null) (null) -    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Translator.TranslateColumnMap(Translator translator, Type elementType, ColumnMap columnMap, MetadataWorkspace workspace, SpanIndex spanIndex, MergeOption mergeOption, Boolean streaming, Boolean valueLayer)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassc.<GetResultsAsync>b__a()
+   at System.Data.Entity.Core.Objects.ObjectContext.<ExecuteInTransactionAsync>d__3d`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<ExecuteAsyncImplementation>d__9`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<GetResultsAsync>d__e.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Internal.LazyAsyncEnumerator`1.<FirstMoveNextAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Data.Entity.Infrastructure.IDbAsyncEnumerableExtensions.<FirstOrDefaultAsync>d__25`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.TaskExtensions.CultureAwaiter`1.GetResult()
+   at Microsoft.AspNet.Identity.EntityFramework.UserStore`6.<GetUserAggregateAsync>d__67.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNet.Identity.AsyncHelper.RunSync[TResult](Func`1 func)
+   at Microsoft.AspNet.Identity.UserManagerExtensions.FindByName[TUser,TKey](UserManager`2 manager, String userName)
+   at AQ.Kelloggs.UI.Controllers.CommonController.CheckUser(String username, String env) in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 338
+   at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 268
+2022-10-16 00:19:37,781 [28] ERROR  Application (null) (null) - Exception has been thrown by the target of an invocation.
+2022-10-16 00:19:50,761 [28] ERROR  Application (null) (null) - Exception has been thrown by the target of an invocation.
+2022-10-16 00:20:33,302 [15] ERROR  Application (null) (null) - Name:11173
+2022-10-16 00:20:33,355 [15] ERROR  Application (null) (null) -    at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 268
+2022-10-16 00:20:33,358 [15] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:20:35,888 [15] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 00:21:17,564 [15] ERROR  Application (null) (null) - Name:AQ\11173
+2022-10-16 00:22:47,242 [14] ERROR  Application (null) (null) - Name:AQ\11173
+2022-10-16 01:14:02,703 [11] ERROR  Application (null) (null) - Name:1117
+2022-10-16 01:14:02,761 [11] ERROR  Application (null) (null) -    at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 274
+2022-10-16 01:14:02,763 [11] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 01:14:04,981 [11] ERROR  Application (null) (null) - Index was outside the bounds of the array.
+2022-10-16 01:14:50,293 [11] ERROR  Application (null) (null) - Name:AQ\11173

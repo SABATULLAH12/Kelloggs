@@ -1,0 +1,724 @@
+﻿@using AQ.Kelloggs.Resources
+@{
+    ViewBag.Title = @Resources.UserManagement;
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta content="utf-8" http-equiv="encoding">
+<script src="~/Scripts/Plugins/ui-bootstrap-tpls.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-combined.min.css" rel="stylesheet" />
+
+
+
+@*<link href="~/Content/Shared/Master.css" rel="stylesheet" />*@
+<script>
+    document.write('<link href="../Content/User Management/UserManagement.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<script src="../Scripts/User Management/UserManagement.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+</script>
+<script src="~/Scripts/Plugins/xlsx.full.min.js"></script>
+<div class="view-container" ng-controller="User-Management-Controller">
+    <div class="view-load usermanagement" ng-click="hideLeftPanel()">
+        <div class="userManagementHeader">
+            <div class="headerIcon"></div>
+            <div class="headerText"><div class="middleAlign">{{HeaderName}}</div></div>
+        </div>
+        <div class="userManagementContainer">
+            <div class="containerTabs">
+                <div id="manageUsers" class="headerButton active" ng-click="selectHeader(1)">
+                    <div class="middleAlign">MANAGE USERS</div>
+                </div>
+                <div id="manageBatchUsers" class="headerButton" ng-click="selectHeader(2)">
+                    <div class="middleAlign">MANAGE BATCH USERS</div>
+                </div>
+                <div id="groups" class="headerButton" ng-click="selectHeader(3)">
+                    <div class="middleAlign">GROUPS</div>
+                </div>
+            </div>
+            <div id="manageUsersContainer">
+                <div class="containerOptions">
+                    <div class="addContainer" ng-click="addUserData()">
+                        <div class="addIcon-container middleAlign"></div>
+                        <div class="add-text-container middleAlign">ADD USER</div>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search" class="searchBox" ng-model="searchText.text" ng-keyup="updateFilteredList(searchText.text)" />
+                        <div class="searchIcon-container middleAlign">
+                            <div class="searchIcon"></div>
+                        </div>
+                        <div class="search-item-container">
+                            <div class="search-item" ng-repeat="item in dataList|search:{searchText : searchText.text}" ng-bind-html="getTrustedHtml(item)" ng-click="searchItemClick(item,searchText)">
+                                @*<div class="middleAlign">{{item.username}}</div>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerList">
+                    <div id="manage-users-table">
+                        <div class="headers-table">
+                            <div class="headers-container" id={{headers.className}} ng-style="{'width':headers.width_style}" ng-repeat="headers in UsersTableHeaders">
+                                <div class="columnShadow" ng-if="headers.headerName != 'MANAGE USERS'"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="heading-container">
+                                    <div class="heading-name"><div class="middleAlign">{{headers.headerName}}</div></div>
+                                    <div class="heading-border"></div>
+                                </div>
+                                <div class="heading-icon-container">
+                                    <div class="heading-icon" ng-if="headers.headerName != 'MANAGE USERS'" ng-click="sortTable($event)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-container" ng-repeat="user in dataList|filter:searchText.text" ng-if="filteredDataList.indexOf(user.UserID) > -1">
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[0].width_style,'text-align':'center'}" title="{{ user.UserID }}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{ user.UserID }}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[1].width_style}" title="{{ user.UserName }}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{ user.UserName }}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[2].width_style}" title="{{user.Email}}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{user.Email}}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[3].width_style}" title="{{user.Department}}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{user.Department}}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[4].width_style}" title="{{user.Role}}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{user.Role}}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[5].width_style,'text-align':'center'}" title="{{user.DateCreated.split(' ')[0]}}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{user.DateCreated.split(' ')[0]}}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[6].width_style}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="status-option" ng-if="user.IsActive">
+                                    <div class="status-option-div">
+                                        <div class="middleAlign">
+                                            <div class="status-option-active"></div>
+                                        </div>
+                                    </div>
+                                    <div class="status-option-text"><div class="middleAlign">Active</div></div>
+                                </div>
+                                <div class="status-option" ng-if="!user.IsActive">
+                                    <div class="status-option-div">
+                                        <div class="middleAlign">
+                                            <div class="status-option-inactive"></div>
+                                        </div>
+                                    </div>
+                                    <div class="status-option-text"><div class="middleAlign">Inactive</div></div>
+                                </div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[7].width_style,'text-align':'center'}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{user.LastActivityDate}}</div>
+                            </div>
+                            <div class="table-data user-table" ng-style="{'width':UsersTableHeaders[8].width_style}">
+                                <div class="edit-delete-div">
+                                    <div class="middleAlign">
+                                        <div class="edit-data-row" data-id={{user.UserID}} ng-click="editUserData($event)"></div>
+                                    </div>
+                                </div>
+                                <div class="edit-delete-div">
+                                    <div class="middleAlign">
+                                        <div class="inactive-data-row" data-id={{user.UserID}} ng-click="deleteUserData($event,user,0)"></div>
+                                    </div>
+                                </div>
+                                <div class="edit-delete-div">
+                                    <div class="middleAlign">
+                                        <div class="delete-data-row" data-id={{user.UserID}} ng-click="deleteUserData($event,user,1)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerFooter">
+                    <div class="exportDataContainer middleAlign" ng-click="Exports('ExportUserData')">
+                        <div class="exportIcon-container middleAlign"></div>
+                        <div class="exportData-container middleAlign">EXPORT USER DATA</div>
+                    </div>
+                    <div id="paginationContainer" class="user">
+                        <div data-pagination="" data-num-pages="numPages()"
+                             data-current-page="currentPage" data-max-size="maxSize"
+                             data-boundary-links="true"></div>
+                        <div id="go-to-container">
+                            <div class="goToPage"><div class="middleAlign">Go to page</div></div>
+                            <input id="go-to-box" class="user" type="number" min="1" value="1" />
+                            <div id="go-to-button" ng-click="setPage()">
+                                <div id="go-to-text"><div class="middleAlign">Go</div></div>
+                                <div class="goToIconDiv">
+                                    <div class="middleAlign">
+                                        >>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="popupContainer" id="addUserPopupContainer">*@
+                <div class="popupContainer-content popupContainer" id="addUserPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText">ADD USER</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer">
+                        <div class="popupDetails">
+                            <div class="detailWrapper">
+                                <div class="email">EMAIL</div>
+                                <div class="search-container">
+                                    <input type="text" placeholder="Search" class="searchBox" ng-model="searchByEmail" />
+                                </div>
+                                <div class="searchIcon-container">
+                                    <div class="searchIcon" ng-click="findData(searchByEmail)"></div>
+                                </div>
+                                @*<div class="search-item-container">
+                                        <div class="search-item" ng-repeat="item in dataList|search:{searchText : searchText.text}" ng-bind-html="getTrustedHtml(item)" ng-click="searchItemClick(item,searchText)">
+                                            @*<div class="middleAlign">{{item.username}}</div>
+                                        </div>
+                                    </div>*@
+                            </div>
+
+                            <div id="user-details">
+                                <div class="headers-table" style="height:21%;margin-left: 1%; width: 98%;padding-right: 0;">
+                                    <div class="headers-container" id={{headers.className}} ng-style="{'width':headers.width_style}" ng-repeat="headers in AddUsersTableHeader">
+                                        <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                        <div class="heading-container" style="width:100%;padding: 0 0.73vw; padding-top: 0.5vw;">
+                                            <div class="heading-name">{{headers.headerName}}</div>
+                                            <div class="heading-border"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data-container-list">
+                                    <div class="data-container" ng-repeat="user in results|filter:searchByEmail">
+
+                                        <div class="table-data user-table" ng-style="{'width':AddUsersTableHeader[0].width_style,'text-align':'center'}">
+                                            <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                            <div class="radio-icon" ng-click="selectUser($event,user)" style="margin-top: 0.3vw;"></div>{{user.UserID }}
+                                        </div>
+                                        <div class="table-data user-table" ng-style="{'width':AddUsersTableHeader[1].width_style}">
+                                            <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                            {{user.UserName }}
+                                        </div>
+                                        <div class="table-data user-table" ng-style="{'width':AddUsersTableHeader[2].width_style}">
+                                            <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                            {{user.Email}}
+                                        </div>
+                                        <div class="table-data user-table" ng-style="{'width':AddUsersTableHeader[3].width_style}">
+                                            <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                            {{user.BusinessUnit}}
+                                        </div>
+                                        <div class="table-data user-table" ng-style="{'width':AddUsersTableHeader[4].width_style}">
+                                            <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                            {{user.Department}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detailWrapper" style="margin-top:7%">
+                                <div class="role-dropdown">
+                                    <div class="dropdown-header-text">ROLE</div>
+                                    <div id="role-add-popup" class="dropdown-bar" ng-click="showDropdownList($event)">
+                                        <input type="text" placeholder="Select" class="dropdownBox" disabled value={{selectedRole}} />
+                                        <i class="arrow down"></i>
+                                    </div>
+                                    <div class="dropdown-list">
+                                        <div class="{{roles.className}} add-popup dropdown-option" ng-repeat="roles in Roles" ng-click="selectRolesDropdownOption($event,roles)">
+                                            <div class="radio-icon middleAlign"></div>
+                                            <div class="dropdown-list-values"><div class="middleAlign">{{roles.role}} </div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="group-dropdown">
+                                    <div class="dropdown-header-text">GROUP</div>
+                                    <div id="group-add-popup" class="dropdown-bar" ng-click="showDropdownList($event)">
+                                        <input type="text" placeholder="Select" class="dropdownBox" disabled value={{selectedGroup}} />
+                                        <i class="arrow down"></i>
+                                    </div>
+                                    <div class="dropdown-list">
+                                        <div class="{{groups.className}} add-popup dropdown-option" ng-repeat="groups in GroupsList" ng-click="selectGroupDropdownOption($event,groups)">
+                                            <div class="checkbox-icon middleAlign"></div>
+                                            <div class="dropdown-list-values"><div class="middleAlign">{{groups.GroupName}} </div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popupButton" ng-click="addUser()" style="height: 6.1%;">
+                                    <div class="button-icon middleAlign"></div>
+                                    <div class="button-text"><div class="middleAlign">ADD</div></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                @*</div>*@
+                @*<div class="popupContainer" id="editUserPopupContainer">*@
+                <div class="popupContainer-content popupContainer" id="editUserPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText">EDIT USER</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer">
+                        <div class="popupDetails">
+                            <div class="name-container">
+                                <div class="name">NAME</div>
+                                <input type="text" class="name-textbox" value={{selectedUsername}} disabled style="box-shadow:none !important">
+                            </div>
+                            <div id="email-container">
+                                <div class="email">EMAIL</div>
+                                <input type="text" id="email-textbox" value={{selectedEmail}} disabled style="box-shadow:none !important">
+                            </div>
+                            <div class="role-dropdown">
+                                <div class="dropdown-header-text">ROLES</div>
+                                <div id="role-edit-popup" class="dropdown-bar" ng-click="showDropdownList($event)">
+                                    <input type="text" placeholder="Select" class="dropdownBox" disabled value={{selectedRole}}>
+                                    <i class="arrow down"></i>
+                                </div>
+                                <div class="dropdown-list">
+                                    <div class="{{role.className}} edit-popup dropdown-option" ng-repeat="role in Roles" ng-click="selectRolesDropdownOption($event,role)">
+                                        <div class="radio-icon{{role.isSelected ? ' active':''}} middleAlign"></div>
+                                        <div class="dropdown-list-values{{role.isSelected ? ' active':''}}"> <div class="middleAlign">{{role.role}}</div> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group-dropdown">
+                                <div class="dropdown-header-text">GROUP</div>
+                                <div id="group-edit-popup" class="dropdown-bar" ng-click="showDropdownList($event)">
+                                    <input type="text" placeholder="Select" class="dropdownBox" disabled value={{selectedGroup}}>
+                                    <i class="arrow down"></i>
+                                </div>
+                                <div class="dropdown-list">
+                                    <div class="{{group.className}} edit-popup dropdown-option" ng-repeat="group in GroupsList" ng-click="selectGroupDropdownOption($event,group)">
+                                        <div class="checkbox-icon{{group.isSelected ? ' active':''}} middleAlign"></div>
+                                        <div class="dropdown-list-values{{group.isSelected ? ' active':''}}"><div class="middleAlign">{{group.GroupName}} </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="status-container">
+                                <div id="status">STATUS</div>
+                                <div id="status-popup" class="dropdown-bar" ng-click="showDropdownList($event)">
+                                    <input type="text" placeholder="Select" class="dropdownBox" disabled value={{selectedStatus}}>
+                                    <i class="arrow down"></i>
+                                </div>
+                                <div class="dropdown-list">
+                                    <div class="{{status.className}} edit-popup dropdown-option" ng-repeat="status in Status" ng-click="selectStatusDropdownOption($event,status)">
+                                        <div class="radio-icon{{status.isSelected ? ' active':''}} middleAlign"></div>
+                                        <div class="dropdown-list-values{{status.isSelected ? ' active':''}}"> <div class="middleAlign">{{status.status}} </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popupButton" ng-click="editUser($event)">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">SAVE</div>
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+                @*<div class="popupContainer deleteUserPopupContainer">*@
+                <div class="popupContainer-content popupContainer deleteUserPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText" style="padding-left: 2%;">ALERT</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer middleAlign">
+                        <div class="delete-popup-content">
+                            <span style="margin-left: 8%;">The user will no longer have access to LOV.</span>
+                            <span style="padding-left: 6%;">Do you want to continue?</span>
+                        </div>
+                        <div class="popupButton yes-delete-popup" ng-click="deleteUser($event)">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">YES</div>
+                        </div>
+                        <div class="popupButton no-delete-popup" ng-click="closePopup()">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">NO</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popupContainer-content popupContainer hardDeleteUserPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText" style="padding-left: 2%;">ALERT</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer middleAlign">
+                        <div class="delete-popup-content">
+                            <span>The user will no longer exist in the LOV.</span><br />
+                            <span>Do you want to continue?</span>
+                        </div>
+                        <div class="popupButton yes-delete-popup" ng-click="hardDeleteUser($event)">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">YES</div>
+                        </div>
+                        <div class="popupButton no-delete-popup" ng-click="closePopup()">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">NO</div>
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+            </div>
+            <div id="manageBatchUsersContainer">
+                <div class="containerList">
+                    <div class="displayUserReason" style="box-shadow: 0.3vw 0.4vw 0.4vw -0.15vw rgba(0,0,0,0.1);">
+                        <div class="header">
+                            <div class="middleAlign">Create</div>
+                            <div class="heading-border" style="margin-left: calc((100% - 1vw) / 2);  position: absolute; margin-top: 3%;"></div>
+                        </div>
+                        <div class="table-header">
+                            <div class="table-header-content">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                <div class="middleAlign">EMAIL</div>
+                                <div class="heading-border" style="position: relative;margin-top: 11.5%;margin-left: 45%;">
+                                </div>
+                            </div>
+                            <div class="table-header-content">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                <div class="middleAlign">ADDED(Y/N)</div>
+
+                                <div class="heading-border" style="position: relative;margin-top: 11.5%;margin-left: 45%;">
+                                </div>
+                            </div>
+                            <div class="table-header-content">
+                                <div class="middleAlign">REASON</div>
+                                <div class="heading-border" style="position: relative;margin-top: 11.5%;margin-left: 45%;">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="detail-table">
+                            <div class="detail-table-content" ng-repeat="user in BatchUserList">
+                                <div class="detail-header-content">
+                                    <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                    <div class="middleAlign">{{user.Email}}</div>
+
+                                </div>
+
+                                <div class="detail-header-content">
+                                    <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                    <div class="middleAlign">{{user.Added}}</div>
+                                </div>
+
+                                <div class="detail-header-content">
+                                    <div class="middleAlign">{{user.Reason}}</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="containerFooter">
+
+
+                            <div class="exportDataContainer middleAlign" id="manage-users-dctc" ng-click="Exports('CreateBatchUsers')">
+                                <div class="exportIcon-container middleAlign" id="manage-users-dcti"></div>
+                                <div class="exportData-container middleAlign" id="manage-users-dctt">DOWNLOAD CREATE TEMPLATE</div>
+                            </div>
+
+                            <div class="exportDataContainer middleAlign" id="manage-users-dctuc">
+                                <div class="exportIcon-container middleAlign" id="manage-users-dctui"></div>
+                                <div class="exportData-container middleAlign" id="manage-users-dctut"><input type="file" id="uploadExcel" name="files" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,.xlsm" files=[] onchange="deleteUserExcel(files,0)" />UPLOAD</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="displayUserReason">
+                        <div class="header">
+                            <div class="middleAlign">Delete</div>
+                            <div class="heading-border" style="margin-left: calc((100% - 1vw) / 2);position: absolute ;margin-top: 3%;">
+                            </div>
+                        </div>
+
+                        <div class="table-header" style="margin-left: 0.8%;">
+                            <div class="table-header-content">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                <div class="middleAlign">EMAIL</div>
+                                <div class="heading-border" style="position: relative;margin-top: 11.5%;margin-left: 45%;">
+                                </div>
+                            </div>
+                            <div class="table-header-content">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                <div class="middleAlign">DELETED(Y/N)</div>
+                                <div class="heading-border" style="position: relative;margin-top: 11.5%;margin-left: 45%;">
+
+                                </div>
+
+                            </div>
+                            <div class="table-header-content">
+                                <div class="middleAlign">REASON</div>
+                                <div class="heading-border" style="position: relative;margin-top: 11.5%;margin-left: 45%;">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="detail-table">
+                            <div class="detail-table-content" ng-repeat="user in DeleteBatchUserList" style="margin-left: 0.8%;">
+
+                                <div class="detail-header-content">
+                                    <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                    <div class="middleAlign">{{user.Email}}</div>
+
+                                </div>
+
+                                <div class="detail-header-content">
+                                    <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                    <div class="middleAlign">{{user.Deleted}}</div>
+                                </div>
+
+                                <div class="detail-header-content">
+                                    <div class="middleAlign">{{user.Reason}}</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="containerFooter">
+
+                            <div class="exportDataContainer middleAlign" id="manage-users-ddtc" ng-click="Exports('DeleteBatchUsers')">
+                                <div class="exportIcon-container middleAlign" id="manage-users-ddti"></div>
+                                <div class="exportData-container middleAlign" id="manage-users-ddtt">DOWNLOAD DELETE TEMPLATE</div>
+                            </div>
+                            <div class="exportDataContainer middleAlign" id="manage-users-ddtuc">
+                                <div class="exportIcon-container middleAlign" id="manage-users-ddtui"></div>
+                                <div class="exportData-container middleAlign" id="manage-users-ddtut"><input type="file" id="uploadExcel" name="files" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,.xlsm" files=[] onchange="deleteUserExcel(files,1)" />UPLOAD</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="groupsContainer">
+                <div class="containerOptions">
+                    <div class="addContainer" ng-click="addGroup()">
+                        <div class="addIcon-container middleAlign"></div>
+                        <div class="add-text-container middleAlign">ADD GROUP</div>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search" class="searchBox" ng-model="searchText.text" ng-keyup="updateFilteredGroupList(searchText.text)" />
+                        <div class="searchIcon-container middleAlign">
+                            <div class="searchIcon"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerList">
+                    <div id="manage-groups-table">
+                        <div class="headers-table">
+                            <div class="headers-container" id={{headers.className}} ng-style="{'width':headers.width_style}" ng-repeat="headers in GroupsTablesHeaders">
+                                <div class="columnShadow" ng-if="headers.headerName != 'MANAGE USERS'"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+
+                                <div class="heading-container">
+                                    <div class="heading-name"><div class="middleAlign">{{headers.headerName}}</div></div>
+                                    <div class="heading-border"></div>
+                                </div>
+                                <div class="heading-icon-container">
+                                    <div class="heading-icon" ng-if="headers.headerName != 'MANAGE USERS'" ng-click="sortGroupTable($event)" style="margin-right: 13%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-container" ng-repeat="group in GroupsList|filter:searchText.text" ng-if="filteredGroupList.indexOf(group.GroupName) > -1">
+                            <div class="table-data group-table" ng-style="{'width':GroupsTablesHeaders[0].width_style}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{ group.GroupName }}</div>
+                            </div>
+                            <div class="table-data group-table" ng-style="{'width':GroupsTablesHeaders[1].width_style}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{ group.CreatedBy}}</div>
+                            </div>
+                            <div class="table-data group-table" ng-style="{'width':GroupsTablesHeaders[2].width_style,'text-align': 'center', 'padding-right': '4%'}">
+                                <div class="columnShadow"><img no-repeat="" src="../Content/Images/Kelloggs_vertical_shadow.png"></div>
+                                <div class="middleAlign">{{ group.DateCreated.split(' ')[0]}}</div>
+                            </div>
+                            <div class="table-data group-table" ng-style="{'width':GroupsTablesHeaders[3].width_style}">
+                                <div class="edit-delete-div">
+                                    <div class="middleAlign">
+                                        <div class="edit-data-row" data-id={{group.GroupName}} ng-click="editGroupData($event,group)"></div>
+                                    </div>
+                                </div>
+                                <div class="edit-delete-div">
+                                    <div class="middleAlign">
+                                        <div class="delete-data-row" data-id={{group.GroupName}} ng-click="deleteUserData($event,group)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerFooter">
+                    <div class="exportDataContainer middleAlign" ng-click="Exports('ExportGroupData')">
+                        <div class="exportIcon-container middleAlign"></div>
+                        <div class="exportData-container middleAlign">EXPORT GROUP DATA</div>
+                    </div>
+                    <div id="paginationContainer" class="group">
+                        <div data-pagination="" data-num-pages="numGroupPages()"
+                             data-current-page="currentGroupPage" data-max-size="maxSize"
+                             data-boundary-links="true"></div>
+                        <div id="go-to-container">
+                            <div class="goToPage"><div class="middleAlign">Go to page</div></div>
+                            <input id="go-to-box" class="group" type="number" value="1" />
+                            <div id="go-to-button" ng-click="setGroupPage()">
+                                <div id="go-to-text"><div class="middleAlign">Go</div></div>
+                                <div class="goToIconDiv">
+                                    <div class="middleAlign">
+                                        >>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="popupContainer" id="addGroupPopupContainer">*@
+                <div class="popupContainer-content popupContainer" id="addGroupPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText" style="padding-left: 2%;">ADD GROUP</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer">
+                        <div class="popupDetails">
+                            <div class="name-container">
+                                <div class="name">GROUP NAME</div>
+                                <input type="text" class="name-textbox" ng-model="newGroupName" />
+                            </div>
+                            <div id="add-users-container">
+                                <div class="name">ADD USERS</div>
+                                <div id="available-users-container">
+                                    <div class="search-container">
+                                        <input type="text" placeholder="Search" class="searchBox" ng-model="searchTextByName.text" />
+                                        <div class="searchIcon-container middleAlign">
+                                            <div class="searchIcon"></div>
+                                        </div>
+                                    </div>
+                                    <div class="users-group-container">
+                                        <div class="users-group-header">Users Available</div>
+                                        <div class="users-group-list">
+                                            <div class="user-list" ng-repeat="user in Users|filter:searchTextByName.text" ng-click="selectUsersForGroup($event,user)">
+                                                <div class="checkbox-icon middleAlign"></div>
+                                                <div class="username-list middleAlign" style="height: 88%;">{{user.UserName}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="icons-container">
+                                    <div id="add-group-icon1" ng-click="addUsersToGroup()"></div>
+                                    <div id="add-group-icon2" ng-click="removeUsersFromGroup()"></div>
+                                </div>
+                                <div id="added-users-container">
+                                    <div class="users-group-container">
+                                        <div class="users-group-header">Users in the Group</div>
+                                        <div class="users-group-list" style="height: 83%;">
+                                            <div class="user-list" ng-repeat="user in usersAddedToGroupList" ng-click="selectUsersToRemoveFromGroup($event,user)">
+                                                <div class="checkbox-icon middleAlign"></div>
+                                                <div class="username-list middleAlign">{{user.UserName}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popupButton" ng-click="saveGroup()">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text"><div class="middleAlign">SAVE</div></div>
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+                @*<div class="popupContainer" id="editGroupPopupContainer">*@
+                <div class="popupContainer-content popupContainer" id="editGroupPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText" style="padding-left: 2%;">EDIT GROUP</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer">
+                        <div class="popupDetails">
+                            <div class="name-container">
+                                <div class="name">GROUP NAME</div>
+                                <input type="text" class="name-textbox" ng-model="newGroupName">
+                            </div>
+                            <div id="add-users-container">
+                                <div class="name">ADD USERS</div>
+                                <div id="available-users-container">
+                                    <div class="search-container">
+                                        <input type="text" placeholder="Search" class="searchBox" ng-model="searchTextByName.text" />
+                                        <div class="searchIcon-container middleAlign">
+                                            <div class="searchIcon"></div>
+                                        </div>
+                                    </div>
+                                    <div class="users-group-container">
+                                        <div class="users-group-header">Users Available</div>
+                                        <div class="users-group-list">
+                                            <div class="user-list" ng-repeat="user in UsersNotAddedToGroup|filter:searchTextByName.text" ng-click="selectUsersForGroup($event,user)">
+                                                <div class="checkbox-icon middleAlign"></div>
+                                                <div class="username-list middleAlign" style="height: 88%;">{{user.UserName}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="icons-container">
+                                    <div id="add-group-icon1" ng-click="editUsersToGroup()"></div>
+                                    <div id="add-group-icon2" ng-click="removeEditUsersFromGroup()"></div>
+                                </div>
+                                <div id="added-users-container">
+                                    <div class="users-group-container">
+                                        <div class="users-group-header">Users in the Group</div>
+                                        <div class="users-group-list">
+                                            <div class="user-list" ng-repeat="user in usersAddedToGroupList" ng-click="selectUsersToRemoveFromGroup($event,user)">
+                                                <div class="checkbox-icon middleAlign"></div>
+                                                <div class="username-list middleAlign">{{user.UserName}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popupButton" ng-click="editGroup()">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text" style="margin-top: 2%;">SAVE</div>
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+                @*<div class="popupContainer deleteUserPopupContainer">*@
+                <div class="popupContainer-content popupContainer deleteUserPopupContainer">
+                    <div class="popupHeaderContainer">
+                        <div class="headerIcon"></div>
+                        <div class="headerText" style="padding-left: 2%;">ALERT</div>
+                        <div class="headerClose" ng-click="closePopup()"></div>
+                    </div>
+                    <div class="popupBodyContainer middleAlign">
+                        <div class="delete-popup-content">
+                            <span style="margin-left: 3%">The group will be permanently deleted from LOV.</span><br />
+                            <span>Do you want to continue?</span>
+                        </div>
+                        <div class="popupButton yes-delete-popup" ng-click="deleteGroup()">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">YES</div>
+                        </div>
+                        <div class="popupButton no-delete-popup" ng-click="closePopup()">
+                            <div class="button-icon middleAlign"></div>
+                            <div class="button-text">NO</div>
+                        </div>
+                    </div>
+                </div>
+                @*</div>*@
+            </div>
+            <div class="FLT-BCK-OVERLAY DN"></div>
+        </div>
+    </div>
+</div>

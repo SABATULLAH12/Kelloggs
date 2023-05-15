@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "LOV : Home";
+}
+
+@*@Styles.Render("~/Content/landing")*@
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@*@Scripts.Render("~/bundles/landing")*@
+
+<title>@ViewBag.Title</title>
+@*video js plugin start*@
+<script src="~/Scripts/video.js"></script>
+<script src="~/Scripts/video.dev.js"></script>
+<link href="~/Content/video-js.css" rel="stylesheet" />
+<link href="~/Content/video-js.min.css" rel="stylesheet" />
+<link href="~/Content/video-js.swf" />
+@*video js plugin end*@
+<script src="~/Scripts/Plugins/angular.min.js"></script>
+<script>
+    var version = '@System.Configuration.ConfigurationManager.AppSettings["Version"].ToString()';
+    document.write('<script src="../Scripts/Common/Services.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<script src="../Scripts/Common/Constans.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<script src="../Scripts/Common/Common.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<script src="../Scripts/Shared/Landing.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<link href="../Content/Shared/Landing.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+
+
+</script>
+<script type="text/javascript">
+    function preventBack() { window.history.forward(); }
+    setTimeout("preventBack()", 0);
+    window.onunload = function () { null };
+    sessionStorage.setItem("SessionID", "@Session.SessionID");
+    sessionStorage.setItem("Username", "@Session["Username"].ToString()");
+    sessionStorage.setItem("Roles", "@Session["Roles"].ToString()");
+    sessionStorage.setItem("Email", "@Session["Email"].ToString()");
+    sessionStorage.setItem("UserId", "@Session["UserId"].ToString()");
+    sessionStorage.setItem("Modules", "@Session["Modules"].ToString()");
+
+</script>
+
+<link href="~/Content/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<content id="parent">
+    <div class="default-background"></div>
+    <div class="rowdiv" style="z-index:9;">
+
+
+        <div class="settings dropdown">
+            <button onclick="myFunction()" class="dropbtn" id="mySettings"></button>
+            <div id="myDropdown" class="settingDropdown">
+                <div class="settingsDiv ddOptions">
+                    <div style="height: 28px;">
+                        <div class="settings active" onclick="myFunction1()"></div>
+                    </div>
+                    <div class="bottomBorder"></div>
+                </div>
+                <div class="userManagementAccess ddOptions " id="userManageAccess" onclick="location.href='@Url.Action("UserManagement", "UserManagement")'" title="User Management">
+                    <div class="middleAlign">
+                        <div class="userManagementAccessIcon"></div>
+                    </div>
+                </div>
+                <div class="helpDiv ddOptions " onclick="downloadUserGuide(1, 'abc')" title="User Guide">
+                    <div class="middleAlign">
+                        <div class="helpIcon ddHIcon ddHelpIcon"></div>
+                    </div>
+                </div>
+                <div class="questionairre ddOptions " id="questionairre" onclick="downloadGuide(11, 'abc')" title="Questionnaire">
+                    <div class="middleAlign">
+                        <div class="questionairreIcon"></div>
+                    </div>
+                </div>
+                <div class="regionalContacts ddOptions " id="regionalContacts" onclick="downloadGuide(12, 'abc')" title="Key Contacts">
+                    <div class="middleAlign">
+                        <div class="regionalContactsIcon"></div>
+                    </div>
+                </div>
+                @*<div class="logoutDiv ddOptions disableSelection">
+                        <div class="middleAlign">
+                            <div class="logoutIcon ddIcon ddLogoutIcon" onclick="location.href='@Url.Action(" Login", "Login" )'"></div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-side-menu">
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li style="pointer-events:none;height: calc(100% / 8);">
+                    <div class="brand">landmark <span style="color : #D31245;letter-spacing:0.02vw;">occasion </span>visualizer</div>
+                    <div class="headingline"></div>
+                </li>
+                <li data-toggle="collapse" data-target="#dashboard" class="collapsed" name="Snapshot" title="OCCASION PROFILE">
+                    <a href="../Snapshot/Snapshot?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.snapshot)">
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="occasionpro"></div>
+                            </div>
+                            <div class="content">OCCASION PROFILE</div>
+                        </div>
+                    </a>
+                </li>
+                <li data-toggle="collapse" data-target="#products" class="collapsed" name="Performance Dashboard" title="PERFORMANCE DASHBOARD">
+                    <a href="../PerformanceDashboard/PerformanceDashboard?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.performanceDashboard)">
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="pdashboard"></div>
+                            </div>
+                            <div class="content">PERFORMANCE DASHBOARD</div>
+                        </div>
+                    </a>
+                </li>
+                <li data-toggle="collapse" data-target="#products" class="collapsed" name="Crosstab" title="VISUAL CROSS TAB">
+                    <a href="../Crosstab/Crosstab?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.crosstab)">
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="vcrosstab"></div>
+                            </div>
+                            <div class="content"> VISUAL CROSSTAB</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed" name="Advanced Analytics" title="ADVANCED ANALYTICS" onclick="showOptions()">
+                    <div id="AdvancedAnalyticsHoverBox">
+
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="advana"></div>
+                            </div>
+                            <div class="content" style="padding-top: 1vw;">ADVANCED ANALYTICS</div>
+                        </div>
+
+                        <div class="advancedAnalyticsOption">
+
+                            <a href="../AdvancedAnalytics/Osp?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.swimlanes)" title="OCCASION STRATEGIC POSTURES">
+                                <div class="optionName"><div class="middleAlign">- OCCASION STRATEGIC POSTURES</div></div>
+                            </a>
+                            <a href="../AdvancedAnalytics/CorrespondenceMap?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.correspondencemaps)" title="CORRESPONDENCE MAPS">
+                                <div class="optionName"><div class="middleAlign">- CORRESPONDENCE MAPS</div></div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <a href="#" id="mainTab">
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="advana"></div>
+                            </div>
+                            <div class="content">ADVANCED ANALYTICS</div>
+                        </div>
+                    </a>
+                </li>
+
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed" name="My Dashboard" title="MY DASHBOARD">
+                    <a href='../Dashboard/Dashboard?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.dashboard)'>
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="myDash"></div>
+                            </div>
+                            <div class="content">MY DASHBOARD</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="collapsed" name="Report Generator" title="REPORT GENERATOR">
+                    <a href="../ReportGenerator/ReportGenerator?moduleid=@Convert.ToInt32(AQ.Kelloggs.Models.Constants.UserGuideType.reportgenerator)">
+                        <div class="hoverBox">
+                            <div class="imageBorder">
+                                <div class="report"></div>
+                            </div>
+                            <div class="content">REPORT GENERATOR</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="custom-popup">
+        <div class="popup-header">
+            <div class="head-warnong-icon"><div class="headLeftBorder"></div></div>
+            <div class="head-msg" id="custom_message">
+                <div class="middleAlign"> ALERT </div>
+            </div>
+            <div class="head-close-icon" onclick="close_Custom_popup()"></div>
+        </div>
+        <div class="popup-container">
+            <div class="middleAlign">content</div>
+        </div>
+
+    </div>
+    <div class="alert-overlay"></div>
+    <div class="alert-popup">
+        <div class="popup-header">
+            <div class="head-warnong-icon"><div class="headLeftBorder"></div></div>
+            <div class="head-msg" id="custom_message">
+                <div class="middleAlign"> ALERT </div>
+            </div>
+            <div class="head-close-icon" onclick="close_alert_popup()"></div>
+        </div>
+        <div class="popup-container">
+            <div class="middleAlign">content</div>
+        </div>
+
+    </div>
+</content>
+<div id="warning-message">
+    this website is only viewable in landscape mode
+</div>
+

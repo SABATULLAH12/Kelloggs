@@ -1,0 +1,128 @@
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\AQ.Kelloggs.Models.dll.config
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\AQ.Kelloggs.Models.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\AQ.Kelloggs.Models.pdb
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.AppContext.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Collections.Immutable.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.AttributedModel.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Convention.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Hosting.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Runtime.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.TypedParts.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Console.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.IO.FileSystem.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Reflection.Metadata.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Threading.Thread.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Xml.XmlDocument.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Xml.XPath.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Framework.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Tasks.Core.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Engine.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Utilities.Core.dll
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Collections.Immutable.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.AttributedModel.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Convention.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Hosting.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Runtime.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.TypedParts.xml
+D:\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Reflection.Metadata.xml
+D:\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.csprojResolveAssemblyReference.cache
+D:\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.Migrations.InitialCreate.resources
+D:\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.csproj.GenerateResource.Cache
+D:\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.dll
+D:\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.pdb
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\AQ.Kelloggs.Models.dll.config
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\AQ.Kelloggs.Models.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\AQ.Kelloggs.Models.pdb
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.AppContext.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Collections.Immutable.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.AttributedModel.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Convention.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Hosting.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Runtime.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.TypedParts.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Console.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.IO.FileSystem.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Reflection.Metadata.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Text.Encoding.CodePages.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Threading.Thread.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Xml.XmlDocument.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Xml.XPath.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Framework.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Tasks.Core.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Engine.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.Build.Utilities.Core.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.CSharp.Workspaces.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\Microsoft.CodeAnalysis.Workspaces.Desktop.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Collections.Immutable.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.AttributedModel.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Convention.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Hosting.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.Runtime.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Composition.TypedParts.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\bin\Debug\System.Reflection.Metadata.xml
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.Migrations.InitialCreate.resources
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.csproj.GenerateResource.Cache
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.dll
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.pdb
+D:\Kellogs Projects\Kellogs\AQ.Kelloggs.Models\obj\Debug\AQ.Kelloggs.Models.csprojResolveAssemblyReference.cache

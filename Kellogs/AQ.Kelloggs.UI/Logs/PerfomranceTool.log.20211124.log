@@ -1,0 +1,24 @@
+2021-11-24 11:33:03,345 [13] ERROR  Application (null) (null) - Name:AQ\11173
+2021-11-24 15:44:05,961 [72] ERROR  Application (null) (null) - System.Runtime.InteropServices.ExternalException (0x80004005): A generic error occurred in GDI+.
+   at System.Drawing.Graphics.MeasureString(String text, Font font, SizeF layoutArea, StringFormat stringFormat)
+   at System.Drawing.Graphics.MeasureString(String text, Font font, Int32 width)
+   at AQ.Kelloggs.BAL.CrossTabBAL.MeasureTextHeight(String text, ExcelFont font, Double width) in D:\Kellogs\AQ.Kelloggs.BAL\CrossTabBAL.cs:line 120
+   at AQ.Kelloggs.BAL.CrossTabBAL.CrosstabExcelExport(Request request, Response response, HttpContextBase context) in D:\Kellogs\AQ.Kelloggs.BAL\CrossTabBAL.cs:line 214
+   at AQ.Kelloggs.UI.Controllers.CrossTabController.CrosstabExport(String exportType, String requestData) in D:\Kellogs\AQ.Kelloggs.UI\Controllers\CrossTabController.cs:line 129
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2021-11-24 15:44:06,001 [72] ERROR  Application (null) (null) - A generic error occurred in GDI+.

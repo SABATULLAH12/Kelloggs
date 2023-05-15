@@ -1,0 +1,171 @@
+/*pagination*/
+.pagination ul>.active>a, .pagination ul>.active>span {
+    color: #999999;
+    cursor: default;
+}
+.pagination ul>li>a:hover, .pagination ul>li>a:focus, .pagination ul>.active>a, .pagination ul>.active>span {
+    background-color: #f5f5f5;
+}
+.pagination ul>li>a, .pagination ul>li>span {
+    float: left;
+    padding: 4px 12px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-left-width: 0;
+}
+
+#paginationContainer {
+    height: 100%;
+    width: 29.3vw;
+    float: right;
+    /*margin-top: -1%;*/
+}
+
+    #paginationContainer .pagination {
+        margin: 0;
+        margin-top: 0.3vw;
+        float: left;
+        width: 15.4vw;
+    }
+
+#go-to-container {
+    height: 95%;
+    width: 50%;
+    float: left;
+    width: 13.1vw;
+    font-size: 1.1vw;
+}
+
+.pagination > li:first-child > a, .pagination > li:last-child > a {
+    background-size: 100% 100%;
+    height: 2.5vw;
+    width: 2.5vw;
+}
+
+.pagination > li > a {
+    font-weight: normal;
+    font-size: 1vw;
+    color: #000000;
+}
+
+#paginationContainer ul li:first-child, #paginationContainer ul li:last-child {
+    display: none;
+}
+
+#paginationContainer ul li a {
+    width: 2.2vw;
+    border: none;
+    padding: 0.22vw 0;
+    font-size: 0.8vw;
+    text-align: center;
+    line-height: 1.5vw;
+}
+
+#paginationContainer .pagination ul li a {
+    cursor: pointer;
+    color: black;
+}
+
+#paginationContainer .pagination ul > .active > a, #paginationContainer .pagination ul > .active > span {
+    cursor: pointer;
+    /*width: 24px;
+    height: 24px;*/
+    color: white;
+    border-top-left-radius: 0.9vw;
+    border-bottom-right-radius: 0.9vw;
+    background: #BC0F34;
+}
+
+#paginationContainer ul li:nth-child(2) a {
+    content: string(<);
+}
+
+#paginationContainer ul li:nth-child(2) a {
+    color: transparent;
+}
+
+    #paginationContainer ul li:nth-child(2) a::before {
+        content: "<";
+        color: black;
+    }
+
+#paginationContainer ul li:nth-last-child(2) a {
+    color: transparent;
+}
+
+    #paginationContainer ul li:nth-last-child(2) a::before {
+        content: "  >";
+        color: black;
+    }
+
+.goToPage {
+    height: 100%;
+    float: left;
+    width: 5.8vw;
+}
+
+input#go-to-box {
+    float: left;
+    height: 1.7vw;
+    width: 3.3vw;
+    margin: 0.2vw 0.37vw 0 0;
+    font-size: 0.9vw;
+}
+
+div#go-to-button {
+    float: left;
+    height: 1.7vw;
+    margin-top: 0.2vw;
+    background: linear-gradient(90deg, rgba(154, 163, 174, 1) 0%, rgba(99, 112, 144, 1) 100%);
+    color: #fff;
+    border-radius: 0.3vw;
+    cursor: pointer;
+    width: 25%;
+    width: 3.6vw;
+}
+
+    div#go-to-button:hover {
+        background: #BC0F34;
+    }
+
+div#go-to-text {
+    height: 100%;
+    float: left;
+    margin-right: 3%;
+    margin-left: 13%;
+}
+
+.goToIconDiv {
+    height: 100%;
+    float: left;
+}
+
+input#go-to-box:focus {
+    border: 0.07vw solid rgba(216, 214, 214, 0.7) !important;
+}
+
+.pagination ul {
+    box-shadow: none !important;
+}
+
+.pagination ul {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-left: 0;
+    margin-bottom: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 0;
+}
+
+.pagination ul > li {
+    display: inline;
+    line-height: 20px;
+}

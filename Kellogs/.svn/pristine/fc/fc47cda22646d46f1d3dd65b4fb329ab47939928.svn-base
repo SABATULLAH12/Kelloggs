@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AQ.Statistics</name>
+    </assembly>
+    <members>
+        <member name="M:AQ.Statistics.CorrespondenceAnalysis(System.Data.DataTable)">
+            <summary>
+            Computes correspondence analysis for the given crosstab. Returns Name, X and Y dimensions.
+            </summary>
+            <param name="CrossTab"></param>
+            <returns>A DataTable.</returns>
+        </member>
+        <member name="M:AQ.Statistics.Correlation(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            Computes correlation between two columns of a data table and returns a value. Null values in the input table are ignored for calculation.
+            </summary>
+            <param name="InputTable"></param>
+            <param name="Column1"></param>
+            <param name="Column2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AQ.Statistics.Correlation(System.Collections.Generic.List{System.Double},System.Collections.Generic.List{System.Double})">
+            <summary>
+             Computes correlation between two lists and returns a value. Null values in the input lists can be passed as double.NaN.
+            </summary>
+            <param name="List1"></param>
+            <param name="List2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AQ.Statistics.Correlation(System.Data.DataTable)">
+            <summary>
+            Computes correlation between columns and returns a table with respective values as result. Null values in the input table are ignored for calculation.
+            </summary>
+            <param name="InputTable"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

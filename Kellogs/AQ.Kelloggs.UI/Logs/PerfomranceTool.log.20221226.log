@@ -1,0 +1,14 @@
+2022-12-26 16:28:01,673 [21] ERROR  Application (null) (null) -    at Microsoft.Graph.Auth.ClaimsPrincipalExtensions.ToGraphUserAccount(ClaimsPrincipal claimsPrincipal)
+   at AQ.Kelloggs.UI.Controllers.CommonController.Index() in D:\Kellogs Projects\Kellogs\AQ.Kelloggs.UI\Controllers\CommonController.cs:line 274
+2022-12-26 16:28:01,687 [21] ERROR  Application (null) (null) - Code: invalidClaim
+Message: Missing 'http://schemas.microsoft.com/identity/claims/objectidentifier' claim.
+
+2022-12-26 16:28:03,951 [21] ERROR  Application (null) (null) - Code: invalidClaim
+Message: Missing 'http://schemas.microsoft.com/identity/claims/objectidentifier' claim.
+
+2022-12-26 17:25:03,825 [9] ERROR  Application (null) (null) - IDX20803: Unable to obtain configuration from: '[PII is hidden]'.
+2022-12-26 17:25:40,650 [9] ERROR  Application (null) (null) - IDX20803: Unable to obtain configuration from: '[PII is hidden]'.
+2022-12-26 17:26:32,872 [11] ERROR  Application (null) (null) - IDX20803: Unable to obtain configuration from: '[PII is hidden]'.
+2022-12-26 17:27:32,001 [11] ERROR  Application (null) (null) - IDX20803: Unable to obtain configuration from: '[PII is hidden]'.
+2022-12-26 17:28:15,928 [11] ERROR  Application (null) (null) - IDX20803: Unable to obtain configuration from: '[PII is hidden]'.
+2022-12-26 17:32:45,991 [11] ERROR  Application (null) (null) - IDX20803: Unable to obtain configuration from: '[PII is hidden]'.

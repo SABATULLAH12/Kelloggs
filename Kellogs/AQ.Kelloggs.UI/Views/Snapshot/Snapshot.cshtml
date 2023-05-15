@@ -1,0 +1,75 @@
+﻿@using AQ.Kelloggs.Resources
+@{
+    ViewBag.Title = @Resources.OccasionProfile;
+    Layout = "~/Views/Shared/Master.cshtml";
+}
+<meta content="utf-8" http-equiv="encoding">
+<script type="text/javascript">
+    var selectedMainModule = "Snapshot";
+    document.write('<link href="../Content/Snapshot/Snapshot.css?version=' + version + '" rel="stylesheet" type="text/css" />');
+    document.write('<script src="../Scripts/Snapshot/Snapshot.js?version=' + version + '" type="text/javascript"></scr' + 'ipt>');
+</script>
+<div class="view-container" ng-controller="Snapshot-Controller">
+
+    <div>
+        <div class="calloutArrow"></div>
+        <div class="selectionButtonCallout">Click here to make selections</div>
+    </div>
+
+    <div class="leftpanelarea" ng-hide="leftMenuIsHidden"></div>
+    @*bind left panel from partial start*@
+    <div class="left-panel-load animate-hide" ng-hide="leftMenuIsHidden">
+        @{Html.RenderPartial("LeftPanel");}
+    </div>
+    @*bind left panel from partial view end*@
+
+    @*bind content start*@
+
+    <div class="view-load page1" ng-click="hideLeftPanel()">
+        <div class="output-container">
+            <div class="widgetArea">
+                <div class="topWidget">
+                    <div class="widget" id="widget_1"></div>
+                    <div class="widget" id="widget_2"></div>
+                </div>
+                <div class="bottomWidget">
+                    <div class="widget" id="widget_3"></div>
+                    <div class="widget" id="widget_4"></div>
+                    <div class="widget" id="widget_5"></div>
+                    <div class="widget" id="widget_6"></div>
+                </div>
+            </div>
+            <div class="widgetScroll page1">
+                <div class="middleAlign">
+                    <div class="topScroll" onclick="loadPage(1)"></div>
+                    <div class="topPages"></div>
+                    <div class="bottomPages"></div>
+                    <div class="bottomScroll" onclick="loadPage(2)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="view-load page2" ng-click="hideLeftPanel()">
+        <div class="output-container">
+            <div class="widgetArea">
+                <div class="topWidget">
+                    <div class="widget" id="widget_7"></div>
+                    <div class="widget" id="widget_8"></div>
+                </div>
+                <div class="bottomWidget">
+                    <div class="widget" id="widget_9"></div>
+                    <div class="widget" id="widget_10"></div>
+                </div>
+            </div>
+            <div class="widgetScroll page2">
+                <div class="middleAlign">
+                    <div class="topScroll" onclick="loadPage(1)"></div>
+                    <div class="topPages"></div>
+                    <div class="bottomPages"></div>
+                    <div class="bottomScroll" onclick="loadPage(2)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*bind content end*@
+</div>

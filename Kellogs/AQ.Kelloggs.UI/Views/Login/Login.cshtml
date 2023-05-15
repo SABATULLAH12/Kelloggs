@@ -1,0 +1,292 @@
+﻿@using AQ.Kelloggs.Models.Login
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+<style>
+    body, html {
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        font-family: Corbel;
+        overflow: hidden;
+    }
+
+    body {
+        background-image: url('../../Content/Images/Kelloggs_Login_BG.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+
+    .right-head-div {
+        right: 2%;
+        top: 50%;
+        height: 46%;
+        width: 6%;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+
+
+    .setting-img {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -137px -231px;
+        width: 41px;
+        height: 40px;
+        right: 2%;
+        bottom: 20%;
+        position: relative;
+        float: right;
+    }
+
+
+    .kelloggs-logo {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat 0 0;
+        width: 228px;
+        height: 83px;
+        top: 10%;
+        left: 45%;
+        position: relative;
+    }
+
+    .kelloggs-logo-div {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.38) 20%, rgba(255, 255, 255, 0.43) 22.69%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.44) 77.31%, rgba(255, 255, 255, 0.39) 80%, rgba(255, 255, 255, 0) 100%);
+        width: 991px;
+        height: 136px;
+        position: relative;
+        top: 30%;
+        left: 10%;
+    }
+
+    .caption-start {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat 0 -109px;
+        width: 114px;
+        height: 8px;
+        position: relative;
+        top: 25%;
+        left: 52%;
+    }
+
+    .dashboard {
+        text-transform: uppercase;
+        position: relative;
+        top: 25%;
+        left: 47%;
+        font-size: 31px;
+        font-weight: normal;
+    }
+
+
+
+    .caption-end {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -143px -109px;
+        width: 114px;
+        height: 8px;
+    }
+
+    .rowdiv {
+        margin: 0;
+        padding: 0;
+        /*margin-top: 3.6%;*/
+        height: 12%;
+        position: relative;
+        top: 2%;
+    }
+
+
+    .row-heightmain {
+        position: absolute;
+        margin: 0;
+        padding: 0 9%;
+        left: 65%;
+        width: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .row-height {
+        height: 40%;
+    }
+
+    .row-option-div {
+        height: 100%;
+        float: left;
+        width: 22.6%;
+    }
+
+        .row-option-div:not(:first-child) {
+            margin-left: 3%;
+        }
+
+
+
+    .outerdiv {
+        width: 100%;
+        height: 100%;
+        float: left;
+        /*box-shadow: 0px 0px 2px rgba(1, 1, 1, 0.1);*/
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -223px -479px;
+        width: 247px;
+        height: 350px;
+    }
+
+
+
+    .imagediv {
+        width: 100%;
+        height: calc(64% - 2px);
+        float: left;
+        position: relative;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .image {
+        width: 84%;
+        height: 51%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 60%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    .link:hover .dotted-line {
+        color: red;
+    }
+
+    .dashboardimg {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat 0 -299px;
+        width: 92px;
+        height: 92px;
+    }
+
+    .deep-divimg {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -240px -299px;
+        width: 92px;
+        height: 92px;
+    }
+
+    .cross-tabimg {
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -120px -299px;
+        width: 92px;
+        height: 93px;
+    }
+
+
+
+
+    .dotted-line {
+        width: 70%;
+        float: left;
+        /*border-style: Dashed;*/
+        border-color: #66A8FD;
+        border-width: 1px;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: #000000;
+    }
+
+
+    .landingBody {
+        height: 88%;
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-logo {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        right: 2.5%;
+        bottom: 5%;
+        cursor: pointer;
+        font-size: calc(0.5vw + 0.5vh + 0.5vmin);
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -258px 0;
+        width: 33px;
+        height: 36px;
+    }
+
+    .username {
+        border-style: Solid;
+        border-color: #AAB4BA;
+        border-width: 0.7px;
+        width: 272px;
+    }
+
+    .icon-username {
+        /* width: 100%; */
+        /* align-self: center; */
+        float: right;
+        position: relative;
+        top: 84%;
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat 0 -231px;
+        width: 17px;
+        height: 25px;
+    }
+
+    .icon-password {
+        /* width: 100%; */
+        /* align-self: center; */
+        float: right;
+        position: relative;
+        top: 95%;
+        background: url('../../Content/Images/Kelloggs_Login_Landing_Sprite.svg') no-repeat -46px -231px;
+        width: 17px;
+        height: 25px;
+    }
+
+</style>
+<link href="~/Content/Shared/Login.css" rel="stylesheet" />
+
+<div class="rowdiv">
+    <div class="kelloggs-logo-div">
+        <div class="kelloggs-logo">
+        </div>
+        <div class="caption-start">
+            <div class="caption-end"></div>
+        </div>
+        <div class="dashboard">dashboard</div>
+
+        <div class="login-controls">
+            <div class="username-ctrl">
+                <div class="txt-left verticalCentre">
+                    <div class="icon-username"></div>
+                </div>
+                <div class="txt-right verticalCentre">
+                    <input type="text" placeholder="USERNAME" id="txtUsername" ng-model="username" autocomplete="off" />
+                </div>
+            </div>
+            <div class="password-ctrl">
+                <div class="txt-left verticalCentre">
+                    <div class="icon-password"></div>
+                </div>
+                <div class="txt-right verticalCentre">
+                    <input type="password" placeholder="PASSWORD" id="txtPassword" ng-model="password" />
+                </div>
+            </div>
+
+            <div class="submit-ctrl">
+                <div class="ctrl-Click" ng-click="checkUser(username,password)">
+                    
+                    <div class="submit-text">SUBMIT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

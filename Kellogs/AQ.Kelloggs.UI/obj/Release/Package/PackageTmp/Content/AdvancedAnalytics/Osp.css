@@ -1,0 +1,454 @@
+﻿.selectedClass {
+    background-color: transparent;
+}
+
+
+
+.OSPHeader {
+    width: 100%;
+    height: 2.2vw;
+    border-bottom: 1px Solid #E0E0E0;
+}
+
+.headerOptions {
+    float: right;
+    height: 100%;
+    width: 22%;
+}
+
+.optionValue {
+    width: 48%;
+    height: 100%;
+    float: left;
+    cursor: pointer;
+    background: #F7F7F7;
+}
+
+
+
+
+.retailText, .disText, .demogText, .motivText, .fiveWsText, .shareCategoryText {
+    float: left;
+    width: 56%;
+    text-align: center;
+    height: 100%;
+    margin-top: 3.8%;
+    font-weight: bold;
+    font-size: 0.9vw;
+    white-space: nowrap;
+}
+
+.shareCategoryText {
+    width: 70%;
+    margin-left: -5%;
+}
+
+    .retailText.active, .disText.active, .fiveWsText.active, .motivText.active, .demogText.active, .shareCategoryText.active {
+        color: #d11245;
+    }
+
+.retailChartArea, .shareCategoryChartArea {
+    display: none;
+}
+
+
+
+
+.separator {
+    float: left;
+    height: 100%;
+    width: 2%;
+    /* background: #F7F7F7; */
+    box-shadow: inset -0.6vw 0 0.9vw -0.73vw rgba(36, 21, 11, 0.5);
+}
+
+.legend {
+    float: right;
+    width: 38%;
+    height: 100%;
+}
+
+.legendContent {
+    float: left;
+    width: 20%;
+    height: 51%;
+    font-size: 0.9vw;
+    font-weight: bold;
+    padding-left: 1%;
+}
+
+.strengthenCore {
+    width: 24%;
+    border-left: 0.22vw solid #FF0000;
+}
+
+.legendOption {
+    width: 24%;
+    border-left: 0.22vw solid #e84518;
+    margin-left: 1%;
+    font-size: 1vw;
+    height: 60%;
+    text-transform: uppercase;
+}
+
+.grow {
+    margin-left: 3%;
+    border-left: 0.22vw solid #7030A0;
+}
+
+.maintain {
+    margin-left: 4%;
+    width: 13%;
+    border-left: 0.22vw solid #FFC925;
+}
+
+.share {
+    margin-left: 3%;
+    width: 17%;
+    border-left: 0.22vw solid #0070C0;
+}
+
+.deprioritize {
+    margin-left: 1%;
+    width: 13%;
+    border-left: 0.22vw solid #b7b7b7;
+}
+
+/*#ascrail2002-hr{
+    top: 608.125px !important;
+}
+
+#ascrail2002 .nicescroll-cursors{
+    height:322px !important;
+}
+
+#ascrail2002{
+    height:404px !important;
+    display:none!important
+}*/
+
+.chartArea {
+    height: calc(100% - 4.32vw);
+}
+
+.columnShadow {
+    height: 100%;
+    width: 0.36vw;
+}
+
+.chartArea .rightBody .row-item:nth-child(odd), .chartArea .leftBody .row-item:nth-child(odd) {
+    background: none;
+}
+
+.Newbody-footer {
+    height: 2.2vw;
+    width: 100%;
+    float: left;
+    border: 1px solid #E0E0E0;
+}
+
+.body-footer {
+    display: none;
+}
+
+.innerFooterContent {
+    height: 100%;
+    width: 100%;
+    float: left;
+    display: none;
+    margin-left: 0.73vw;
+}
+
+    .innerFooterContent > div {
+        width: auto;
+        letter-spacing: 0.22px;
+        margin-left: 0.37vw;
+        float: left;
+        font-weight: normal;
+        font-size: 0.8vw;
+        color: #000000;
+    }
+
+.drilldown-container {
+    height: 94%;
+    width: 98%;
+    margin: 1%;
+    background: white;
+    z-index: 10;
+    border-radius: 0.3vw;
+    display: none;
+}
+
+.retailIconImage, .disIcon, .demogIconImage, .motivIcon, .fiveWsIcon, .shareIcon {
+    width: 24%;
+    height: 100%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    float: left;
+    margin-left: 5%;
+    transform: scale(0.8);
+}
+
+    .shareIcon.channel {
+        background: url('../Images/LeftPanel SVG/channel.svg');
+    }
+
+    .shareIcon.category {
+        background: url('../Images/LeftPanel SVG/category.svg');
+    }
+
+.retailIconImage {
+    background: url('../Images/LeftPanel SVG/retailValueIcon.svg');
+}
+
+/*.retailIconImage.active, .disIcon.active, .motivIcon.active, .demogIconImage.active, .fiveWsIcon.active,.shareIcon.active {
+       
+        background-size: contain;
+       
+    }*/
+
+.shareIcon.active.channel {
+    background: url('../Images/LeftPanel SVG/channel_active.svg');
+}
+
+.shareIcon.active.category {
+    background: url('../Images/LeftPanel SVG/category_active.svg');
+}
+
+.retailIconImage.active {
+    background: url('../Images/LeftPanel SVG/retailValueIcon_active.svg');
+}
+
+
+.disIcon {
+    background: url('../Images/LeftPanel SVG/distributionIcon.svg');
+}
+
+    .disIcon.active {
+        background: url('../Images/LeftPanel SVG/distributionIcon_active.svg');
+    }
+
+
+
+
+.demogIconImage {
+    background: url('../Images/LeftPanel SVG/demographics.svg');
+    margin-top: 0.3vw;
+}
+
+    .demogIconImage.active {
+        background: url('../Images/LeftPanel SVG/demographics_active.svg');
+    }
+
+.motivIcon {
+    background: url('../Images/LeftPanel SVG/motivationIcon.svg');
+}
+
+    .motivIcon.active {
+        background: url('../Images/LeftPanel SVG/motivationIcon_active.svg');
+    }
+
+.fiveWsIcon {
+    background: url('../Images/LeftPanel SVG/5wsIcon.svg');
+}
+
+    .fiveWsIcon.active {
+        background: url('../Images/LeftPanel SVG/5wsIcon_active.svg');
+    }
+
+.backButton {
+    background: url('../Images/icons SVG/removeFromGroupIcon.svg');
+    width: 1.4vw;
+    height: 1.4vw;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    float: left;
+}
+
+    .backButton:hover {
+        background: url('../Images/icons SVG/removeFromGroupIcon_active.svg');
+    }
+
+.parentHeader {
+    float: left;
+    width: 99%;
+    height: 3vw;
+    background: #fafafa;
+}
+
+.headerIcon_Gender, .headerIcon_Motivation, .headerIcon_Generations, .headerIcon_AverageHHIncome, .headerIcon_HouseholdSize, .headerIcon_Ethnicity, .headerIcon_WhoWith, .headerIcon_DayOfWeek, .headerIcon_Where, .headerIcon_KelloggsShareofOccasion, .headerIcon_AverageItemsperOccasion, .headerIcon_Typeofconsumption, .headerIcon_Activities, .headerIcon_Purchaser, .headerIcon_PackageType, .headerIcon_ShopperMission, .headerIcon_ProductAttributes {
+    background: url('../Images/icons SVG/genderIcon.svg');
+    width: 84%;
+    height: 76%;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    left: 23%;
+    transform: scale(0.9) translateY(-50%);
+}
+
+.headerIcon_Motivation {
+    background: url('../Images/icons SVG/motivationIcon.svg');
+}
+
+.headerIcon_Generations {
+    background: url('../Images/icons SVG/generationIcon.svg');
+    left: 10%;
+    top: 65%;
+}
+
+.headerIcon_AverageHHIncome {
+    background: url('../Images/icons SVG/avgHHIncomeIcon.svg');
+}
+
+.headerIcon_HouseholdSize {
+    background: url('../Images/icons SVG/householdIncomeIcon.svg');
+}
+
+.headerIcon_Ethnicity {
+    background: url('../Images/icons SVG/ethnicityIcon.svg');
+    left: 7%;
+    top: 54%;
+}
+
+.headerIcon_WhoWith {
+    background: url('../Images/icons SVG/whoWithHeaderIcon.svg');
+    left: 7%;
+    top: 54%;
+}
+
+.headerIcon_DayOfWeek {
+    background: url('../Images/icons SVG/dayOfWeekIcon.svg');
+    top: 54%;
+}
+
+.headerIcon_Where {
+    background: url('../Images/icons SVG/whereHeaderIcon.svg');
+}
+
+.headerIcon_KelloggsShareofOccasion {
+    background: url('../Images/icons SVG/shareOfOccasionIcon.svg');
+}
+
+
+.headerIcon_AverageItemsperOccasion {
+    background: url('../Images/icons SVG/avgOccasionIcon.svg');
+}
+
+
+.headerIcon_Typeofconsumption {
+    background: url('../Images/icons SVG/typeOfConsumptionIcon.svg');
+}
+
+
+.headerIcon_Activities {
+    background: url('../Images/icons SVG/activityHeaderIcon.svg');
+}
+
+.headerIcon_Purchaser {
+    background: url('../Images/icons SVG/purchaserIcon.svg');
+}
+
+.headerIcon_PackageType {
+    background: url('../Images/icons SVG/packageTypeIcon.svg');
+}
+
+.headerIcon_ShopperMission {
+    background: url('../Images/icons SVG/shopperMissionHeaderIcon.svg');
+}
+
+.headerIcon_ProductAttributes {
+    background: url('../Images/icons SVG/productAttributeIcon.svg');
+}
+
+.headerIconDiv {
+    background: rgba(242,242,242,0.8);
+    width: 3.3vw;
+    height: 2.8vw;
+    float: left;
+}
+
+.parentHeader .headerText {
+    font-weight: bold;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    color: #000000;
+    float: left;
+    width: 20%;
+    margin-left: 1%;
+}
+
+.colName, .rowName {
+    float: left;
+}
+
+.drillDownContent {
+    height: 95%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.drilldown-container .leftBody .row-item .row-item-div:first-child .row-right-item-content, .leftHeader .row-item .row-item-div:first-child .row-item-head-content {
+    margin-left: 3.6vw;
+}
+
+.advHeader {
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1vw;
+    width: 38%;
+    height: 100%;
+    margin-left: 20%;
+    text-align: center;
+    color: #5a5b5b;
+    cursor: pointer;
+}
+
+.level3.shareTab {
+    margin-left: 0.73vw !important;
+    width: calc(100% - 1.47vw) !important;
+    font-size: 1vw !important;
+}
+
+.retailCallout {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 46.72%, rgba(237, 236, 236, 1) 100%);
+    width: 11%;
+    border-radius: 0px 0px 0.3vw 0.3vw;
+    border-top: 0.15vw solid rgba(211, 18, 69, 1);
+    margin-left: 81%;
+    margin-top: -0.9vw;
+    box-shadow: 0 0.4vw 0.4vw -0.4vw rgba(0, 0, 0, 0.3);
+    font-style: italic;
+    font-size: 0.9vw;
+    color: #000000;
+    padding: 0.4vw;
+    text-align: left;
+    position: absolute;
+}
+
+.retailcalloutArrow {
+    transform: rotateY(180deg);
+    position: absolute;
+    margin-left: 91%;
+    margin-top: -1.8%;
+    background: url('../../Content/Images/icons SVG/calloutArrow.svg');
+    width: 3vw;
+    height: 3vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#retailCallout {
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    right: 16%;
+    top: 2.6vw;
+    display: none;
+}
+
+.retailValue.optionValue.disableSelection {
+    pointer-events: auto;
+}
+
+
